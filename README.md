@@ -36,12 +36,12 @@ These strings are not exist SourceMod function! Purpose of these strings provide
 
 Where: `%1` - Class name, `%2` - Tag name, `%3` - Real method/property/constructor name
 
-**PREFIX** - Text before `%3` param (e.g., `METHODMAP_ConVar_PROP_`Flags)
+**PREFIX** - Text before `%3` param (e.g., `METHODMAP_ArrayList_Handle_METHOD_`GetArray)
 
 ### Examples:
 
 **String to watch docs:**  
-Method: Clone
+Method: Clone  
 Prefix: METHODMAP_ArrayList_Handle_METHOD_  
 Result: METHODMAP_ArrayList_Handle_METHOD_Clone
 
