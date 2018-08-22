@@ -47,5 +47,5 @@ Result: METHODMAP_ArrayList_Handle_METHOD_Clone
 
 **String to use as code:**  
 Docs string: METHODMAP_ArrayStack_PROP_BlockSize_get  
-Removes prefix: METHODMAP_ArrayStack_PROP_
+Removes prefix: METHODMAP_ArrayStack_PROP_  
 Result: my_code.BlockSize.get()
