@@ -30,7 +30,7 @@ These strings are not exist SourceMod function! Purpose of these strings provide
 
 | Type | With tag | Without tag |
 |------| ------ | ------ |
-| Constructor | METHODMAP_`%1`_`%2`\_CONSTRUCTOR_`%3` | METHODMAP_`%1`\_CONSTRUCTOR_`%3` |
+| Constructor | METHODMAP_`%1`_`%2`\_CONSTRUCTOR\_`%3` | METHODMAP_`%1`\_CONSTRUCTOR_`%3` |
 | Method | METHODMAP_`%1`_`%2`_METHOD\_`%3` | METHODMAP_`%1`\_METHOD_`%3` |
 | Property | METHODMAP_`%1`_`%2`_PROP\_`%3` | METHODMAP_`%1`_PROP\_`%3` |
 
