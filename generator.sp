@@ -1,50 +1,45 @@
-#include <profiler>
+#define PLUGIN_VERSION "1.2.3"
+
 #pragma newdecls required
 #pragma semicolon 1
 
-public Plugin myinfo =
-{
-	name = "sourcemod.xml generator",
-	author = "MCPAN (mcpan@foxmail.com), raziEiL [disawar1]",
-	version = "1.2.2",
-	url = "https://forums.alliedmods.net/member.php?u=73370"
-}
+#include <sourcemod>
+#include <profiler>
+
+// Pre-compiler option
+// TODO: check -> file, property 
+// TODO: Не верная сортировка xml.? Не высвечивается поиск по функциям METHODMAP_..., FindStringInArray, strl
+// TODO: check -> KvGetVector
+#define	DEBUG_ENABLED 0 // DISABLE DEBUG BEFORE PARSE ALL INC.
+// write to NPP_STYLE_FUNCTION file all strings but fake mothodmaps (e.g., METHODMAP_ArrayList_Handle_METHOD_GetArray)
+#define ADD_NPP_STYLE_METHODMAP 1
+#define ADD_DOCS_OPERATORS_MISC 1
+#define ADD_DOCS_VARIABLES 1
 
 #define	MAX_WIDTH 28
 #define WIDTH MAX_WIDTH - 4
-
 #define SPACE_CHAR	' '
 #define SPACE_X4	"    "
 #define SPACE_X8	"        "
 #define SPACE_X12	"            "
 #define SPACE_X16	"                "
 #define SPACE_X28	"                            "
-
 #define COMMENT_PARAM		"@param"
 #define COMMENT_RETURN		"@return"
 #define COMMENT_NORETURN	"@noreturn"
 #define COMMENT_ERROR		"@error"
-
 #define PATH_INCLUDE	"addons/sourcemod/scripting/include"
-#define FILE_SOURCEMOD	"addons/sourcemod/plugins/sourcemod.xml"
-#define FILE_FUNCTIONS	"addons/sourcemod/plugins/NPP_KEYWORDS_FUNCTION.sp"
-#define FILE_CONSTANT	"addons/sourcemod/plugins/NPP_KEYWORDS_CONSTANT.sp"
-#define FILE_CLASS_TAG		"addons/sourcemod/plugins/NPP_KEYWORDS_CLASS_&_TAG.sp"
-
-// DISABLE DEBUG BEFORE PARSE ALL INC.
-#define	DEBUG_ENABLED 0
+#define FILE_SOURCEMOD	"addons/sourcemod/plugins/NPP/sourcemod.xml"
+#define FILE_OPERATORS	"addons/sourcemod/plugins/NPP/NPP_STYLE_OPERATORS.sp"
+#define FILE_FUNCTIONS	"addons/sourcemod/plugins/NPP/NPP_STYLE_FUNCTION.sp"
+#define FILE_CONSTANT	"addons/sourcemod/plugins/NPP/NPP_STYLE_CONSTANT.sp"
+#define FILE_MISC		"addons/sourcemod/plugins/NPP/NPP_STYLE_MISC.sp"
+// ( ) [ ] ; , - style separator
+#define NPP_STYLE_OPERATORS "( ) [ ] ; , * / % + - << >> >>> < > <= >= == != & && ^ | || ? : = += -= *= /= %= &= ^= |= <<= >>= >>>= ++ -- ~ !"
+#define NPP_STYLE_OPERATORS_MISC "for if else do while switch case default return break delete continue new decl public stock const enum forward static funcenum functag native sizeof view_as true false union function methodmap typedef property struct this"
+#define NPP_STYLE_VARIABLES "bool char int float Handle"
 
 #define LOG		"logs\\generator.log"
-char DEBUG[1024];
-
-StringMap g_FuncTrie;
-ArrayList g_FuncArray;
-ArrayList g_ConstArray;
-ArrayList g_ClassTagArray;
-
-File g_FileSourcemodXML;
-char g_MethodmapName[48], g_MethodmapTag[48];
-char g_FuncPrefix[][] = { "forward", "native", "stock", "public native", "property", "public" };
 
 #define PARAM 0
 #define NOTES 1
@@ -52,6 +47,20 @@ char g_FuncPrefix[][] = { "forward", "native", "stock", "public native", "proper
 #define RETURN 3
 #define TOTAL_COMMENT 4
 
+public Plugin myinfo =
+{
+	name = "sourcemod.xml generator",
+	author = "MCPAN (mcpan@foxmail.com), raziEiL [disawar1]",
+	version = PLUGIN_VERSION,
+	url = "https://github.com/raziEiL/SourceMod-Npp-Docs"
+}
+
+char DEBUG[1024];
+StringMap g_FuncTrie;
+ArrayList g_FuncArray, g_ConstArray, g_MiscArray; // Class ,tag, vars
+File g_FileSourcemodXML;
+char g_MethodmapName[48], g_MethodmapTag[48];
+char g_FuncPrefix[][] = { "forward", "native", "stock", "public native", "property", "public" };
 char g_CommentType[TOTAL_COMMENT][] = { "Params:", "Notes:", "Error:", "Return:" };
 int g_XMLFixCount;
 
@@ -60,7 +69,7 @@ public void OnPluginStart()
 #if DEBUG_ENABLED
 	BuildPath(Path_SM, DEBUG, sizeof(DEBUG), LOG);
 #endif
-	RegServerCmd("sm_makedocs", Cmd_Start);
+	RegServerCmd("sm_makedocs", Cmd_Start, "starts to parse SourceMod includes and generates output files");
 }
 
 public Action Cmd_Start(int argc)
@@ -69,15 +78,16 @@ public Action Cmd_Start(int argc)
 	g_XMLFixCount = 0;
 	Handle prof = CreateProfiler();
 	StartProfiling(prof);
+	CreateDirectory("addons/sourcemod/plugins/NPP", 511);
 
-	int size, count[3];
+	int i, size, count[3];
 	char buffer[PLATFORM_MAX_PATH];
-	ArrayList fileArray = CreateArray(ByteCountToCells(PLATFORM_MAX_PATH)), g_TypesAndDefineArray = CreateArray(ByteCountToCells(64));
+	ArrayList fileArray = CreateArray(ByteCountToCells(PLATFORM_MAX_PATH)), g_CommonArray = CreateArray(ByteCountToCells(64));
 
 	g_FuncTrie = CreateTrie();
 	g_FuncArray = CreateArray(ByteCountToCells(64));
 	g_ConstArray = CreateArray(ByteCountToCells(64));
-	g_ClassTagArray = CreateArray(ByteCountToCells(64));
+	g_MiscArray = CreateArray(ByteCountToCells(64));
 
 	Debug("> --------------------------------");
 	Debug("> PARSING STARTED");
@@ -87,7 +97,7 @@ public Action Cmd_Start(int argc)
 
 	if ((size = ReadDirFileList(fileArray, PATH_INCLUDE, "inc")))
 	{
-		for (int i = 0; i < size; i++)
+		for (i = 0; i < size; i++)
 		{
 			fileArray.GetString(i, buffer, PLATFORM_MAX_PATH-1);
 			ReadIncludeFile(buffer, i);
@@ -101,51 +111,81 @@ public Action Cmd_Start(int argc)
 	SortADTArrayCustom(g_FuncArray, SortFuncADTArray);
 	File file = OpenFile(FILE_FUNCTIONS, "wb");
 	g_FileSourcemodXML = OpenFile(FILE_SOURCEMOD, "wb");
-
+	
 	g_FileSourcemodXML.WriteLine("<?xml version=\"1.0\" encoding=\"Windows-1252\" ?>");
 	g_FileSourcemodXML.WriteLine("<NotepadPlus>");
 	g_FileSourcemodXML.WriteLine("%s<AutoComplete language=\"sourcemod\">", SPACE_X4);
+	g_FileSourcemodXML.WriteLine("%s<Environment ignoreCase=\"no\"/>", SPACE_X4); // fix
 
 	if ((count[0] = size = GetArraySize(g_FuncArray)))
 	{
 		int value;
 		char funcname[64];
-		for (int i = 0; i < size; i++)
+		for (i = 0; i < size; i++)
 		{
 			g_FuncArray.GetString(i, funcname, 63);
 			g_FuncTrie.GetValue(funcname, value);
 			fileArray.GetString(value, buffer, PLATFORM_MAX_PATH-1);
 			ReadIncludeFile(buffer, _, funcname);
+			if (ADD_NPP_STYLE_METHODMAP && StrContains(funcname, "METHODMAP_") != -1)
+				continue;
 			file.WriteLine("%s ", funcname);
 		}
 	}
+	
+#if ADD_DOCS_OPERATORS_MISC
+	char temp[42][32];
+	ExplodeString(NPP_STYLE_OPERATORS_MISC, " ", temp, sizeof(temp), sizeof(temp[]));
 
-	if ((count[1] = size = GetArraySize(g_ClassTagArray)))
+	for (i = 0; i < sizeof(temp); i++)
 	{
-		for (int i = 0; i < size; i++)
+		if (!temp[i]) 
+			break;
+		
+		if (FindStringInArray(g_CommonArray, temp[i]) == -1)
+			PushArrayString(g_CommonArray, temp[i]);
+	}
+#endif
+#if ADD_DOCS_VARIABLES
+	char temp2[5][16];
+	ExplodeString(NPP_STYLE_VARIABLES, " ", temp2, sizeof(temp2), sizeof(temp2[]));
+
+	for (i = 0; i < sizeof(temp2); i++)
+	{
+		if (!temp2[i]) 
+			break;
+		
+		if (FindStringInArray(g_MiscArray, temp2[i]) == -1)
+			PushArrayString(g_MiscArray, temp2[i]);
+	}
+#endif
+	
+	if ((count[1] = size = GetArraySize(g_MiscArray)))
+	{
+		for (i = 0; i < size; i++)
 		{
-			g_ClassTagArray.GetString(i, buffer, PLATFORM_MAX_PATH-1);
-			PushArrayString(g_TypesAndDefineArray, buffer);
+			g_MiscArray.GetString(i, buffer, PLATFORM_MAX_PATH-1);
+			PushArrayString(g_CommonArray, buffer);
 		}
 	}
 	if ((count[2] = size = GetArraySize(g_ConstArray)))
 	{
-		for (int i = 0; i < size; i++)
+		for (i = 0; i < size; i++)
 		{
 			g_ConstArray.GetString(i, buffer, PLATFORM_MAX_PATH-1);
-			PushArrayString(g_TypesAndDefineArray, buffer);
+			PushArrayString(g_CommonArray, buffer);
 		}
 	}
-
-	SortADTArrayCustom(g_TypesAndDefineArray, SortFuncADTArray);
+	
+	SortADTArrayCustom(g_CommonArray, SortFuncADTArray);
 	SortADTArrayCustom(g_ConstArray, SortFuncADTArray);
-	SortADTArrayCustom(g_ClassTagArray, SortFuncADTArray);
+	SortADTArrayCustom(g_MiscArray, SortFuncADTArray);
 
-	if ((size = GetArraySize(g_TypesAndDefineArray)))
+	if ((size = GetArraySize(g_CommonArray)))
 	{
-		for (int i = 0; i < size; i++)
+		for (i = 0; i < size; i++)
 		{
-			g_TypesAndDefineArray.GetString(i, buffer, PLATFORM_MAX_PATH-1);
+			g_CommonArray.GetString(i, buffer, PLATFORM_MAX_PATH-1);
 			g_FileSourcemodXML.WriteLine("%s<KeyWord name=\"%s\"/>", SPACE_X8, buffer);
 		}
 	}
@@ -158,12 +198,12 @@ public Action Cmd_Start(int argc)
 	delete g_FuncTrie;
 	delete g_FuncArray;
 	delete g_FileSourcemodXML;
-	delete g_TypesAndDefineArray;
+	delete g_CommonArray;
 
 	file = OpenFile(FILE_CONSTANT, "wb");
 	if ((size = GetArraySize(g_ConstArray)))
 	{
-		for (int i = 0; i < size; i++)
+		for (i = 0; i < size; i++)
 		{
 			g_ConstArray.GetString(i, buffer, PLATFORM_MAX_PATH-1);
 			file.WriteLine("%s ", buffer);
@@ -173,21 +213,26 @@ public Action Cmd_Start(int argc)
 	delete file;
 	delete g_ConstArray;
 
-	file = OpenFile(FILE_CLASS_TAG, "wb");
-	if ((size = GetArraySize(g_ClassTagArray)))
+	file = OpenFile(FILE_MISC, "wb");
+	if ((size = GetArraySize(g_MiscArray)))
 	{
-		for (int i = 0; i < size; i++)
+		for (i = 0; i < size; i++)
 		{
-			g_ClassTagArray.GetString(i, buffer, PLATFORM_MAX_PATH-1);
+			g_MiscArray.GetString(i, buffer, PLATFORM_MAX_PATH-1);
 			file.WriteLine("%s ", buffer);
 		}
 	}
 
 	delete file;
-	delete g_ClassTagArray;
-
+	delete g_MiscArray;
+	
+	file = OpenFile(FILE_OPERATORS, "wb");
+	file.WriteLine("%s\n", NPP_STYLE_OPERATORS);
+	file.WriteLine(NPP_STYLE_OPERATORS_MISC);
+	delete file;
+	
 	StopProfiling(prof);
-	PrintToServer("\n\t\t\t\t> Job Done! Time used: %.2fs. XML fixed: %d error. Func: %d, Type & Class %d, Define %d", GetProfilerTime(prof), g_XMLFixCount, count[0], count[1], count[2]);
+	PrintToServer("\n\t\t\t\t> Job Done! Time used: %.2fs. XML fixed: %d error. Func: %d, Misc %d, Define %d", GetProfilerTime(prof), g_XMLFixCount, count[0], count[1], count[2]);
 	delete prof;
 
 	return Plugin_Handled;
@@ -245,7 +290,7 @@ void ReadIncludeFile(char[] filepath, int fileArrayIdx=-1, char[] search="")
 			nextDeep += tempVal - tempVal2;
 			currentDeep = nextDeep - (diveInDeep ? 1 : 0);
 
-			//if (nextDeep)
+			if (nextDeep)
 				Debug("Brace deep=%d", nextDeep);
 
 			// check if in methodmap selection
@@ -447,10 +492,9 @@ void ReadIncludeFile(char[] filepath, int fileArrayIdx=-1, char[] search="")
 
 				strcopy(temp, 1023, buffer);
 				ReplaceString(temp, 1023, "{", "");
-				if (IsValidString(temp) && FindStringInArray(g_ConstArray, temp) == -1)
+				if (IsValidString(temp) && FindStringInArray(g_MiscArray, temp) == -1)
 				{
-					//PushArrayString(g_ConstArray, temp);
-					PushArrayString(g_ClassTagArray, temp);
+					PushArrayString(g_MiscArray, temp);
 				}
 
 				if ((value = FindCharInString2(buffer, '{')) != -1)
@@ -510,7 +554,7 @@ void ReadIncludeFile(char[] filepath, int fileArrayIdx=-1, char[] search="")
 					}
 				}
 			}
-			else
+			else 
 			{
 				found_func = false;
 
@@ -540,7 +584,7 @@ void ReadIncludeFile(char[] filepath, int fileArrayIdx=-1, char[] search="")
 	
 						if (isMethodmap){
 
-							 Debug("%s", funcname);
+							Debug("%s", funcname);
 							// TODO: доделать проперти
 							if (!in_property)
 								lastPropName = funcname;
@@ -571,10 +615,10 @@ void ReadIncludeFile(char[] filepath, int fileArrayIdx=-1, char[] search="")
 								WriteFileLine(g_FileSourcemodXML, "%s<KeyWord name=\"%s\" func=\"yes\">", SPACE_X8, funcname);
 								WriteFileLine(g_FileSourcemodXML, "%s<Overload retVal=\"%s %s\" descr=\"", SPACE_X12, funcprefix, retval[0] ? retval : (isMethodmap ? g_MethodmapTag : "void"));
 
-								if (IsValidString(retval) && FindStringInArray(g_ClassTagArray, retval) == -1)
+								if (IsValidString(retval) && FindStringInArray(g_MiscArray, retval) == -1)
 								{
 									//Debug("type: %s", retval);
-									PushArrayString(g_ClassTagArray, retval);
+									PushArrayString(g_MiscArray, retval);
 								}
 
 								Debug("currentDeep=%d, commentDeep=%d", currentDeep, commentDeep);
@@ -809,14 +853,14 @@ bool ReadMethodmapHeader(char[] buffer)
 					strcopy(g_MethodmapTag, pos+1, str);
 					if (!IsValidString(g_MethodmapTag))
 						g_MethodmapTag[0] = 0;
-					else if (FindStringInArray(g_ClassTagArray, g_MethodmapTag) == -1)
-						PushArrayString(g_ClassTagArray, g_MethodmapTag);
+					else if (FindStringInArray(g_MiscArray, g_MethodmapTag) == -1)
+						PushArrayString(g_MiscArray, g_MethodmapTag);
 				}
 			}
 
 			if (IsValidString(g_MethodmapName)){
-				if (FindStringInArray(g_ClassTagArray, g_MethodmapName) == -1)
-					PushArrayString(g_ClassTagArray, g_MethodmapName);
+				if (FindStringInArray(g_MiscArray, g_MethodmapName) == -1)
+					PushArrayString(g_MiscArray, g_MethodmapName);
 				return true;
 			}
 
