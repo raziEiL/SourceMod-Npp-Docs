@@ -24,7 +24,7 @@ Here the new API docs with all (I hope) function, define, enum, methodmap and fi
 ### Server command:
 **sm_makedocs** - starts to parse SourceMod includes and generates output files.
 
-# Notepad
+# Notepad++
 
 ## Autocompletion
 API files are located in the **plugins\APIs\\** subfolder of the Notepad++ installation folder. Use **sm_makedocs** command to generate docs. Files will be created in the **plugins\NPP\\** subfolder of sourcemod folder. Copy **sourcemod.xm**l file to Notepad++ API folder. The completion list can be triggered automatically as you type, via settings in **Settings -> Preferences -> Auto-Completion:** Auto-Completion is enabled by a checkbox. Additionally there is a setting "From X th character", accepting a the minimum length of a prefix needed before the completion list is shown (some people like 2, some 3, some 4...); and, there is a setting to specify which candidates should be used: words, functions, or both.
@@ -35,8 +35,8 @@ Check **plugins\NPP\\** folder for **NPP_STYLE** files. These files contain defi
 # Methodmap notes
 ![Docs screenshot](https://github.com/raziEiL/SourceMod-Npp-Docs/blob/master/img/docs%20list.png "Inline docs: methodmap strings")  
 These strings are not exist SourceMod function! Purpose of these strings provide access to docs and show methodmap structure. Notepad++ don't reacts on dots in names (exp: LineNumber.get) and docs not shown, so `.` were separated with `_` symbol.
->If you want to use string as code you must remove prefix and separate `_` with `.`  
->If you want to watch docs you must do the vice versa.
+>**Note:** If you want to use string as code you must remove prefix and separate `_` with `.`  
+>**Note:** If you want to watch docs you must do the vice versa.
 
 ## Prefix structure:
 
@@ -52,12 +52,12 @@ Where: `%1` - Class name, `%2` - Tag name, `%3` - Real method/property/construct
 
 ## Examples:
 
-**String to watch docs:**  
+**Editing string to watch docs:**  
 Method: Clone  
 Prefix: METHODMAP_ArrayList_Handle_METHOD_  
 Result: METHODMAP_ArrayList_Handle_METHOD_Clone
 
-**String to use as code:**  
+**Editing string to use as code:**  
 Docs string: METHODMAP_ArrayStack_PROP_BlockSize_get  
 Removes prefix: METHODMAP_ArrayStack_PROP_  
 Result: my_code.BlockSize.get()
