@@ -6,10 +6,11 @@
 #include <sourcemod>
 #include <profiler>
 
-// Pre-compiler option
 // TODO: check -> file, property 
 // TODO: Не верная сортировка xml.? Не высвечивается поиск по функциям METHODMAP_..., FindStringInArray, strl
-// TODO: check -> KvGetVector
+// TODO: check @param -> KvGetVector
+
+// Pre-compiler option
 #define	DEBUG_ENABLED 0 // DISABLE DEBUG BEFORE PARSE ALL INC.
 // write to NPP_STYLE_FUNCTION file all strings but fake mothodmaps (e.g., METHODMAP_ArrayList_Handle_METHOD_GetArray)
 #define ADD_NPP_STYLE_METHODMAP 1
@@ -49,8 +50,9 @@
 
 public Plugin myinfo =
 {
-	name = "sourcemod.xml generator",
+	name = "Npp-generator",
 	author = "MCPAN (mcpan@foxmail.com), raziEiL [disawar1]",
+	description = "Generate auto-completion files & sourcemod.xml docs",
 	version = PLUGIN_VERSION,
 	url = "https://github.com/raziEiL/SourceMod-Npp-Docs"
 }
