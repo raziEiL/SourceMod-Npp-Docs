@@ -7615,8 +7615,7 @@ Notes:
 Return:
     32bit timestamp (number of seconds since unix epoch).
 ">
-                <Param name="int bigStamp[2]={0"/>
-                <Param name="0}"/>
+                <Param name="int bigStamp[2]={0,0}"/>
             </Overload>
         </KeyWord>
         <KeyWord name="GetTopMenuInfoString" func="yes">
@@ -9083,8 +9082,7 @@ Error:
                 <Param name="Handle kv"/>
                 <Param name="const char[] key"/>
                 <Param name="int value[2]"/>
-                <Param name="int defvalue[2]={0"/>
-                <Param name="0}"/>
+                <Param name="int defvalue[2]={0,0}"/>
             </Overload>
         </KeyWord>
         <KeyWord name="KvGetVector" func="yes">
@@ -9102,9 +9100,7 @@ Error:
                 <Param name="Handle kv"/>
                 <Param name="const char[] key"/>
                 <Param name="float vec[3]"/>
-                <Param name="const float defvalue[3]={0.0"/>
-                <Param name="0.0"/>
-                <Param name="0.0}"/>
+                <Param name="const float defvalue[3]={0.0, 0.0, 0.0}"/>
             </Overload>
         </KeyWord>
         <KeyWord name="KvGoBack" func="yes">
@@ -11033,8 +11029,7 @@ Return:
 ">
                 <Param name="const char[] key"/>
                 <Param name="int value[2]"/>
-                <Param name="int defvalue[2]={0"/>
-                <Param name="0}"/>
+                <Param name="int defvalue[2]={0,0}"/>
             </Overload>
         </KeyWord>
         <KeyWord name="METHODMAP_KeyValues_METHOD_GetVector" func="yes">
@@ -11042,9 +11037,7 @@ Return:
 ">
                 <Param name="const char[] key"/>
                 <Param name="float vec[3]"/>
-                <Param name="const float defvalue[3]={0.0"/>
-                <Param name="0.0"/>
-                <Param name="0.0}"/>
+                <Param name="const float defvalue[3]={0.0, 0.0, 0.0}"/>
             </Overload>
         </KeyWord>
         <KeyWord name="METHODMAP_KeyValues_METHOD_GoBack" func="yes">
@@ -16184,10 +16177,7 @@ Notes:
                 <Param name="float y"/>
                 <Param name="float holdTime"/>
                 <Param name="int color1[4]"/>
-                <Param name="int color2[4]={255"/>
-                <Param name="255"/>
-                <Param name="255"/>
-                <Param name="0}"/>
+                <Param name="int color2[4]={255,255,255,0}"/>
                 <Param name="int effect = 0"/>
                 <Param name="float fxTime=6.0"/>
                 <Param name="float fadeIn=0.1"/>
@@ -18833,9 +18823,7 @@ Notes:
                 <Param name="int Flags"/>
                 <Param name="int Radius"/>
                 <Param name="int Magnitude"/>
-                <Param name="const float normal[3]={0.0"/>
-                <Param name="0.0"/>
-                <Param name="1.0}"/>
+                <Param name="const float normal[3]={0.0, 0.0, 1.0}"/>
                 <Param name="int MaterialType=&apos;C&apos;"/>
             </Overload>
         </KeyWord>
