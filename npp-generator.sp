@@ -1,4 +1,4 @@
-#define PLUGIN_VERSION "1.2.5"
+#define PLUGIN_VERSION "1.2.6"
 
 #pragma newdecls required
 #pragma semicolon 1
@@ -7,17 +7,17 @@
 #include <profiler>
 
 // TODO: check -> file, property
-// TODO: Не верная сортировка xml.? Не высвечивается поиск по функциям METHODMAP_..., FindStringInArray, strl
-// TODO: check @param -> KvGetVector
 
 //-----------------------------------
 // Pre-compiler option
 //-----------------------------------
-#define DEBUG_BYTES (DEBUG_BYTE_LOG_FILE|DEBUG_BYTE_ERROR) // bytes mask
+#define DEBUG_BYTES (DEBUG_BYTE_LOG_FILE|DEBUG_BYTE_ERROR|DEBUG_BYTE_COMMON) // bytes mask
 // write to NPP_STYLE_FUNCTION file all strings but fake mothodmaps (e.g., METHODMAP_ArrayList_Handle_METHOD_GetArray)
 #define ADD_NPP_STYLE_METHODMAP 1
 #define ADD_DOCS_OPERATORS_MISC 1
 #define ADD_DOCS_VARIABLES		1
+#define CASE_SENSITIVE_SORTING	true
+#define USE_SHORT_PREFIX		1
 // -----------------------------------
 
 // bits
@@ -30,8 +30,10 @@
 #define DEBUG_BYTE_COMMENTARY	64
 #define DEBUG_BYTE_XML			128
 #define DEBUG_BYTE_ERROR		256
-
 #define DEBUG_BYTE_ALL			510
+
+#define PROP_BYTE_GET			1
+#define PROP_BYTE_SET			2
 
 #define DEBUG_TAG_COMMOM 		0
 #define DEBUG_TAG_FUNC_PARAM 	1
@@ -41,36 +43,40 @@
 #define DEBUG_TAG_XML 			5
 #define DEBUG_TAG_ERROR 		6
 
-#define	MAX_WIDTH 28
-#define WIDTH MAX_WIDTH - 4
-#define SPACE_CHAR	' '
-#define SPACE_X4	"    "
-#define SPACE_X8	"        "
-#define SPACE_X12	"            "
-#define SPACE_X16	"                "
-#define SPACE_X28	"                            "
-#define COMMENT_PARAM		"@param"
-#define COMMENT_RETURN		"@return"
-#define COMMENT_NORETURN	"@noreturn"
-#define COMMENT_ERROR		"@error"
-#define PATH_INCLUDE	"addons/sourcemod/scripting/include"
-#define FILE_SOURCEMOD	"addons/sourcemod/plugins/NPP/sourcemod.xml"
-#define FILE_OPERATORS	"addons/sourcemod/plugins/NPP/NPP_STYLE_OPERATORS.sp"
-#define FILE_FUNCTIONS	"addons/sourcemod/plugins/NPP/NPP_STYLE_FUNCTION.sp"
-#define FILE_CONSTANT	"addons/sourcemod/plugins/NPP/NPP_STYLE_CONSTANT.sp"
-#define FILE_MISC		"addons/sourcemod/plugins/NPP/NPP_STYLE_MISC.sp"
+#define PREFIX_METHODMAP		0
+#define PREFIX_METHOD			1
+#define PREFIX_CONSTRUCTOR		2
+#define PREFIX_PROP				3
+
+#define COMMENT_PARAM			0
+#define COMMENT_NOTES			1
+#define COMMENT_ERROR			2
+#define COMMENT_RETURN			3
+#define COMMENT_TOTAL			4
+
+#define	MAX_WIDTH				28
+#define WIDTH					MAX_WIDTH - 4
+#define SPACE_CHAR				' '
+#define SPACE_X4				"    "
+#define SPACE_X8				"        "
+#define SPACE_X12				"            "
+#define SPACE_X16				"                "
+#define SPACE_X28				"                            "
+#define TEXT_PARAM				"@param"
+#define TEXT_RETURN				"@return"
+#define TEXT_NORETURN			"@noreturn"
+#define TEXT_ERROR				"@error"
+#define PATH_INCLUDE			"addons/sourcemod/scripting/include"
+#define FILE_SOURCEMOD			"addons/sourcemod/plugins/NPP/sourcemod.xml"
+#define FILE_OPERATORS			"addons/sourcemod/plugins/NPP/NPP_STYLE_OPERATORS.sp"
+#define FILE_FUNCTIONS			"addons/sourcemod/plugins/NPP/NPP_STYLE_FUNCTION.sp"
+#define FILE_CONSTANT			"addons/sourcemod/plugins/NPP/NPP_STYLE_CONSTANT.sp"
+#define FILE_MISC				"addons/sourcemod/plugins/NPP/NPP_STYLE_MISC.sp"
 // ( ) [ ] ; , - style separator
-#define NPP_STYLE_OPERATORS "( ) [ ] ; , * / % + - << >> >>> < > <= >= == != & && ^ | || ? : = += -= *= /= %= &= ^= |= <<= >>= >>>= ++ -- ~ !"
+#define NPP_STYLE_OPERATORS		"( ) [ ] ; , * / % + - << >> >>> < > <= >= == != & && ^ | || ? : = += -= *= /= %= &= ^= |= <<= >>= >>>= ++ -- ~ !"
 #define NPP_STYLE_OPERATORS_MISC "for if else do while switch case default return break delete continue new decl public stock const enum forward static funcenum functag native sizeof view_as true false union function methodmap typedef property struct this"
-#define NPP_STYLE_VARIABLES "bool char int float Handle"
-
-#define LOG		"logs\\generator.log"
-
-#define PARAM 0
-#define NOTES 1
-#define ERROR 2
-#define RETURN 3
-#define TOTAL_COMMENT 4
+#define NPP_STYLE_VARIABLES		"bool char int float Handle"
+#define LOG						"logs\\generator.log"
 
 public Plugin myinfo =
 {
@@ -81,16 +87,20 @@ public Plugin myinfo =
 	url = "https://github.com/raziEiL/SourceMod-Npp-Docs"
 }
 
-char DEBUG[1024];
-char g_Debug[][24] = {"COMMON", "FUNC PARAM", "METHODMAP", "BRACKET", "COMMENTARY", "XML", "ERROR"};
-File fileDebug;
+char	g_Debug[][24] = {"COMMON", "FUNC PARAM", "METHODMAP", "BRACKET", "COMMENTARY", "XML", "ERROR"},
+		g_FuncPrefix[][] = {"forward", "native", "stock", "public native", "property", "public" },
+		g_CommentType[COMMENT_TOTAL][] = { "Params:", "Notes:", "Error:", "Return:" }, 
+		DEBUG[1024], g_MethodmapName[48], g_MethodmapTag[48];
 
-StringMap g_FuncTrie;
+#if USE_SHORT_PREFIX
+char g_Prefix[][] = {"MM_", "M", "C", "P"};
+#else
+char g_Prefix[][] = {"METHODMAP_", "METHOD", "CONSTRUCTOR", "PROP"};
+#endif
+
+File fileDebug, g_FileSourcemodXML;
+StringMap g_FuncTrie, g_Property;
 ArrayList g_FuncArray, g_ConstArray, g_MiscArray; // Class ,tag, vars
-File g_FileSourcemodXML;
-char g_MethodmapName[48], g_MethodmapTag[48];
-char g_FuncPrefix[][] = {"forward", "native", "stock", "public native", "property", "public" };
-char g_CommentType[TOTAL_COMMENT][] = { "Params:", "Notes:", "Error:", "Return:" };
 int g_XMLFixCount;
 
 public void OnPluginStart()
@@ -119,6 +129,7 @@ public Action Cmd_Start(int argc)
 	char buffer[PLATFORM_MAX_PATH];
 	ArrayList fileArray = CreateArray(ByteCountToCells(PLATFORM_MAX_PATH)), g_CommonArray = CreateArray(ByteCountToCells(64));
 
+	g_Property = CreateTrie();
 	g_FuncTrie = CreateTrie();
 	g_FuncArray = CreateArray(ByteCountToCells(64));
 	g_ConstArray = CreateArray(ByteCountToCells(64));
@@ -162,7 +173,7 @@ public Action Cmd_Start(int argc)
 			g_FuncTrie.GetValue(funcname, value);
 			fileArray.GetString(value, buffer, PLATFORM_MAX_PATH-1);
 			ReadIncludeFile(buffer, _, funcname);
-			if (ADD_NPP_STYLE_METHODMAP && StrContains(funcname, "METHODMAP_") != -1)
+			if (ADD_NPP_STYLE_METHODMAP && StrContains(funcname, g_Prefix[PREFIX_METHODMAP]) != -1)
 				continue;
 			file.WriteLine("%s ", funcname);
 		}
@@ -221,7 +232,8 @@ public Action Cmd_Start(int argc)
 		for (i = 0; i < size; i++)
 		{
 			g_CommonArray.GetString(i, buffer, PLATFORM_MAX_PATH-1);
-			g_FileSourcemodXML.WriteLine("%s<KeyWord name=\"%s\"/>", SPACE_X8, buffer);
+			if (buffer[0])
+				g_FileSourcemodXML.WriteLine("%s<KeyWord name=\"%s\"/>", SPACE_X8, buffer);
 		}
 	}
 
@@ -231,6 +243,7 @@ public Action Cmd_Start(int argc)
 	delete file;
 	delete fileArray;
 	delete g_FuncTrie;
+	delete g_Property;
 	delete g_FuncArray;
 	delete g_FileSourcemodXML;
 	delete g_CommonArray;
@@ -268,7 +281,7 @@ public Action Cmd_Start(int argc)
 	delete fileDebug;
 
 	StopProfiling(prof);
-	PrintToServer("> Job Done! Time used: %.2fs. XML fixed: %d error. Func: %d, Misc %d, Define %d", GetProfilerTime(prof), g_XMLFixCount, count[0], count[1], count[2]);
+	PrintToServer("> Job Done!\n> Time used: %.2fs. / XML error fixed: %d\n> Totally generated: function: %d, misc %d, define %d", GetProfilerTime(prof), g_XMLFixCount, count[0], count[1], count[2]);
 	delete prof;
 
 	return Plugin_Handled;
@@ -285,10 +298,10 @@ void ReadIncludeFile(char[] filepath, int fileArrayIdx=-1, char[] search="")
 
 	int value, i;
 	bool comment_buffer, found_comment, found_params, found_return, found_error, found_func, found_property, in_property;
-	char temp[1024], buffer[1024], funcprefix[14], retval[32], funcname[128], funcparam[32], lastPropName[128];
+	char temp[1024], buffer[1024], funcprefix[14], retval[32], funcname[128], funcnameBak[128], funcparam[32], lastPropName[128], retval2[32];
 
-	ArrayList array_comment[TOTAL_COMMENT];
-	for (int elem = 0; elem < TOTAL_COMMENT; elem++)
+	ArrayList array_comment[COMMENT_TOTAL];
+	for (int elem = 0; elem < COMMENT_TOTAL; elem++)
 		array_comment[elem] = CreateArray(ByteCountToCells(1024));
 
 	bool isMethodmap, diveInDeep;
@@ -307,7 +320,7 @@ void ReadIncludeFile(char[] filepath, int fileArrayIdx=-1, char[] search="")
 				found_return = false;
 				found_error = false;
 
-				for (i = 0; i < TOTAL_COMMENT; i++)
+				for (i = 0; i < COMMENT_TOTAL; i++)
 					ClearArray(array_comment[i]);
 
 				commentDeep = nextDeep;
@@ -377,25 +390,25 @@ void ReadIncludeFile(char[] filepath, int fileArrayIdx=-1, char[] search="")
 				continue;
 			}
 
-			if (StrContains(buffer, COMMENT_PARAM) == -1 &&
-				StrContains(buffer, COMMENT_RETURN) == -1 &&
-				StrContains(buffer, COMMENT_NORETURN) == -1 &&
-				StrContains(buffer, COMMENT_ERROR) == -1)
+			if (StrContains(buffer, TEXT_PARAM) == -1 &&
+				StrContains(buffer, TEXT_RETURN) == -1 &&
+				StrContains(buffer, TEXT_NORETURN) == -1 &&
+				StrContains(buffer, TEXT_ERROR) == -1)
 			{
 				if (found_params)
 				{
 					FormatEx(temp, 1023, "%s%s", SPACE_X28, buffer);
-					PushArrayString(array_comment[PARAM], temp);
+					PushArrayString(array_comment[COMMENT_PARAM], temp);
 				}
 				else if (found_return)
 				{
 					FormatEx(temp, 1023, "%s%s", SPACE_X4, buffer);
-					PushArrayString(array_comment[RETURN], temp);
+					PushArrayString(array_comment[COMMENT_RETURN], temp);
 				}
 				else if (found_error)
 				{
 					FormatEx(temp, 1023, "%s%s", SPACE_X4, buffer);
-					PushArrayString(array_comment[ERROR], temp);
+					PushArrayString(array_comment[COMMENT_ERROR], temp);
 				}
 				else
 				{
@@ -404,10 +417,10 @@ void ReadIncludeFile(char[] filepath, int fileArrayIdx=-1, char[] search="")
 
 					TrimString(buffer);
 					FormatEx(temp, 1023, "%s%s", SPACE_X4, buffer);
-					PushArrayString(array_comment[NOTES], temp);
+					PushArrayString(array_comment[COMMENT_NOTES], temp);
 				}
 			}
-			else if ((value = StrContains(buffer, COMMENT_PARAM)) != -1)
+			else if ((value = StrContains(buffer, TEXT_PARAM)) != -1)
 			{
 				found_params = true;
 				found_return = false;
@@ -435,16 +448,16 @@ void ReadIncludeFile(char[] filepath, int fileArrayIdx=-1, char[] search="")
 					}
 
 					Format(temp, 1023, "%s%s%s%s", SPACE_X4, funcparam, value > 0 ? temp : SPACE_X4, buffer);
-					PushArrayString(array_comment[PARAM], temp);
+					PushArrayString(array_comment[COMMENT_PARAM], temp);
 				}
 			}
-			else if ((value = StrContains(buffer, COMMENT_RETURN)) != -1 || StrContains(buffer, COMMENT_NORETURN) != -1)
+			else if ((value = StrContains(buffer, TEXT_RETURN)) != -1 || StrContains(buffer, TEXT_NORETURN) != -1)
 			{
 				found_params = false;
 				found_return = true;
 				found_error = false;
 
-				if (StrContains(buffer, COMMENT_NORETURN) != -1)
+				if (StrContains(buffer, TEXT_NORETURN) != -1)
 				{
 					found_return = false;
 					continue;
@@ -453,9 +466,9 @@ void ReadIncludeFile(char[] filepath, int fileArrayIdx=-1, char[] search="")
 				strcopy(buffer, 1023, buffer[value+7]);
 				TrimString(buffer);
 				FormatEx(temp, 1023, "%s%s", SPACE_X4, buffer);
-				PushArrayString(array_comment[RETURN], temp);
+				PushArrayString(array_comment[COMMENT_RETURN], temp);
 			}
-			else if ((value = StrContains(buffer, COMMENT_ERROR)) != -1)
+			else if ((value = StrContains(buffer, TEXT_ERROR)) != -1)
 			{
 				found_params = false;
 				found_return = false;
@@ -463,7 +476,7 @@ void ReadIncludeFile(char[] filepath, int fileArrayIdx=-1, char[] search="")
 				strcopy(buffer, 1023, buffer[value+6]);
 				TrimString(buffer);
 				FormatEx(temp, 1023, "%s%s", SPACE_X4, buffer);
-				PushArrayString(array_comment[ERROR], temp);
+				PushArrayString(array_comment[COMMENT_ERROR], temp);
 			}
 			else
 			{
@@ -613,38 +626,58 @@ void ReadIncludeFile(char[] filepath, int fileArrayIdx=-1, char[] search="")
 				{
 					if (ReadFuncString(buffer, retval, funcname, found_property, in_property) && IsValidString(funcname)){
 
+						retval2[0] = 0;
+
 						if (isMethodmap){
 
 							Debug(DEBUG_BYTE_COMMON, "%s", funcname);
-							// TODO: доделать проперти
-							if (!in_property)
-								lastPropName = funcname;
-							else
-								Format(funcname, 128, "%s_%s", lastPropName, funcname);
-
+								
 							if (found_property)
-								temp = "PROP";
-							else if (!retval[0])
-								temp = "CONSTRUCTOR";
+								temp = g_Prefix[PREFIX_PROP];
+							else if (!retval[0]){
+								temp = g_Prefix[PREFIX_CONSTRUCTOR];
+								if (g_MethodmapTag[0])
+									strcopy(retval2, sizeof(retval2), g_MethodmapTag);
+							}
 							else
-								temp = "METHOD";
+								temp = g_Prefix[PREFIX_METHOD];
 
+							strcopy(funcnameBak, sizeof(funcnameBak), funcname);
+							
 							if (g_MethodmapTag[0])
-								Format(funcname, 128, "METHODMAP_%s_%s_%s_%s", g_MethodmapName, g_MethodmapTag, temp, funcname);
+								Format(funcname, 128, "%s%s_%s_%s_%s", g_Prefix[PREFIX_METHODMAP], g_MethodmapName, g_MethodmapTag, temp, funcname);
 							else
-								Format(funcname, 128, "METHODMAP_%s_%s_%s", g_MethodmapName, temp, funcname);
+								Format(funcname, 128, "%s%s_%s_%s", g_Prefix[PREFIX_METHODMAP], g_MethodmapName, temp, funcname);
 
 							Debug(DEBUG_BYTE_COMMON, "Ftype:Methodmap: %s", funcname);
+
+							// TODO: РґРѕРґРµР»Р°С‚СЊ РїСЂРѕРїРµСЂС‚Рё
+							if (!in_property)
+								lastPropName = funcname;
+							else {
+								i = 0;
+								GetTrieValue(g_Property, lastPropName, i);
+								
+								if (strcmp(funcnameBak, "get") == 0)
+									i |= PROP_BYTE_GET;
+								else if (strcmp(funcnameBak, "set") == 0)
+									i |= PROP_BYTE_SET;
+
+								SetTrieValue(g_Property, lastPropName, i);
+								Debug(DEBUG_BYTE_COMMON, "Set lastprop get/set byte: val=%d, '%s'", i, lastPropName);
+								continue;
+							}	
 						}
 						else
-							Debug(DEBUG_BYTE_COMMON, "Ftype:Normal: funcname='%s', retval='%s' ", funcname, retval[0] ? retval : "void");
+							Debug(DEBUG_BYTE_COMMON, "Ftype:Normal: funcname='%s', retval='%s' ", funcname, retval[0] ? retval : (retval2[0] ? retval2 : "void"));
 
 						if (search[0])
 						{
 							if (strcmp(funcname, search) == 0)
 							{
+								
 								WriteFileLine(g_FileSourcemodXML, "%s<KeyWord name=\"%s\" func=\"yes\">", SPACE_X8, funcname);
-								WriteFileLine(g_FileSourcemodXML, "%s<Overload retVal=\"%s %s\" descr=\"", SPACE_X12, funcprefix, retval[0] ? retval : (isMethodmap ? g_MethodmapTag : "void"));
+								WriteFileLine(g_FileSourcemodXML, "%s<Overload retVal=\"%s %s\" descr=\"", SPACE_X12, funcprefix, retval[0] ? retval : (retval2[0] ? retval2 : "void"));
 
 								if (IsValidString(retval) && FindStringInArray(g_MiscArray, retval) == -1)
 								{
@@ -653,9 +686,28 @@ void ReadIncludeFile(char[] filepath, int fileArrayIdx=-1, char[] search="")
 
 								Debug(DEBUG_BYTE_BRACKET, "currentDeep=%d, commentDeep=%d", currentDeep, commentDeep);
 
+								if (isMethodmap){
+
+									Debug(DEBUG_BYTE_COMMON, "trie search: '%s', result=%d", funcname, GetTrieValue(g_Property, funcname, i));
+									
+									if (GetTrieValue(g_Property, funcname, i)){
+									
+										WriteFileLine(g_FileSourcemodXML, "Property methods:");
+										
+										if (i){
+											if (i & PROP_BYTE_GET)
+												WriteFileLine(g_FileSourcemodXML, "%sHas getter", SPACE_X4);
+											if (i & PROP_BYTE_SET)
+												WriteFileLine(g_FileSourcemodXML, "%sHas setter", SPACE_X4);
+										}
+										else 
+											WriteFileLine(g_FileSourcemodXML, "%sNone", SPACE_X4);
+									}
+								}
+									
 								if (currentDeep == commentDeep)
 								{
-									for (int comment = 0; comment < TOTAL_COMMENT; comment++){
+									for (int comment = 0; comment < COMMENT_TOTAL; comment++){
 
 										if ((value = GetArraySize(array_comment[comment])))
 										{
@@ -704,7 +756,7 @@ void ReadIncludeFile(char[] filepath, int fileArrayIdx=-1, char[] search="")
 							Debug(DEBUG_BYTE_ERROR,"UHM...same func name '%s'", funcname);
 					}
 
-					for (i = 0; i < TOTAL_COMMENT; i++)
+					for (i = 0; i < COMMENT_TOTAL; i++)
 						ClearArray(array_comment[i]);
 
 				}
@@ -712,7 +764,7 @@ void ReadIncludeFile(char[] filepath, int fileArrayIdx=-1, char[] search="")
 		}
 	}
 
-	for (i = 0; i < TOTAL_COMMENT; i++)
+	for (i = 0; i < COMMENT_TOTAL; i++)
 		CloseHandle(array_comment[i]);
 
 	CloseHandle(file);
@@ -866,7 +918,7 @@ bool ReadMethodmapHeader(char[] buffer)
 
 		if (strcmp(str, "methodmap") == 0){
 
-			static int pos, len;
+			static int pos;
 			str[0] = 0;
 			strcopy(str, sizeof(str), buffer);
 			strcopy(str, sizeof(str), str[10]);
@@ -1039,7 +1091,7 @@ public int SortFuncADTArray(int index1, int index2, Handle array, Handle hndl)
 	char str1[64], str2[64];
 	GetArrayString(array, index1, str1, 63);
 	GetArrayString(array, index2, str2, 63);
-	return strcmp(str1, str2, false);
+	return strcmp(str1, str2, CASE_SENSITIVE_SORTING);
 }
 
 stock int ReadDirFileList(Handle &fileArray, const char[] dirPath, const char[] fileExt="")
@@ -1210,7 +1262,7 @@ public void ValidateXML(char[] text, int size)
 			}
 		}
 	}
-	// TODO: проверить кол-во получаемых значений дл§ g_XMLFixCount
+	// TODO: РїСЂРѕРІРµСЂРёС‚СЊ РєРѕР»-РІРѕ РїРѕР»СѓС‡Р°РµРјС‹С… Р·РЅР°С‡РµРЅРёР№ РґР»В§ g_XMLFixCount
 	g_XMLFixCount += ReplaceString(text, 1023, "<", "&lt;");
 	g_XMLFixCount += ReplaceString(text, 1023, ">", "&gt;");
 	g_XMLFixCount += ReplaceString(text, 1023, "'", "&apos;");
@@ -1252,9 +1304,10 @@ public void Debug(int BYTE, const char[] format, any ...)
 
 	Format(myFormattedString, len, "[%s] %s", tag, myFormattedString);
 
-	if ((DEBUG_BYTES & DEBUG_BYTE_LOG_FILE))
-		fileDebug.WriteLine(myFormattedString);
-
-	if ((DEBUG_BYTES & DEBUG_BYTE_PRINT_SERVER))
-		PrintToServer(myFormattedString);
+#if (DEBUG_BYTES & DEBUG_BYTE_LOG_FILE)
+	fileDebug.WriteLine(myFormattedString);
+#endif
+#if (DEBUG_BYTES & DEBUG_BYTE_PRINT_SERVER)
+	PrintToServer(myFormattedString);
+#endif
 }
