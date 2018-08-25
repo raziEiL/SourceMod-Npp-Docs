@@ -1,4 +1,4 @@
-#define PLUGIN_VERSION "1.2.4"
+#define PLUGIN_VERSION "1.2.5"
 
 #pragma newdecls required
 #pragma semicolon 1
@@ -6,14 +6,14 @@
 #include <sourcemod>
 #include <profiler>
 
-// TODO: check -> file, property 
+// TODO: check -> file, property
 // TODO: Не верная сортировка xml.? Не высвечивается поиск по функциям METHODMAP_..., FindStringInArray, strl
 // TODO: check @param -> KvGetVector
 
 //-----------------------------------
 // Pre-compiler option
 //-----------------------------------
-#define DEBUG_BYTES (DEBUG_BYTE_LOG_FILE|DEBUG_BYTE_FUNC_PARAM|DEBUG_BYTE_ERROR|DEBUG_BYTE_COMMON) // bytes mask
+#define DEBUG_BYTES (DEBUG_BYTE_LOG_FILE|DEBUG_BYTE_ERROR) // bytes mask
 // write to NPP_STYLE_FUNCTION file all strings but fake mothodmaps (e.g., METHODMAP_ArrayList_Handle_METHOD_GetArray)
 #define ADD_NPP_STYLE_METHODMAP 1
 #define ADD_DOCS_OPERATORS_MISC 1
@@ -82,13 +82,15 @@ public Plugin myinfo =
 }
 
 char DEBUG[1024];
+char g_Debug[][24] = {"COMMON", "FUNC PARAM", "METHODMAP", "BRACKET", "COMMENTARY", "XML", "ERROR"};
+File fileDebug;
+
 StringMap g_FuncTrie;
 ArrayList g_FuncArray, g_ConstArray, g_MiscArray; // Class ,tag, vars
 File g_FileSourcemodXML;
 char g_MethodmapName[48], g_MethodmapTag[48];
 char g_FuncPrefix[][] = {"forward", "native", "stock", "public native", "property", "public" };
 char g_CommentType[TOTAL_COMMENT][] = { "Params:", "Notes:", "Error:", "Return:" };
-char g_Debug[][24] = {"COMMON", "FUNC PARAM", "METHODMAP", "BRACKET", "COMMENTARY", "XML", "ERROR"};
 int g_XMLFixCount;
 
 public void OnPluginStart()
@@ -101,7 +103,12 @@ public void OnPluginStart()
 
 public Action Cmd_Start(int argc)
 {
-	PrintToServer("starts to parse includes! (debug = %d)", DEBUG_BYTES);
+	PrintToServer("> starts to parse includes! (debug bytes = %d)", DEBUG_BYTES);
+
+#if (DEBUG_BYTES & DEBUG_BYTE_LOG_FILE)
+	fileDebug = OpenFile(DEBUG, "wb");
+#endif
+
 	Debug(DEBUG_BYTE_COMMON, "--------------------------------------------");
 	g_XMLFixCount = 0;
 	Handle prof = CreateProfiler();
@@ -139,7 +146,7 @@ public Action Cmd_Start(int argc)
 	SortADTArrayCustom(g_FuncArray, SortFuncADTArray);
 	File file = OpenFile(FILE_FUNCTIONS, "wb");
 	g_FileSourcemodXML = OpenFile(FILE_SOURCEMOD, "wb");
-	
+
 	g_FileSourcemodXML.WriteLine("<?xml version=\"1.0\" encoding=\"Windows-1252\" ?>");
 	g_FileSourcemodXML.WriteLine("<NotepadPlus>");
 	g_FileSourcemodXML.WriteLine("%s<AutoComplete language=\"sourcemod\">", SPACE_X4);
@@ -160,16 +167,16 @@ public Action Cmd_Start(int argc)
 			file.WriteLine("%s ", funcname);
 		}
 	}
-	
+
 #if ADD_DOCS_OPERATORS_MISC
 	char temp[42][32];
 	ExplodeString(NPP_STYLE_OPERATORS_MISC, " ", temp, sizeof(temp), sizeof(temp[]));
 
 	for (i = 0; i < sizeof(temp); i++)
 	{
-		if (!temp[i]) 
+		if (!temp[i])
 			break;
-		
+
 		if (FindStringInArray(g_CommonArray, temp[i]) == -1)
 			PushArrayString(g_CommonArray, temp[i]);
 	}
@@ -180,14 +187,14 @@ public Action Cmd_Start(int argc)
 
 	for (i = 0; i < sizeof(temp2); i++)
 	{
-		if (!temp2[i]) 
+		if (!temp2[i])
 			break;
-		
+
 		if (FindStringInArray(g_MiscArray, temp2[i]) == -1)
 			PushArrayString(g_MiscArray, temp2[i]);
 	}
 #endif
-	
+
 	if ((count[1] = size = GetArraySize(g_MiscArray)))
 	{
 		for (i = 0; i < size; i++)
@@ -204,7 +211,7 @@ public Action Cmd_Start(int argc)
 			PushArrayString(g_CommonArray, buffer);
 		}
 	}
-	
+
 	SortADTArrayCustom(g_CommonArray, SortFuncADTArray);
 	SortADTArrayCustom(g_ConstArray, SortFuncADTArray);
 	SortADTArrayCustom(g_MiscArray, SortFuncADTArray);
@@ -253,14 +260,15 @@ public Action Cmd_Start(int argc)
 
 	delete file;
 	delete g_MiscArray;
-	
+
 	file = OpenFile(FILE_OPERATORS, "wb");
 	file.WriteLine("%s\n", NPP_STYLE_OPERATORS);
 	file.WriteLine(NPP_STYLE_OPERATORS_MISC);
 	delete file;
-	
+	delete fileDebug;
+
 	StopProfiling(prof);
-	PrintToServer("\n\t\t\t\t> Job Done! Time used: %.2fs. XML fixed: %d error. Func: %d, Misc %d, Define %d", GetProfilerTime(prof), g_XMLFixCount, count[0], count[1], count[2]);
+	PrintToServer("> Job Done! Time used: %.2fs. XML fixed: %d error. Func: %d, Misc %d, Define %d", GetProfilerTime(prof), g_XMLFixCount, count[0], count[1], count[2]);
 	delete prof;
 
 	return Plugin_Handled;
@@ -278,11 +286,11 @@ void ReadIncludeFile(char[] filepath, int fileArrayIdx=-1, char[] search="")
 	int value, i;
 	bool comment_buffer, found_comment, found_params, found_return, found_error, found_func, found_property, in_property;
 	char temp[1024], buffer[1024], funcprefix[14], retval[32], funcname[128], funcparam[32], lastPropName[128];
-	
+
 	ArrayList array_comment[TOTAL_COMMENT];
 	for (int elem = 0; elem < TOTAL_COMMENT; elem++)
 		array_comment[elem] = CreateArray(ByteCountToCells(1024));
-	
+
 	bool isMethodmap, diveInDeep;
 	int nextDeep, propDeep, currentDeep, commentDeep, tempVal, tempVal2;
 
@@ -301,7 +309,7 @@ void ReadIncludeFile(char[] filepath, int fileArrayIdx=-1, char[] search="")
 
 				for (i = 0; i < TOTAL_COMMENT; i++)
 					ClearArray(array_comment[i]);
-					
+
 				commentDeep = nextDeep;
 			}
 			continue;
@@ -328,7 +336,7 @@ void ReadIncludeFile(char[] filepath, int fileArrayIdx=-1, char[] search="")
 
 				if (strcmp(funcprefix, "methodmap") == 0 && ReadMethodmapHeader(buffer)){
 					isMethodmap = true;
-					Debug(DEBUG_BYTE_METHODMAP, "5. '%s', '%s'", g_MethodmapName, g_MethodmapTag);
+
 					continue;
 				}
 			}
@@ -361,14 +369,14 @@ void ReadIncludeFile(char[] filepath, int fileArrayIdx=-1, char[] search="")
 			{
 				strcopy(buffer, 1023, buffer[++value]);
 			}
-			
+
 			TrimString(buffer);
 
 			if (!buffer[0])
 			{
 				continue;
 			}
-			
+
 			if (StrContains(buffer, COMMENT_PARAM) == -1 &&
 				StrContains(buffer, COMMENT_RETURN) == -1 &&
 				StrContains(buffer, COMMENT_NORETURN) == -1 &&
@@ -577,7 +585,7 @@ void ReadIncludeFile(char[] filepath, int fileArrayIdx=-1, char[] search="")
 					}
 				}
 			}
-			else 
+			else
 			{
 				found_func = false;
 
@@ -600,11 +608,11 @@ void ReadIncludeFile(char[] filepath, int fileArrayIdx=-1, char[] search="")
 					found_property = true;
 					propDeep = currentDeep;
 				}
-	
+
 				if (found_func)
 				{
 					if (ReadFuncString(buffer, retval, funcname, found_property, in_property) && IsValidString(funcname)){
-	
+
 						if (isMethodmap){
 
 							Debug(DEBUG_BYTE_COMMON, "%s", funcname);
@@ -613,7 +621,7 @@ void ReadIncludeFile(char[] filepath, int fileArrayIdx=-1, char[] search="")
 								lastPropName = funcname;
 							else
 								Format(funcname, 128, "%s_%s", lastPropName, funcname);
-							
+
 							if (found_property)
 								temp = "PROP";
 							else if (!retval[0])
@@ -648,7 +656,7 @@ void ReadIncludeFile(char[] filepath, int fileArrayIdx=-1, char[] search="")
 								if (currentDeep == commentDeep)
 								{
 									for (int comment = 0; comment < TOTAL_COMMENT; comment++){
-									
+
 										if ((value = GetArraySize(array_comment[comment])))
 										{
 											WriteFileLine(g_FileSourcemodXML, g_CommentType[comment]);
@@ -662,26 +670,26 @@ void ReadIncludeFile(char[] filepath, int fileArrayIdx=-1, char[] search="")
 										}
 									}
 								}
-								
+
 								WriteFileLine(g_FileSourcemodXML, "\">");
 
 								if (!found_property){
-								
+
 									if (buffer[0] == '(')
 									{
 										value = 1;
 										buffer[0] = SPACE_CHAR;
 									}
-									else 
+									else
 										value = 0;
-												
-									do 
+
+									do
 									{
 										value += CountCharInString(buffer, '(') - CountCharInString(buffer, ')');
 										WriteFuncParams(g_FileSourcemodXML, buffer, 1023, value > 0) ;
-									} while (value > 0 && ReadFileLine(file, buffer, 1023));		
+									} while (value > 0 && ReadFileLine(file, buffer, 1023));
 								}
-								
+
 								WriteFileLine(g_FileSourcemodXML, "%s</Overload>", SPACE_X12);
 								WriteFileLine(g_FileSourcemodXML, "%s</KeyWord>", SPACE_X8);
 								break;
@@ -696,7 +704,7 @@ void ReadIncludeFile(char[] filepath, int fileArrayIdx=-1, char[] search="")
 							Debug(DEBUG_BYTE_ERROR,"UHM...same func name '%s'", funcname);
 					}
 
-					for (i = 0; i < TOTAL_COMMENT; i++)			
+					for (i = 0; i < TOTAL_COMMENT; i++)
 						ClearArray(array_comment[i]);
 
 				}
@@ -704,9 +712,9 @@ void ReadIncludeFile(char[] filepath, int fileArrayIdx=-1, char[] search="")
 		}
 	}
 
-	for (i = 0; i < TOTAL_COMMENT; i++)			
+	for (i = 0; i < TOTAL_COMMENT; i++)
 		CloseHandle(array_comment[i]);
-	
+
 	CloseHandle(file);
 }
 
@@ -815,9 +823,9 @@ bool ReadFuncString(char[] buffer, char[] retval, char[] funcname, bool found_pr
 		strcopy(buffer, len, buffer[pos]);
 
 		TrimString(funcname);
-		
+
 		Debug(DEBUG_BYTE_COMMON, "ReadFuncString -> '%s'", funcname);
-		
+
 		if (strcmp(funcname, "VerifyCoreVersion") == 0 ||
 			StrContains(funcname, "operator") != -1)
 		{
@@ -846,48 +854,57 @@ bool ReadMethodmapHeader(char[] buffer)
 
 	g_MethodmapName[0] = 0;
 	g_MethodmapTag[0] = 0;
-	static int pos, len;
 
-	if ((len = strlen(buffer))){
+	TrimString(buffer);
+
+	if (buffer[0]){
 
 		static char str[1024];
+
 		str[0] = 0;
-		strcopy(str, 1024, buffer);
-		strcopy(str, len, str[10]);
-		TrimString(str);
+		strcopy(str, 10, buffer);
 
-		Debug(DEBUG_BYTE_METHODMAP, "1. '%s'", buffer);
+		if (strcmp(str, "methodmap") == 0){
 
-		if ((pos = FindCharInString2(str, SPACE_CHAR)) != -1)
-		{
-			Debug(DEBUG_BYTE_METHODMAP, "2. space_pos=%d, ", pos);
+			static int pos, len;
+			str[0] = 0;
+			strcopy(str, sizeof(str), buffer);
+			strcopy(str, sizeof(str), str[10]);
+			ReplaceString(str, sizeof(str), "{", "");
+			TrimString(str);
 
-			strcopy(g_MethodmapName, pos+1, str);
-			strcopy(str, len, str[pos]);
+			Debug(DEBUG_BYTE_METHODMAP, "methodmap detected! '%s'", buffer);
 
-			Debug(DEBUG_BYTE_METHODMAP, "3. '%s'", str);
-
-			if (ReplaceString(str, len, "<", "")){
-
+			if ((pos = FindCharInString2(str, '<')) != -1)
+			{
+				strcopy(g_MethodmapTag, sizeof(g_MethodmapTag), str[pos+1]);
+				strcopy(str, pos, str);
+				TrimString(g_MethodmapTag);
 				TrimString(str);
-				Debug(DEBUG_BYTE_METHODMAP, "4. '%s'", str);
+				Debug(DEBUG_BYTE_METHODMAP, "tag detected! calss='%s', tag='%s'", str, g_MethodmapTag);
 
-				if ((pos = FindCharInString2(str, SPACE_CHAR)) != -1){
-					strcopy(g_MethodmapTag, pos+1, str);
-					if (!IsValidString(g_MethodmapTag))
-						g_MethodmapTag[0] = 0;
-					else if (FindStringInArray(g_MiscArray, g_MethodmapTag) == -1)
+				if (IsValidString(g_MethodmapTag)){
+					if (FindStringInArray(g_MiscArray, g_MethodmapTag) == -1)
 						PushArrayString(g_MiscArray, g_MethodmapTag);
 				}
+				else
+					g_MethodmapTag[0] = 0;
 			}
-
+			strcopy(g_MethodmapName, sizeof(g_MethodmapName), str);
 			if (IsValidString(g_MethodmapName)){
+
 				if (FindStringInArray(g_MiscArray, g_MethodmapName) == -1)
 					PushArrayString(g_MiscArray, g_MethodmapName);
+
+				Debug(DEBUG_BYTE_METHODMAP, "success! calss='%s', tag='%s'", g_MethodmapName, g_MethodmapTag);
 				return true;
 			}
-
-			return false;
+			else {
+				g_MethodmapName[0] = 0;
+				g_MethodmapTag[0] = 0;
+				Debug(DEBUG_BYTE_ERROR, "Failed to detect methodmap class/tag. Called from %s", g_Debug[DEBUG_TAG_METHODMAP]);
+				return false;
+			}
 		}
 	}
 	return false;
@@ -897,36 +914,36 @@ void WriteFuncParams(Handle handle, char[] buffer, int maxlength, bool isLineBre
 {
 	static char buildStr[2048];
 	Format(buildStr, sizeof(buildStr), "%s%s", buildStr, buffer);
-	
+
 	Debug(DEBUG_BYTE_FUNC_PARAM, "Split func params (is line breaked=%d):", isLineBreaked);
 	Debug(DEBUG_BYTE_FUNC_PARAM, "src: '%s'", buildStr);
-	
+
 	if (isLineBreaked)
 		return;
-		
+
 	ReplaceString(buildStr, maxlength, "\t", " ");
 	ReplaceString(buildStr, maxlength, "\"", "'");
 	ReplaceString(buildStr, maxlength, "%", "%%");
 	TrimString(buildStr);
-	
+
 	if (buildStr[0]){
-	
+
 		static int count, i, blah, bracet, lastpos;
 		static bool isEnd;
 		static char temp[128], execlude[] = "{;)";
 		maxlength = strlen(buildStr);
-		
+
 		for (i = bracet = lastpos = count = 0; i < maxlength; i++){
-		
+
 			if (buildStr[i] == '{')
 				bracet++;
 			else if (buildStr[i] == '}')
 				bracet--;
-				
+
 			isEnd = i + 1 == maxlength;
-			
+
 			if (!bracet && buildStr[i] == ',' || isEnd){
-				
+
 				strcopy(temp, i + 1 - lastpos - (lastpos && !isEnd ? 1 : 0), buildStr[lastpos + (lastpos ? 1 : 0)]);
 				TrimString(temp);
 				lastpos = i;
@@ -934,14 +951,14 @@ void WriteFuncParams(Handle handle, char[] buffer, int maxlength, bool isLineBre
 				if (isEnd){
 
 					for (blah = 0; blah < 3; blah++){
-					
+
 						lastpos = strlen(temp)-1;
 						if (lastpos < 0){
-						
+
 							Debug(DEBUG_BYTE_ERROR, "Array index out-of-bounds! No params? Called from %s", g_Debug[DEBUG_TAG_FUNC_PARAM]);
 							break;
-						}			
-							
+						}
+
 						if (temp[lastpos] == execlude[blah]){
 							temp[lastpos] = 0;
 							TrimString(temp);
@@ -949,11 +966,11 @@ void WriteFuncParams(Handle handle, char[] buffer, int maxlength, bool isLineBre
 					}
 				}
 				if (temp[0]){
-				
+
 					ValidateXML(temp, 128);
 					Debug(DEBUG_BYTE_FUNC_PARAM, "%d. '%s'", ++count, temp);
 					WriteFileLine(handle, "%s<Param name=\"%s\"/>", SPACE_X16, temp);
-				}	
+				}
 			}
 		}
 	}
@@ -1158,32 +1175,32 @@ public void ValidateXML(char[] text, int size)
 	Debug(DEBUG_BYTE_XML, "text = '%s', search = '%s'", text, search);
 
 	for (i = 0; i < text_len; i++){
-	
+
 		if (text[i] == search[0]){
-		
+
 			Debug(DEBUG_BYTE_XML, "match at pos: %d", i);
-			
+
 			for (offset = 1; offset < search_len; offset++){
-		
+
 				if (i+offset >= size){
 					Debug(DEBUG_BYTE_XML, "offset out of range: %d/%d!", offset, size);
 					break;
 				}
 
 				if (text[i+offset] != search[offset]){
-				
+
 					strcopy(buffer, i+1, text);
 					offset = strlen(buffer) + strlen(search) + strlen(text[i+1]);
 					Debug(DEBUG_BYTE_XML, "split str: '%s', new len = %d", buffer, offset);
-					
+
 					if (offset < sizeof(buffer)){
-					
+
 						Format(buffer, sizeof(buffer), "%s%s%s", buffer, search, text[i+1]);
 						strcopy(text, size, buffer);
 						text_len = strlen(text);
 						Debug(DEBUG_BYTE_XML, "builded str: '%s'", text);
 						g_XMLFixCount++;
-					}	
+					}
 					else
 						Debug(DEBUG_BYTE_XML, "new len out of range: %d/%d!", offset, sizeof(buffer));
 					break;
@@ -1198,16 +1215,16 @@ public void ValidateXML(char[] text, int size)
 	g_XMLFixCount += ReplaceString(text, 1023, ">", "&gt;");
 	g_XMLFixCount += ReplaceString(text, 1023, "'", "&apos;");
 	g_XMLFixCount += ReplaceString(text, 1023, "\"", "&quot;");
-	
+
 	Debug(DEBUG_BYTE_XML, "result: '%s'", text);
 }
 
 
 public void Debug(int BYTE, const char[] format, any ...)
 {
-	if (DEBUG_BYTES == 0 
-	|| !((DEBUG_BYTE_PRINT_SERVER|DEBUG_BYTE_LOG_FILE) & DEBUG_BYTES) 
-	|| !(DEBUG_BYTES & BYTE)) 
+	if (DEBUG_BYTES == 0
+	|| !((DEBUG_BYTE_PRINT_SERVER|DEBUG_BYTE_LOG_FILE) & DEBUG_BYTES)
+	|| !(DEBUG_BYTES & BYTE))
 		return;
 
 	static int len;
@@ -1234,10 +1251,10 @@ public void Debug(int BYTE, const char[] format, any ...)
 	}
 
 	Format(myFormattedString, len, "[%s] %s", tag, myFormattedString);
-	
+
 	if ((DEBUG_BYTES & DEBUG_BYTE_LOG_FILE))
-		LogToFile(DEBUG, myFormattedString);
-	
+		fileDebug.WriteLine(myFormattedString);
+
 	if ((DEBUG_BYTES & DEBUG_BYTE_PRINT_SERVER))
 		PrintToServer(myFormattedString);
 }

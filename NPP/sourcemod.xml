@@ -9896,27 +9896,27 @@ Return:
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_ArrayStack_CONSTRUCTOR_ArrayStack" func="yes">
-            <Overload retVal="public native " descr="
+        <KeyWord name="METHODMAP_ArrayStack_Handle_CONSTRUCTOR_ArrayStack" func="yes">
+            <Overload retVal="public native Handle" descr="
 ">
                 <Param name="int blocksize=1"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_ArrayStack_METHOD_Pop" func="yes">
+        <KeyWord name="METHODMAP_ArrayStack_Handle_METHOD_Pop" func="yes">
             <Overload retVal="public native any" descr="
 ">
                 <Param name="int block=0"/>
                 <Param name="bool asChar=false"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_ArrayStack_METHOD_PopArray" func="yes">
+        <KeyWord name="METHODMAP_ArrayStack_Handle_METHOD_PopArray" func="yes">
             <Overload retVal="public native void" descr="
 ">
                 <Param name="any[] buffer"/>
                 <Param name="int size=-1"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_ArrayStack_METHOD_PopString" func="yes">
+        <KeyWord name="METHODMAP_ArrayStack_Handle_METHOD_PopString" func="yes">
             <Overload retVal="public native void" descr="
 ">
                 <Param name="char[] buffer"/>
@@ -9924,98 +9924,98 @@ Return:
                 <Param name="int &amp;written = 0"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_ArrayStack_METHOD_Push" func="yes">
+        <KeyWord name="METHODMAP_ArrayStack_Handle_METHOD_Push" func="yes">
             <Overload retVal="public native void" descr="
 ">
                 <Param name="any value"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_ArrayStack_METHOD_PushArray" func="yes">
+        <KeyWord name="METHODMAP_ArrayStack_Handle_METHOD_PushArray" func="yes">
             <Overload retVal="public native void" descr="
 ">
                 <Param name="const any[] values"/>
                 <Param name="int size=-1"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_ArrayStack_METHOD_PushString" func="yes">
+        <KeyWord name="METHODMAP_ArrayStack_Handle_METHOD_PushString" func="yes">
             <Overload retVal="public native void" descr="
 ">
                 <Param name="const char[] value"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_ArrayStack_PROP_BlockSize" func="yes">
+        <KeyWord name="METHODMAP_ArrayStack_Handle_PROP_BlockSize" func="yes">
             <Overload retVal="property int" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_ArrayStack_PROP_BlockSize_get" func="yes">
-            <Overload retVal="public native " descr="
+        <KeyWord name="METHODMAP_ArrayStack_Handle_PROP_BlockSize_get" func="yes">
+            <Overload retVal="public native Handle" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_ArrayStack_PROP_Empty" func="yes">
+        <KeyWord name="METHODMAP_ArrayStack_Handle_PROP_Empty" func="yes">
             <Overload retVal="property bool" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_ArrayStack_PROP_Empty_get" func="yes">
-            <Overload retVal="public native " descr="
+        <KeyWord name="METHODMAP_ArrayStack_Handle_PROP_Empty_get" func="yes">
+            <Overload retVal="public native Handle" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_BfRead_METHOD_ReadAngle" func="yes">
+        <KeyWord name="METHODMAP_BfRead_Handle_METHOD_ReadAngle" func="yes">
             <Overload retVal="public native float" descr="
 ">
                 <Param name="int numBits=8"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_BfRead_METHOD_ReadAngles" func="yes">
+        <KeyWord name="METHODMAP_BfRead_Handle_METHOD_ReadAngles" func="yes">
             <Overload retVal="public native void" descr="
 ">
                 <Param name="float angles[3]"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_BfRead_METHOD_ReadBool" func="yes">
+        <KeyWord name="METHODMAP_BfRead_Handle_METHOD_ReadBool" func="yes">
             <Overload retVal="public native bool" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_BfRead_METHOD_ReadByte" func="yes">
+        <KeyWord name="METHODMAP_BfRead_Handle_METHOD_ReadByte" func="yes">
             <Overload retVal="public native int" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_BfRead_METHOD_ReadChar" func="yes">
+        <KeyWord name="METHODMAP_BfRead_Handle_METHOD_ReadChar" func="yes">
             <Overload retVal="public native int" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_BfRead_METHOD_ReadCoord" func="yes">
+        <KeyWord name="METHODMAP_BfRead_Handle_METHOD_ReadCoord" func="yes">
             <Overload retVal="public native float" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_BfRead_METHOD_ReadEntity" func="yes">
+        <KeyWord name="METHODMAP_BfRead_Handle_METHOD_ReadEntity" func="yes">
             <Overload retVal="public native int" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_BfRead_METHOD_ReadFloat" func="yes">
+        <KeyWord name="METHODMAP_BfRead_Handle_METHOD_ReadFloat" func="yes">
             <Overload retVal="public native float" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_BfRead_METHOD_ReadNum" func="yes">
+        <KeyWord name="METHODMAP_BfRead_Handle_METHOD_ReadNum" func="yes">
             <Overload retVal="public native int" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_BfRead_METHOD_ReadShort" func="yes">
+        <KeyWord name="METHODMAP_BfRead_Handle_METHOD_ReadShort" func="yes">
             <Overload retVal="public native int" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_BfRead_METHOD_ReadString" func="yes">
+        <KeyWord name="METHODMAP_BfRead_Handle_METHOD_ReadString" func="yes">
             <Overload retVal="public native int" descr="
 ">
                 <Param name="char[] buffer"/>
@@ -10023,173 +10023,173 @@ Return:
                 <Param name="bool line=false"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_BfRead_METHOD_ReadVecCoord" func="yes">
+        <KeyWord name="METHODMAP_BfRead_Handle_METHOD_ReadVecCoord" func="yes">
             <Overload retVal="public native void" descr="
 ">
                 <Param name="float coord[3]"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_BfRead_METHOD_ReadVecNormal" func="yes">
+        <KeyWord name="METHODMAP_BfRead_Handle_METHOD_ReadVecNormal" func="yes">
             <Overload retVal="public native void" descr="
 ">
                 <Param name="float vec[3]"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_BfRead_METHOD_ReadWord" func="yes">
+        <KeyWord name="METHODMAP_BfRead_Handle_METHOD_ReadWord" func="yes">
             <Overload retVal="public native int" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_BfRead_PROP_BytesLeft" func="yes">
+        <KeyWord name="METHODMAP_BfRead_Handle_PROP_BytesLeft" func="yes">
             <Overload retVal="property int" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_BfRead_PROP_BytesLeft_get" func="yes">
-            <Overload retVal="public native " descr="
+        <KeyWord name="METHODMAP_BfRead_Handle_PROP_BytesLeft_get" func="yes">
+            <Overload retVal="public native Handle" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_BfWrite_METHOD_WriteAngle" func="yes">
+        <KeyWord name="METHODMAP_BfWrite_Handle_METHOD_WriteAngle" func="yes">
             <Overload retVal="public native void" descr="
 ">
                 <Param name="float angle"/>
                 <Param name="int numBits=8"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_BfWrite_METHOD_WriteAngles" func="yes">
+        <KeyWord name="METHODMAP_BfWrite_Handle_METHOD_WriteAngles" func="yes">
             <Overload retVal="public native void" descr="
 ">
                 <Param name="float angles[3]"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_BfWrite_METHOD_WriteBool" func="yes">
+        <KeyWord name="METHODMAP_BfWrite_Handle_METHOD_WriteBool" func="yes">
             <Overload retVal="public native void" descr="
 ">
                 <Param name="bool bit"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_BfWrite_METHOD_WriteByte" func="yes">
+        <KeyWord name="METHODMAP_BfWrite_Handle_METHOD_WriteByte" func="yes">
             <Overload retVal="public native void" descr="
 ">
                 <Param name="int byte"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_BfWrite_METHOD_WriteChar" func="yes">
+        <KeyWord name="METHODMAP_BfWrite_Handle_METHOD_WriteChar" func="yes">
             <Overload retVal="public native void" descr="
 ">
                 <Param name="int chr"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_BfWrite_METHOD_WriteCoord" func="yes">
+        <KeyWord name="METHODMAP_BfWrite_Handle_METHOD_WriteCoord" func="yes">
             <Overload retVal="public native void" descr="
 ">
                 <Param name="float coord"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_BfWrite_METHOD_WriteEntity" func="yes">
+        <KeyWord name="METHODMAP_BfWrite_Handle_METHOD_WriteEntity" func="yes">
             <Overload retVal="public native void" descr="
 ">
                 <Param name="int ent"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_BfWrite_METHOD_WriteFloat" func="yes">
+        <KeyWord name="METHODMAP_BfWrite_Handle_METHOD_WriteFloat" func="yes">
             <Overload retVal="public native void" descr="
 ">
                 <Param name="float num"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_BfWrite_METHOD_WriteNum" func="yes">
+        <KeyWord name="METHODMAP_BfWrite_Handle_METHOD_WriteNum" func="yes">
             <Overload retVal="public native void" descr="
 ">
                 <Param name="int num"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_BfWrite_METHOD_WriteShort" func="yes">
+        <KeyWord name="METHODMAP_BfWrite_Handle_METHOD_WriteShort" func="yes">
             <Overload retVal="public native void" descr="
 ">
                 <Param name="int num"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_BfWrite_METHOD_WriteString" func="yes">
+        <KeyWord name="METHODMAP_BfWrite_Handle_METHOD_WriteString" func="yes">
             <Overload retVal="public native void" descr="
 ">
                 <Param name="const char[] string"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_BfWrite_METHOD_WriteVecCoord" func="yes">
+        <KeyWord name="METHODMAP_BfWrite_Handle_METHOD_WriteVecCoord" func="yes">
             <Overload retVal="public native void" descr="
 ">
                 <Param name="float coord[3]"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_BfWrite_METHOD_WriteVecNormal" func="yes">
+        <KeyWord name="METHODMAP_BfWrite_Handle_METHOD_WriteVecNormal" func="yes">
             <Overload retVal="public native void" descr="
 ">
                 <Param name="float vec[3]"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_BfWrite_METHOD_WriteWord" func="yes">
+        <KeyWord name="METHODMAP_BfWrite_Handle_METHOD_WriteWord" func="yes">
             <Overload retVal="public native void" descr="
 ">
                 <Param name="int num"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_ConVar_METHOD_AddChangeHook" func="yes">
+        <KeyWord name="METHODMAP_ConVar_Handle_METHOD_AddChangeHook" func="yes">
             <Overload retVal="public native void" descr="
 ">
                 <Param name="ConVarChanged callback"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_ConVar_METHOD_GetBounds" func="yes">
+        <KeyWord name="METHODMAP_ConVar_Handle_METHOD_GetBounds" func="yes">
             <Overload retVal="public native bool" descr="
 ">
                 <Param name="ConVarBounds type"/>
                 <Param name="float &amp;value"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_ConVar_METHOD_GetDefault" func="yes">
+        <KeyWord name="METHODMAP_ConVar_Handle_METHOD_GetDefault" func="yes">
             <Overload retVal="public native int" descr="
 ">
                 <Param name="char[] value"/>
                 <Param name="int maxlength"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_ConVar_METHOD_GetName" func="yes">
+        <KeyWord name="METHODMAP_ConVar_Handle_METHOD_GetName" func="yes">
             <Overload retVal="public native void" descr="
 ">
                 <Param name="char[] name"/>
                 <Param name="int maxlength"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_ConVar_METHOD_GetString" func="yes">
+        <KeyWord name="METHODMAP_ConVar_Handle_METHOD_GetString" func="yes">
             <Overload retVal="public native void" descr="
 ">
                 <Param name="char[] value"/>
                 <Param name="int maxlength"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_ConVar_METHOD_RemoveChangeHook" func="yes">
+        <KeyWord name="METHODMAP_ConVar_Handle_METHOD_RemoveChangeHook" func="yes">
             <Overload retVal="public native void" descr="
 ">
                 <Param name="ConVarChanged callback"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_ConVar_METHOD_ReplicateToClient" func="yes">
+        <KeyWord name="METHODMAP_ConVar_Handle_METHOD_ReplicateToClient" func="yes">
             <Overload retVal="public native bool" descr="
 ">
                 <Param name="int client"/>
                 <Param name="const char[] value"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_ConVar_METHOD_RestoreDefault" func="yes">
+        <KeyWord name="METHODMAP_ConVar_Handle_METHOD_RestoreDefault" func="yes">
             <Overload retVal="public native void" descr="
 ">
                 <Param name="bool replicate=false"/>
                 <Param name="bool notify=false"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_ConVar_METHOD_SetBool" func="yes">
+        <KeyWord name="METHODMAP_ConVar_Handle_METHOD_SetBool" func="yes">
             <Overload retVal="public native void" descr="
 ">
                 <Param name="bool value"/>
@@ -10197,7 +10197,7 @@ Return:
                 <Param name="bool notify=false"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_ConVar_METHOD_SetBounds" func="yes">
+        <KeyWord name="METHODMAP_ConVar_Handle_METHOD_SetBounds" func="yes">
             <Overload retVal="public native void" descr="
 ">
                 <Param name="ConVarBounds type"/>
@@ -10205,7 +10205,7 @@ Return:
                 <Param name="float value=0.0"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_ConVar_METHOD_SetFloat" func="yes">
+        <KeyWord name="METHODMAP_ConVar_Handle_METHOD_SetFloat" func="yes">
             <Overload retVal="public native void" descr="
 ">
                 <Param name="float value"/>
@@ -10213,7 +10213,7 @@ Return:
                 <Param name="bool notify=false"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_ConVar_METHOD_SetInt" func="yes">
+        <KeyWord name="METHODMAP_ConVar_Handle_METHOD_SetInt" func="yes">
             <Overload retVal="public native void" descr="
 ">
                 <Param name="int value"/>
@@ -10221,7 +10221,7 @@ Return:
                 <Param name="bool notify=false"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_ConVar_METHOD_SetString" func="yes">
+        <KeyWord name="METHODMAP_ConVar_Handle_METHOD_SetString" func="yes">
             <Overload retVal="public native void" descr="
 ">
                 <Param name="const char[] value"/>
@@ -10229,67 +10229,67 @@ Return:
                 <Param name="bool notify=false"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_ConVar_PROP_BoolValue" func="yes">
+        <KeyWord name="METHODMAP_ConVar_Handle_PROP_BoolValue" func="yes">
             <Overload retVal="property bool" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_ConVar_PROP_BoolValue_get" func="yes">
-            <Overload retVal="public native " descr="
+        <KeyWord name="METHODMAP_ConVar_Handle_PROP_BoolValue_get" func="yes">
+            <Overload retVal="public native Handle" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_ConVar_PROP_BoolValue_set" func="yes">
-            <Overload retVal="public native " descr="
+        <KeyWord name="METHODMAP_ConVar_Handle_PROP_BoolValue_set" func="yes">
+            <Overload retVal="public native Handle" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_ConVar_PROP_Flags" func="yes">
+        <KeyWord name="METHODMAP_ConVar_Handle_PROP_Flags" func="yes">
             <Overload retVal="property int" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_ConVar_PROP_Flags_get" func="yes">
-            <Overload retVal="public native " descr="
+        <KeyWord name="METHODMAP_ConVar_Handle_PROP_Flags_get" func="yes">
+            <Overload retVal="public native Handle" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_ConVar_PROP_Flags_set" func="yes">
-            <Overload retVal="public native " descr="
+        <KeyWord name="METHODMAP_ConVar_Handle_PROP_Flags_set" func="yes">
+            <Overload retVal="public native Handle" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_ConVar_PROP_FloatValue" func="yes">
+        <KeyWord name="METHODMAP_ConVar_Handle_PROP_FloatValue" func="yes">
             <Overload retVal="property float" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_ConVar_PROP_FloatValue_get" func="yes">
-            <Overload retVal="public native " descr="
+        <KeyWord name="METHODMAP_ConVar_Handle_PROP_FloatValue_get" func="yes">
+            <Overload retVal="public native Handle" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_ConVar_PROP_FloatValue_set" func="yes">
-            <Overload retVal="public native " descr="
+        <KeyWord name="METHODMAP_ConVar_Handle_PROP_FloatValue_set" func="yes">
+            <Overload retVal="public native Handle" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_ConVar_PROP_IntValue" func="yes">
+        <KeyWord name="METHODMAP_ConVar_Handle_PROP_IntValue" func="yes">
             <Overload retVal="property int" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_ConVar_PROP_IntValue_get" func="yes">
-            <Overload retVal="public native " descr="
+        <KeyWord name="METHODMAP_ConVar_Handle_PROP_IntValue_get" func="yes">
+            <Overload retVal="public native Handle" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_ConVar_PROP_IntValue_set" func="yes">
-            <Overload retVal="public native " descr="
+        <KeyWord name="METHODMAP_ConVar_Handle_PROP_IntValue_set" func="yes">
+            <Overload retVal="public native Handle" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Database_METHOD_Escape" func="yes">
+        <KeyWord name="METHODMAP_Database_Handle_METHOD_Escape" func="yes">
             <Overload retVal="public native bool" descr="
 ">
                 <Param name="const char[] string"/>
@@ -10298,7 +10298,7 @@ Return:
                 <Param name="int &amp;written=0"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Database_METHOD_Execute" func="yes">
+        <KeyWord name="METHODMAP_Database_Handle_METHOD_Execute" func="yes">
             <Overload retVal="public native void" descr="
 ">
                 <Param name="Transaction txn"/>
@@ -10308,7 +10308,7 @@ Return:
                 <Param name="DBPriority priority = DBPrio_Normal"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Database_METHOD_Format" func="yes">
+        <KeyWord name="METHODMAP_Database_Handle_METHOD_Format" func="yes">
             <Overload retVal="public native int" descr="
 ">
                 <Param name="const char[] buffer"/>
@@ -10317,13 +10317,13 @@ Return:
                 <Param name="any ..."/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Database_METHOD_IsSameConnection" func="yes">
+        <KeyWord name="METHODMAP_Database_Handle_METHOD_IsSameConnection" func="yes">
             <Overload retVal="public native bool" descr="
 ">
                 <Param name="Database other"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Database_METHOD_Query" func="yes">
+        <KeyWord name="METHODMAP_Database_Handle_METHOD_Query" func="yes">
             <Overload retVal="public native void" descr="
 ">
                 <Param name="SQLQueryCallback callback"/>
@@ -10332,145 +10332,145 @@ Return:
                 <Param name="DBPriority prio = DBPrio_Normal"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Database_METHOD_SetCharset" func="yes">
+        <KeyWord name="METHODMAP_Database_Handle_METHOD_SetCharset" func="yes">
             <Overload retVal="public native bool" descr="
 ">
                 <Param name="const char[] charset"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Database_PROP_Driver" func="yes">
+        <KeyWord name="METHODMAP_Database_Handle_PROP_Driver" func="yes">
             <Overload retVal="property DBDriver" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Database_PROP_Driver_get" func="yes">
-            <Overload retVal="public native " descr="
+        <KeyWord name="METHODMAP_Database_Handle_PROP_Driver_get" func="yes">
+            <Overload retVal="public native Handle" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_DataPack_CONSTRUCTOR_DataPack" func="yes">
-            <Overload retVal="public native " descr="
+        <KeyWord name="METHODMAP_DataPack_Handle_CONSTRUCTOR_DataPack" func="yes">
+            <Overload retVal="public native Handle" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_DataPack_METHOD_IsReadable" func="yes">
+        <KeyWord name="METHODMAP_DataPack_Handle_METHOD_IsReadable" func="yes">
             <Overload retVal="public native bool" descr="
 ">
                 <Param name="int bytes"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_DataPack_METHOD_ReadCell" func="yes">
+        <KeyWord name="METHODMAP_DataPack_Handle_METHOD_ReadCell" func="yes">
             <Overload retVal="public native any" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_DataPack_METHOD_ReadFloat" func="yes">
+        <KeyWord name="METHODMAP_DataPack_Handle_METHOD_ReadFloat" func="yes">
             <Overload retVal="public native float" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_DataPack_METHOD_ReadFunction" func="yes">
+        <KeyWord name="METHODMAP_DataPack_Handle_METHOD_ReadFunction" func="yes">
             <Overload retVal="public native function" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_DataPack_METHOD_ReadString" func="yes">
+        <KeyWord name="METHODMAP_DataPack_Handle_METHOD_ReadString" func="yes">
             <Overload retVal="public native void" descr="
 ">
                 <Param name="char[] buffer"/>
                 <Param name="int maxlen"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_DataPack_METHOD_Reset" func="yes">
+        <KeyWord name="METHODMAP_DataPack_Handle_METHOD_Reset" func="yes">
             <Overload retVal="public native void" descr="
 ">
                 <Param name="bool clear=false"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_DataPack_METHOD_WriteCell" func="yes">
+        <KeyWord name="METHODMAP_DataPack_Handle_METHOD_WriteCell" func="yes">
             <Overload retVal="public native void" descr="
 ">
                 <Param name="any cell"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_DataPack_METHOD_WriteFloat" func="yes">
+        <KeyWord name="METHODMAP_DataPack_Handle_METHOD_WriteFloat" func="yes">
             <Overload retVal="public native void" descr="
 ">
                 <Param name="float val"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_DataPack_METHOD_WriteFunction" func="yes">
+        <KeyWord name="METHODMAP_DataPack_Handle_METHOD_WriteFunction" func="yes">
             <Overload retVal="public native void" descr="
 ">
                 <Param name="Function fktptr"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_DataPack_METHOD_WriteString" func="yes">
+        <KeyWord name="METHODMAP_DataPack_Handle_METHOD_WriteString" func="yes">
             <Overload retVal="public native void" descr="
 ">
                 <Param name="const char[] str"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_DataPack_PROP_Position" func="yes">
+        <KeyWord name="METHODMAP_DataPack_Handle_PROP_Position" func="yes">
             <Overload retVal="property DataPackPos" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_DataPack_PROP_Position_get" func="yes">
-            <Overload retVal="public native " descr="
+        <KeyWord name="METHODMAP_DataPack_Handle_PROP_Position_get" func="yes">
+            <Overload retVal="public native Handle" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_DataPack_PROP_Position_set" func="yes">
-            <Overload retVal="public native " descr="
+        <KeyWord name="METHODMAP_DataPack_Handle_PROP_Position_set" func="yes">
+            <Overload retVal="public native Handle" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_DBDriver_METHOD_GetIdentifier" func="yes">
+        <KeyWord name="METHODMAP_DBDriver_Handle_METHOD_GetIdentifier" func="yes">
             <Overload retVal="public native void" descr="
 ">
                 <Param name="char[] ident"/>
                 <Param name="int maxlength"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_DBDriver_METHOD_GetProduct" func="yes">
+        <KeyWord name="METHODMAP_DBDriver_Handle_METHOD_GetProduct" func="yes">
             <Overload retVal="public native void" descr="
 ">
                 <Param name="char[] product"/>
                 <Param name="int maxlength"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_DBResultSet_METHOD_FetchFloat" func="yes">
+        <KeyWord name="METHODMAP_DBResultSet_Handle_METHOD_FetchFloat" func="yes">
             <Overload retVal="public native float" descr="
 ">
                 <Param name="int field"/>
                 <Param name="DBResult &amp;result=DBVal_Error"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_DBResultSet_METHOD_FetchInt" func="yes">
+        <KeyWord name="METHODMAP_DBResultSet_Handle_METHOD_FetchInt" func="yes">
             <Overload retVal="public native int" descr="
 ">
                 <Param name="int field"/>
                 <Param name="DBResult &amp;result=DBVal_Error"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_DBResultSet_METHOD_FetchMoreResults" func="yes">
+        <KeyWord name="METHODMAP_DBResultSet_Handle_METHOD_FetchMoreResults" func="yes">
             <Overload retVal="public native bool" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_DBResultSet_METHOD_FetchRow" func="yes">
+        <KeyWord name="METHODMAP_DBResultSet_Handle_METHOD_FetchRow" func="yes">
             <Overload retVal="public native bool" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_DBResultSet_METHOD_FetchSize" func="yes">
+        <KeyWord name="METHODMAP_DBResultSet_Handle_METHOD_FetchSize" func="yes">
             <Overload retVal="public native int" descr="
 ">
                 <Param name="int field"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_DBResultSet_METHOD_FetchString" func="yes">
+        <KeyWord name="METHODMAP_DBResultSet_Handle_METHOD_FetchString" func="yes">
             <Overload retVal="public native int" descr="
 ">
                 <Param name="int field"/>
@@ -10479,14 +10479,14 @@ Return:
                 <Param name="DBResult &amp;result=DBVal_Error"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_DBResultSet_METHOD_FieldNameToNum" func="yes">
+        <KeyWord name="METHODMAP_DBResultSet_Handle_METHOD_FieldNameToNum" func="yes">
             <Overload retVal="public native bool" descr="
 ">
                 <Param name="const char[] name"/>
                 <Param name="int &amp;field"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_DBResultSet_METHOD_FieldNumToName" func="yes">
+        <KeyWord name="METHODMAP_DBResultSet_Handle_METHOD_FieldNumToName" func="yes">
             <Overload retVal="public native void" descr="
 ">
                 <Param name="int field"/>
@@ -10494,85 +10494,85 @@ Return:
                 <Param name="int maxlength"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_DBResultSet_METHOD_IsFieldNull" func="yes">
+        <KeyWord name="METHODMAP_DBResultSet_Handle_METHOD_IsFieldNull" func="yes">
             <Overload retVal="public native bool" descr="
 ">
                 <Param name="int field"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_DBResultSet_METHOD_Rewind" func="yes">
+        <KeyWord name="METHODMAP_DBResultSet_Handle_METHOD_Rewind" func="yes">
             <Overload retVal="public native bool" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_DBResultSet_PROP_AffectedRows" func="yes">
+        <KeyWord name="METHODMAP_DBResultSet_Handle_PROP_AffectedRows" func="yes">
             <Overload retVal="property int" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_DBResultSet_PROP_AffectedRows_get" func="yes">
-            <Overload retVal="public native " descr="
+        <KeyWord name="METHODMAP_DBResultSet_Handle_PROP_AffectedRows_get" func="yes">
+            <Overload retVal="public native Handle" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_DBResultSet_PROP_FieldCount" func="yes">
+        <KeyWord name="METHODMAP_DBResultSet_Handle_PROP_FieldCount" func="yes">
             <Overload retVal="property int" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_DBResultSet_PROP_FieldCount_get" func="yes">
-            <Overload retVal="public native " descr="
+        <KeyWord name="METHODMAP_DBResultSet_Handle_PROP_FieldCount_get" func="yes">
+            <Overload retVal="public native Handle" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_DBResultSet_PROP_HasResults" func="yes">
+        <KeyWord name="METHODMAP_DBResultSet_Handle_PROP_HasResults" func="yes">
             <Overload retVal="property bool" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_DBResultSet_PROP_HasResults_get" func="yes">
-            <Overload retVal="public native " descr="
+        <KeyWord name="METHODMAP_DBResultSet_Handle_PROP_HasResults_get" func="yes">
+            <Overload retVal="public native Handle" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_DBResultSet_PROP_InsertId" func="yes">
+        <KeyWord name="METHODMAP_DBResultSet_Handle_PROP_InsertId" func="yes">
             <Overload retVal="property int" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_DBResultSet_PROP_InsertId_get" func="yes">
-            <Overload retVal="public native " descr="
+        <KeyWord name="METHODMAP_DBResultSet_Handle_PROP_InsertId_get" func="yes">
+            <Overload retVal="public native Handle" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_DBResultSet_PROP_MoreRows" func="yes">
+        <KeyWord name="METHODMAP_DBResultSet_Handle_PROP_MoreRows" func="yes">
             <Overload retVal="property bool" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_DBResultSet_PROP_MoreRows_get" func="yes">
-            <Overload retVal="public native " descr="
+        <KeyWord name="METHODMAP_DBResultSet_Handle_PROP_MoreRows_get" func="yes">
+            <Overload retVal="public native Handle" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_DBResultSet_PROP_RowCount" func="yes">
+        <KeyWord name="METHODMAP_DBResultSet_Handle_PROP_RowCount" func="yes">
             <Overload retVal="property int" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_DBResultSet_PROP_RowCount_get" func="yes">
-            <Overload retVal="public native " descr="
+        <KeyWord name="METHODMAP_DBResultSet_Handle_PROP_RowCount_get" func="yes">
+            <Overload retVal="public native Handle" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_DBStatement_METHOD_BindFloat" func="yes">
+        <KeyWord name="METHODMAP_DBStatement_Handle_METHOD_BindFloat" func="yes">
             <Overload retVal="public native void" descr="
 ">
                 <Param name="int param"/>
                 <Param name="float value"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_DBStatement_METHOD_BindInt" func="yes">
+        <KeyWord name="METHODMAP_DBStatement_Handle_METHOD_BindInt" func="yes">
             <Overload retVal="public native void" descr="
 ">
                 <Param name="int param"/>
@@ -10580,7 +10580,7 @@ Return:
                 <Param name="bool signed=true"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_DBStatement_METHOD_BindString" func="yes">
+        <KeyWord name="METHODMAP_DBStatement_Handle_METHOD_BindString" func="yes">
             <Overload retVal="public native void" descr="
 ">
                 <Param name="int param"/>
@@ -10588,7 +10588,7 @@ Return:
                 <Param name="bool copy"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_DirectoryListing_METHOD_GetNext" func="yes">
+        <KeyWord name="METHODMAP_DirectoryListing_Handle_METHOD_GetNext" func="yes">
             <Overload retVal="public native bool" descr="
 ">
                 <Param name="char[] buffer"/>
@@ -10596,52 +10596,52 @@ Return:
                 <Param name="FileType &amp;type=FileType_Unknown"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Event_METHOD_Cancel" func="yes">
+        <KeyWord name="METHODMAP_Event_Handle_METHOD_Cancel" func="yes">
             <Overload retVal="public native void" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Event_METHOD_Fire" func="yes">
+        <KeyWord name="METHODMAP_Event_Handle_METHOD_Fire" func="yes">
             <Overload retVal="public native void" descr="
 ">
                 <Param name="bool dontBroadcast=false"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Event_METHOD_FireToClient" func="yes">
+        <KeyWord name="METHODMAP_Event_Handle_METHOD_FireToClient" func="yes">
             <Overload retVal="public native void" descr="
 ">
                 <Param name="int client"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Event_METHOD_GetBool" func="yes">
+        <KeyWord name="METHODMAP_Event_Handle_METHOD_GetBool" func="yes">
             <Overload retVal="public native bool" descr="
 ">
                 <Param name="const char[] key"/>
                 <Param name="bool defValue=false"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Event_METHOD_GetFloat" func="yes">
+        <KeyWord name="METHODMAP_Event_Handle_METHOD_GetFloat" func="yes">
             <Overload retVal="public native float" descr="
 ">
                 <Param name="const char[] key"/>
                 <Param name="float defValue=0.0"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Event_METHOD_GetInt" func="yes">
+        <KeyWord name="METHODMAP_Event_Handle_METHOD_GetInt" func="yes">
             <Overload retVal="public native int" descr="
 ">
                 <Param name="const char[] key"/>
                 <Param name="int defValue=0"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Event_METHOD_GetName" func="yes">
+        <KeyWord name="METHODMAP_Event_Handle_METHOD_GetName" func="yes">
             <Overload retVal="public native void" descr="
 ">
                 <Param name="char[] name"/>
                 <Param name="int maxlength"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Event_METHOD_GetString" func="yes">
+        <KeyWord name="METHODMAP_Event_Handle_METHOD_GetString" func="yes">
             <Overload retVal="public native void" descr="
 ">
                 <Param name="const char[] key"/>
@@ -10650,55 +10650,55 @@ Return:
                 <Param name="const char[] defvalue=&apos;&apos;"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Event_METHOD_SetBool" func="yes">
+        <KeyWord name="METHODMAP_Event_Handle_METHOD_SetBool" func="yes">
             <Overload retVal="public native void" descr="
 ">
                 <Param name="const char[] key"/>
                 <Param name="bool value"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Event_METHOD_SetFloat" func="yes">
+        <KeyWord name="METHODMAP_Event_Handle_METHOD_SetFloat" func="yes">
             <Overload retVal="public native void" descr="
 ">
                 <Param name="const char[] key"/>
                 <Param name="float value"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Event_METHOD_SetInt" func="yes">
+        <KeyWord name="METHODMAP_Event_Handle_METHOD_SetInt" func="yes">
             <Overload retVal="public native void" descr="
 ">
                 <Param name="const char[] key"/>
                 <Param name="int value"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Event_METHOD_SetString" func="yes">
+        <KeyWord name="METHODMAP_Event_Handle_METHOD_SetString" func="yes">
             <Overload retVal="public native void" descr="
 ">
                 <Param name="const char[] key"/>
                 <Param name="const char[] value"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Event_PROP_BroadcastDisabled" func="yes">
+        <KeyWord name="METHODMAP_Event_Handle_PROP_BroadcastDisabled" func="yes">
             <Overload retVal="property bool" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Event_PROP_BroadcastDisabled_set" func="yes">
-            <Overload retVal="public native " descr="
+        <KeyWord name="METHODMAP_Event_Handle_PROP_BroadcastDisabled_set" func="yes">
+            <Overload retVal="public native Handle" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_File_METHOD_Close" func="yes">
+        <KeyWord name="METHODMAP_File_Handle_METHOD_Close" func="yes">
             <Overload retVal="public void" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_File_METHOD_EndOfFile" func="yes">
+        <KeyWord name="METHODMAP_File_Handle_METHOD_EndOfFile" func="yes">
             <Overload retVal="public native bool" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_File_METHOD_Read" func="yes">
+        <KeyWord name="METHODMAP_File_Handle_METHOD_Read" func="yes">
             <Overload retVal="public native int" descr="
 ">
                 <Param name="int[] items"/>
@@ -10706,32 +10706,32 @@ Return:
                 <Param name="int size"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_File_METHOD_ReadInt16" func="yes">
+        <KeyWord name="METHODMAP_File_Handle_METHOD_ReadInt16" func="yes">
             <Overload retVal="public native bool" descr="
 ">
                 <Param name="int &amp;data"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_File_METHOD_ReadInt32" func="yes">
+        <KeyWord name="METHODMAP_File_Handle_METHOD_ReadInt32" func="yes">
             <Overload retVal="public native bool" descr="
 ">
                 <Param name="int &amp;data"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_File_METHOD_ReadInt8" func="yes">
+        <KeyWord name="METHODMAP_File_Handle_METHOD_ReadInt8" func="yes">
             <Overload retVal="public native bool" descr="
 ">
                 <Param name="int &amp;data"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_File_METHOD_ReadLine" func="yes">
+        <KeyWord name="METHODMAP_File_Handle_METHOD_ReadLine" func="yes">
             <Overload retVal="public native bool" descr="
 ">
                 <Param name="char[] buffer"/>
                 <Param name="int maxlength"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_File_METHOD_ReadString" func="yes">
+        <KeyWord name="METHODMAP_File_Handle_METHOD_ReadString" func="yes">
             <Overload retVal="public native int" descr="
 ">
                 <Param name="char[] buffer"/>
@@ -10739,26 +10739,26 @@ Return:
                 <Param name="int read_count=-1"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_File_METHOD_ReadUint16" func="yes">
+        <KeyWord name="METHODMAP_File_Handle_METHOD_ReadUint16" func="yes">
             <Overload retVal="public native bool" descr="
 ">
                 <Param name="int &amp;data"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_File_METHOD_ReadUint8" func="yes">
+        <KeyWord name="METHODMAP_File_Handle_METHOD_ReadUint8" func="yes">
             <Overload retVal="public native bool" descr="
 ">
                 <Param name="int &amp;data"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_File_METHOD_Seek" func="yes">
+        <KeyWord name="METHODMAP_File_Handle_METHOD_Seek" func="yes">
             <Overload retVal="public native bool" descr="
 ">
                 <Param name="int position"/>
                 <Param name="int where"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_File_METHOD_Write" func="yes">
+        <KeyWord name="METHODMAP_File_Handle_METHOD_Write" func="yes">
             <Overload retVal="public native bool" descr="
 ">
                 <Param name="const int[] items"/>
@@ -10766,45 +10766,45 @@ Return:
                 <Param name="int size"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_File_METHOD_WriteInt16" func="yes">
+        <KeyWord name="METHODMAP_File_Handle_METHOD_WriteInt16" func="yes">
             <Overload retVal="public native bool" descr="
 ">
                 <Param name="int data"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_File_METHOD_WriteInt32" func="yes">
+        <KeyWord name="METHODMAP_File_Handle_METHOD_WriteInt32" func="yes">
             <Overload retVal="public native bool" descr="
 ">
                 <Param name="int data"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_File_METHOD_WriteInt8" func="yes">
+        <KeyWord name="METHODMAP_File_Handle_METHOD_WriteInt8" func="yes">
             <Overload retVal="public native bool" descr="
 ">
                 <Param name="int data"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_File_METHOD_WriteLine" func="yes">
+        <KeyWord name="METHODMAP_File_Handle_METHOD_WriteLine" func="yes">
             <Overload retVal="public native bool" descr="
 ">
                 <Param name="const char[] format"/>
                 <Param name="any ..."/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_File_METHOD_WriteString" func="yes">
+        <KeyWord name="METHODMAP_File_Handle_METHOD_WriteString" func="yes">
             <Overload retVal="public native bool" descr="
 ">
                 <Param name="const char[] buffer"/>
                 <Param name="bool term"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_File_PROP_Position" func="yes">
+        <KeyWord name="METHODMAP_File_Handle_PROP_Position" func="yes">
             <Overload retVal="property int" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_File_PROP_Position_get" func="yes">
-            <Overload retVal="public native " descr="
+        <KeyWord name="METHODMAP_File_Handle_PROP_Position_get" func="yes">
+            <Overload retVal="public native Handle" descr="
 ">
             </Overload>
         </KeyWord>
@@ -10918,39 +10918,39 @@ Return:
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_KeyValues_CONSTRUCTOR_KeyValues" func="yes">
-            <Overload retVal="public native " descr="
+        <KeyWord name="METHODMAP_KeyValues_Handle_CONSTRUCTOR_KeyValues" func="yes">
+            <Overload retVal="public native Handle" descr="
 ">
                 <Param name="const char[] name"/>
                 <Param name="const char[] firstKey=&apos;&apos;"/>
                 <Param name="const char[] firstValue=&apos;&apos;"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_KeyValues_METHOD_DeleteKey" func="yes">
+        <KeyWord name="METHODMAP_KeyValues_Handle_METHOD_DeleteKey" func="yes">
             <Overload retVal="public native bool" descr="
 ">
                 <Param name="const char[] key"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_KeyValues_METHOD_DeleteThis" func="yes">
+        <KeyWord name="METHODMAP_KeyValues_Handle_METHOD_DeleteThis" func="yes">
             <Overload retVal="public native int" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_KeyValues_METHOD_ExportToFile" func="yes">
+        <KeyWord name="METHODMAP_KeyValues_Handle_METHOD_ExportToFile" func="yes">
             <Overload retVal="public native bool" descr="
 ">
                 <Param name="const char[] file"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_KeyValues_METHOD_ExportToString" func="yes">
+        <KeyWord name="METHODMAP_KeyValues_Handle_METHOD_ExportToString" func="yes">
             <Overload retVal="public native int" descr="
 ">
                 <Param name="char[] buffer"/>
                 <Param name="int maxlength"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_KeyValues_METHOD_FindKeyById" func="yes">
+        <KeyWord name="METHODMAP_KeyValues_Handle_METHOD_FindKeyById" func="yes">
             <Overload retVal="public native bool" descr="
 ">
                 <Param name="int id"/>
@@ -10958,7 +10958,7 @@ Return:
                 <Param name="int maxlength"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_KeyValues_METHOD_GetColor" func="yes">
+        <KeyWord name="METHODMAP_KeyValues_Handle_METHOD_GetColor" func="yes">
             <Overload retVal="public native void" descr="
 ">
                 <Param name="const char[] key"/>
@@ -10968,54 +10968,54 @@ Return:
                 <Param name="int &amp;a"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_KeyValues_METHOD_GetColor4" func="yes">
+        <KeyWord name="METHODMAP_KeyValues_Handle_METHOD_GetColor4" func="yes">
             <Overload retVal="public void" descr="
 ">
                 <Param name="const char[] key"/>
                 <Param name="int color[4]"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_KeyValues_METHOD_GetDataType" func="yes">
+        <KeyWord name="METHODMAP_KeyValues_Handle_METHOD_GetDataType" func="yes">
             <Overload retVal="public native KvDataTypes" descr="
 ">
                 <Param name="const char[] key"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_KeyValues_METHOD_GetFloat" func="yes">
+        <KeyWord name="METHODMAP_KeyValues_Handle_METHOD_GetFloat" func="yes">
             <Overload retVal="public native float" descr="
 ">
                 <Param name="const char[] key"/>
                 <Param name="float defvalue=0.0"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_KeyValues_METHOD_GetNameSymbol" func="yes">
+        <KeyWord name="METHODMAP_KeyValues_Handle_METHOD_GetNameSymbol" func="yes">
             <Overload retVal="public native bool" descr="
 ">
                 <Param name="const char[] key"/>
                 <Param name="int &amp;id"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_KeyValues_METHOD_GetNum" func="yes">
+        <KeyWord name="METHODMAP_KeyValues_Handle_METHOD_GetNum" func="yes">
             <Overload retVal="public native int" descr="
 ">
                 <Param name="const char[] key"/>
                 <Param name="int defvalue=0"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_KeyValues_METHOD_GetSectionName" func="yes">
+        <KeyWord name="METHODMAP_KeyValues_Handle_METHOD_GetSectionName" func="yes">
             <Overload retVal="public native bool" descr="
 ">
                 <Param name="char[] section"/>
                 <Param name="int maxlength"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_KeyValues_METHOD_GetSectionSymbol" func="yes">
+        <KeyWord name="METHODMAP_KeyValues_Handle_METHOD_GetSectionSymbol" func="yes">
             <Overload retVal="public native bool" descr="
 ">
                 <Param name="int &amp;id"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_KeyValues_METHOD_GetString" func="yes">
+        <KeyWord name="METHODMAP_KeyValues_Handle_METHOD_GetString" func="yes">
             <Overload retVal="public native void" descr="
 ">
                 <Param name="const char[] key"/>
@@ -11024,7 +11024,7 @@ Return:
                 <Param name="const char[] defvalue=&apos;&apos;"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_KeyValues_METHOD_GetUInt64" func="yes">
+        <KeyWord name="METHODMAP_KeyValues_Handle_METHOD_GetUInt64" func="yes">
             <Overload retVal="public native void" descr="
 ">
                 <Param name="const char[] key"/>
@@ -11032,7 +11032,7 @@ Return:
                 <Param name="int defvalue[2]={0,0}"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_KeyValues_METHOD_GetVector" func="yes">
+        <KeyWord name="METHODMAP_KeyValues_Handle_METHOD_GetVector" func="yes">
             <Overload retVal="public native void" descr="
 ">
                 <Param name="const char[] key"/>
@@ -11040,71 +11040,71 @@ Return:
                 <Param name="const float defvalue[3]={0.0, 0.0, 0.0}"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_KeyValues_METHOD_GoBack" func="yes">
+        <KeyWord name="METHODMAP_KeyValues_Handle_METHOD_GoBack" func="yes">
             <Overload retVal="public native bool" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_KeyValues_METHOD_GotoFirstSubKey" func="yes">
-            <Overload retVal="public native bool" descr="
-">
-                <Param name="bool keyOnly=true"/>
-            </Overload>
-        </KeyWord>
-        <KeyWord name="METHODMAP_KeyValues_METHOD_GotoNextKey" func="yes">
+        <KeyWord name="METHODMAP_KeyValues_Handle_METHOD_GotoFirstSubKey" func="yes">
             <Overload retVal="public native bool" descr="
 ">
                 <Param name="bool keyOnly=true"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_KeyValues_METHOD_Import" func="yes">
+        <KeyWord name="METHODMAP_KeyValues_Handle_METHOD_GotoNextKey" func="yes">
+            <Overload retVal="public native bool" descr="
+">
+                <Param name="bool keyOnly=true"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="METHODMAP_KeyValues_Handle_METHOD_Import" func="yes">
             <Overload retVal="public native void" descr="
 ">
                 <Param name="KeyValues other"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_KeyValues_METHOD_ImportFromFile" func="yes">
+        <KeyWord name="METHODMAP_KeyValues_Handle_METHOD_ImportFromFile" func="yes">
             <Overload retVal="public native bool" descr="
 ">
                 <Param name="const char[] file"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_KeyValues_METHOD_ImportFromString" func="yes">
+        <KeyWord name="METHODMAP_KeyValues_Handle_METHOD_ImportFromString" func="yes">
             <Overload retVal="public native bool" descr="
 ">
                 <Param name="const char[] buffer"/>
                 <Param name="const char[] resourceName=&apos;StringToKeyValues&apos;"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_KeyValues_METHOD_JumpToKey" func="yes">
+        <KeyWord name="METHODMAP_KeyValues_Handle_METHOD_JumpToKey" func="yes">
             <Overload retVal="public native bool" descr="
 ">
                 <Param name="const char[] key"/>
                 <Param name="bool create=false"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_KeyValues_METHOD_JumpToKeySymbol" func="yes">
+        <KeyWord name="METHODMAP_KeyValues_Handle_METHOD_JumpToKeySymbol" func="yes">
             <Overload retVal="public native bool" descr="
 ">
                 <Param name="int id"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_KeyValues_METHOD_NodesInStack" func="yes">
+        <KeyWord name="METHODMAP_KeyValues_Handle_METHOD_NodesInStack" func="yes">
             <Overload retVal="public native int" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_KeyValues_METHOD_Rewind" func="yes">
+        <KeyWord name="METHODMAP_KeyValues_Handle_METHOD_Rewind" func="yes">
             <Overload retVal="public native void" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_KeyValues_METHOD_SavePosition" func="yes">
+        <KeyWord name="METHODMAP_KeyValues_Handle_METHOD_SavePosition" func="yes">
             <Overload retVal="public native void" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_KeyValues_METHOD_SetColor" func="yes">
+        <KeyWord name="METHODMAP_KeyValues_Handle_METHOD_SetColor" func="yes">
             <Overload retVal="public native void" descr="
 ">
                 <Param name="const char[] key"/>
@@ -11114,78 +11114,78 @@ Return:
                 <Param name="int a=0"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_KeyValues_METHOD_SetColor4" func="yes">
+        <KeyWord name="METHODMAP_KeyValues_Handle_METHOD_SetColor4" func="yes">
             <Overload retVal="public void" descr="
 ">
                 <Param name="const char[] key"/>
                 <Param name="const int color[4]"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_KeyValues_METHOD_SetEscapeSequences" func="yes">
+        <KeyWord name="METHODMAP_KeyValues_Handle_METHOD_SetEscapeSequences" func="yes">
             <Overload retVal="public native void" descr="
 ">
                 <Param name="bool useEscapes"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_KeyValues_METHOD_SetFloat" func="yes">
+        <KeyWord name="METHODMAP_KeyValues_Handle_METHOD_SetFloat" func="yes">
             <Overload retVal="public native void" descr="
 ">
                 <Param name="const char[] key"/>
                 <Param name="float value"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_KeyValues_METHOD_SetNum" func="yes">
+        <KeyWord name="METHODMAP_KeyValues_Handle_METHOD_SetNum" func="yes">
             <Overload retVal="public native void" descr="
 ">
                 <Param name="const char[] key"/>
                 <Param name="int value"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_KeyValues_METHOD_SetSectionName" func="yes">
+        <KeyWord name="METHODMAP_KeyValues_Handle_METHOD_SetSectionName" func="yes">
             <Overload retVal="public native void" descr="
 ">
                 <Param name="const char[] section"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_KeyValues_METHOD_SetString" func="yes">
+        <KeyWord name="METHODMAP_KeyValues_Handle_METHOD_SetString" func="yes">
             <Overload retVal="public native void" descr="
 ">
                 <Param name="const char[] key"/>
                 <Param name="const char[] value"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_KeyValues_METHOD_SetUInt64" func="yes">
+        <KeyWord name="METHODMAP_KeyValues_Handle_METHOD_SetUInt64" func="yes">
             <Overload retVal="public native void" descr="
 ">
                 <Param name="const char[] key"/>
                 <Param name="const int value[2]"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_KeyValues_METHOD_SetVector" func="yes">
+        <KeyWord name="METHODMAP_KeyValues_Handle_METHOD_SetVector" func="yes">
             <Overload retVal="public native void" descr="
 ">
                 <Param name="const char[] key"/>
                 <Param name="const float vec[3]"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_KeyValues_PROP_ExportLength" func="yes">
+        <KeyWord name="METHODMAP_KeyValues_Handle_PROP_ExportLength" func="yes">
             <Overload retVal="property int" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_KeyValues_PROP_ExportLength_get" func="yes">
-            <Overload retVal="public native " descr="
+        <KeyWord name="METHODMAP_KeyValues_Handle_PROP_ExportLength_get" func="yes">
+            <Overload retVal="public native Handle" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Menu_CONSTRUCTOR_Menu" func="yes">
-            <Overload retVal="public native " descr="
+        <KeyWord name="METHODMAP_Menu_Handle_CONSTRUCTOR_Menu" func="yes">
+            <Overload retVal="public native Handle" descr="
 ">
                 <Param name="MenuHandler handler"/>
                 <Param name="MenuAction actions=MENU_ACTIONS_DEFAULT"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Menu_METHOD_AddItem" func="yes">
+        <KeyWord name="METHODMAP_Menu_Handle_METHOD_AddItem" func="yes">
             <Overload retVal="public native bool" descr="
 ">
                 <Param name="const char[] info"/>
@@ -11193,19 +11193,19 @@ Return:
                 <Param name="int style=ITEMDRAW_DEFAULT"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Menu_METHOD_Cancel" func="yes">
+        <KeyWord name="METHODMAP_Menu_Handle_METHOD_Cancel" func="yes">
             <Overload retVal="public native void" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Menu_METHOD_Display" func="yes">
+        <KeyWord name="METHODMAP_Menu_Handle_METHOD_Display" func="yes">
             <Overload retVal="public native bool" descr="
 ">
                 <Param name="int client"/>
                 <Param name="int time"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Menu_METHOD_DisplayAt" func="yes">
+        <KeyWord name="METHODMAP_Menu_Handle_METHOD_DisplayAt" func="yes">
             <Overload retVal="public native bool" descr="
 ">
                 <Param name="int client"/>
@@ -11213,7 +11213,7 @@ Return:
                 <Param name="int time"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Menu_METHOD_DisplayVote" func="yes">
+        <KeyWord name="METHODMAP_Menu_Handle_METHOD_DisplayVote" func="yes">
             <Overload retVal="public native bool" descr="
 ">
                 <Param name="int[] clients"/>
@@ -11222,14 +11222,14 @@ Return:
                 <Param name="int flags=0"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Menu_METHOD_DisplayVoteToAll" func="yes">
+        <KeyWord name="METHODMAP_Menu_Handle_METHOD_DisplayVoteToAll" func="yes">
             <Overload retVal="public bool" descr="
 ">
                 <Param name="int time"/>
                 <Param name="int flags=0"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Menu_METHOD_GetItem" func="yes">
+        <KeyWord name="METHODMAP_Menu_Handle_METHOD_GetItem" func="yes">
             <Overload retVal="public native bool" descr="
 ">
                 <Param name="int position"/>
@@ -11240,14 +11240,14 @@ Return:
                 <Param name="int dispBufLen=0"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Menu_METHOD_GetTitle" func="yes">
+        <KeyWord name="METHODMAP_Menu_Handle_METHOD_GetTitle" func="yes">
             <Overload retVal="public native void" descr="
 ">
                 <Param name="char[] buffer"/>
                 <Param name="int maxlength"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Menu_METHOD_InsertItem" func="yes">
+        <KeyWord name="METHODMAP_Menu_Handle_METHOD_InsertItem" func="yes">
             <Overload retVal="public native bool" descr="
 ">
                 <Param name="int position"/>
@@ -11256,165 +11256,165 @@ Return:
                 <Param name="int style=ITEMDRAW_DEFAULT"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Menu_METHOD_RemoveAllItems" func="yes">
+        <KeyWord name="METHODMAP_Menu_Handle_METHOD_RemoveAllItems" func="yes">
             <Overload retVal="public native void" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Menu_METHOD_RemoveItem" func="yes">
+        <KeyWord name="METHODMAP_Menu_Handle_METHOD_RemoveItem" func="yes">
             <Overload retVal="public native bool" descr="
 ">
                 <Param name="int position"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Menu_METHOD_SetTitle" func="yes">
+        <KeyWord name="METHODMAP_Menu_Handle_METHOD_SetTitle" func="yes">
             <Overload retVal="public native void" descr="
 ">
                 <Param name="const char[] fmt"/>
                 <Param name="any ..."/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Menu_METHOD_ToPanel" func="yes">
+        <KeyWord name="METHODMAP_Menu_Handle_METHOD_ToPanel" func="yes">
             <Overload retVal="public native Panel" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Menu_PROP_ExitBackButton" func="yes">
+        <KeyWord name="METHODMAP_Menu_Handle_PROP_ExitBackButton" func="yes">
             <Overload retVal="property bool" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Menu_PROP_ExitBackButton_get" func="yes">
-            <Overload retVal="public native " descr="
+        <KeyWord name="METHODMAP_Menu_Handle_PROP_ExitBackButton_get" func="yes">
+            <Overload retVal="public native Handle" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Menu_PROP_ExitBackButton_set" func="yes">
-            <Overload retVal="public native " descr="
+        <KeyWord name="METHODMAP_Menu_Handle_PROP_ExitBackButton_set" func="yes">
+            <Overload retVal="public native Handle" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Menu_PROP_ExitButton" func="yes">
+        <KeyWord name="METHODMAP_Menu_Handle_PROP_ExitButton" func="yes">
             <Overload retVal="property bool" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Menu_PROP_ExitButton_get" func="yes">
-            <Overload retVal="public native " descr="
+        <KeyWord name="METHODMAP_Menu_Handle_PROP_ExitButton_get" func="yes">
+            <Overload retVal="public native Handle" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Menu_PROP_ExitButton_set" func="yes">
-            <Overload retVal="public native " descr="
+        <KeyWord name="METHODMAP_Menu_Handle_PROP_ExitButton_set" func="yes">
+            <Overload retVal="public native Handle" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Menu_PROP_ItemCount" func="yes">
+        <KeyWord name="METHODMAP_Menu_Handle_PROP_ItemCount" func="yes">
             <Overload retVal="property int" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Menu_PROP_ItemCount_get" func="yes">
-            <Overload retVal="public native " descr="
+        <KeyWord name="METHODMAP_Menu_Handle_PROP_ItemCount_get" func="yes">
+            <Overload retVal="public native Handle" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Menu_PROP_NoVoteButton" func="yes">
+        <KeyWord name="METHODMAP_Menu_Handle_PROP_NoVoteButton" func="yes">
             <Overload retVal="property bool" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Menu_PROP_NoVoteButton_set" func="yes">
-            <Overload retVal="public native " descr="
+        <KeyWord name="METHODMAP_Menu_Handle_PROP_NoVoteButton_set" func="yes">
+            <Overload retVal="public native Handle" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Menu_PROP_OptionFlags" func="yes">
+        <KeyWord name="METHODMAP_Menu_Handle_PROP_OptionFlags" func="yes">
             <Overload retVal="property int" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Menu_PROP_OptionFlags_get" func="yes">
-            <Overload retVal="public native " descr="
+        <KeyWord name="METHODMAP_Menu_Handle_PROP_OptionFlags_get" func="yes">
+            <Overload retVal="public native Handle" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Menu_PROP_OptionFlags_set" func="yes">
-            <Overload retVal="public native " descr="
+        <KeyWord name="METHODMAP_Menu_Handle_PROP_OptionFlags_set" func="yes">
+            <Overload retVal="public native Handle" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Menu_PROP_Pagination" func="yes">
+        <KeyWord name="METHODMAP_Menu_Handle_PROP_Pagination" func="yes">
             <Overload retVal="property int" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Menu_PROP_Pagination_get" func="yes">
-            <Overload retVal="public native " descr="
+        <KeyWord name="METHODMAP_Menu_Handle_PROP_Pagination_get" func="yes">
+            <Overload retVal="public native Handle" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Menu_PROP_Pagination_set" func="yes">
-            <Overload retVal="public native " descr="
+        <KeyWord name="METHODMAP_Menu_Handle_PROP_Pagination_set" func="yes">
+            <Overload retVal="public native Handle" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Menu_PROP_Selection" func="yes">
+        <KeyWord name="METHODMAP_Menu_Handle_PROP_Selection" func="yes">
             <Overload retVal="property int" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Menu_PROP_Selection_get" func="yes">
-            <Overload retVal="public native " descr="
+        <KeyWord name="METHODMAP_Menu_Handle_PROP_Selection_get" func="yes">
+            <Overload retVal="public native Handle" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Menu_PROP_Style" func="yes">
+        <KeyWord name="METHODMAP_Menu_Handle_PROP_Style" func="yes">
             <Overload retVal="property Handle" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Menu_PROP_Style_get" func="yes">
-            <Overload retVal="public native " descr="
+        <KeyWord name="METHODMAP_Menu_Handle_PROP_Style_get" func="yes">
+            <Overload retVal="public native Handle" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Menu_PROP_VoteResultCallback" func="yes">
+        <KeyWord name="METHODMAP_Menu_Handle_PROP_VoteResultCallback" func="yes">
             <Overload retVal="property VoteHandler" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Menu_PROP_VoteResultCallback_set" func="yes">
-            <Overload retVal="public native " descr="
+        <KeyWord name="METHODMAP_Menu_Handle_PROP_VoteResultCallback_set" func="yes">
+            <Overload retVal="public native Handle" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Panel_CONSTRUCTOR_Panel" func="yes">
-            <Overload retVal="public native " descr="
+        <KeyWord name="METHODMAP_Panel_Handle_CONSTRUCTOR_Panel" func="yes">
+            <Overload retVal="public native Handle" descr="
 ">
                 <Param name="Handle hStyle = null"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Panel_METHOD_CanDrawFlags" func="yes">
+        <KeyWord name="METHODMAP_Panel_Handle_METHOD_CanDrawFlags" func="yes">
             <Overload retVal="public native bool" descr="
 ">
                 <Param name="int style"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Panel_METHOD_DrawItem" func="yes">
+        <KeyWord name="METHODMAP_Panel_Handle_METHOD_DrawItem" func="yes">
             <Overload retVal="public native int" descr="
 ">
                 <Param name="const char[] text"/>
                 <Param name="int style=ITEMDRAW_DEFAULT"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Panel_METHOD_DrawText" func="yes">
+        <KeyWord name="METHODMAP_Panel_Handle_METHOD_DrawText" func="yes">
             <Overload retVal="public native bool" descr="
 ">
                 <Param name="const char[] text"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Panel_METHOD_Send" func="yes">
+        <KeyWord name="METHODMAP_Panel_Handle_METHOD_Send" func="yes">
             <Overload retVal="public native bool" descr="
 ">
                 <Param name="int client"/>
@@ -11422,123 +11422,123 @@ Return:
                 <Param name="int time"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Panel_METHOD_SetKeys" func="yes">
+        <KeyWord name="METHODMAP_Panel_Handle_METHOD_SetKeys" func="yes">
             <Overload retVal="public native bool" descr="
 ">
                 <Param name="int keys"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Panel_METHOD_SetTitle" func="yes">
+        <KeyWord name="METHODMAP_Panel_Handle_METHOD_SetTitle" func="yes">
             <Overload retVal="public native void" descr="
 ">
                 <Param name="const char[] text"/>
                 <Param name="bool onlyIfEmpty=false"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Panel_PROP_CurrentKey" func="yes">
+        <KeyWord name="METHODMAP_Panel_Handle_PROP_CurrentKey" func="yes">
             <Overload retVal="property int" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Panel_PROP_CurrentKey_get" func="yes">
-            <Overload retVal="public native " descr="
+        <KeyWord name="METHODMAP_Panel_Handle_PROP_CurrentKey_get" func="yes">
+            <Overload retVal="public native Handle" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Panel_PROP_CurrentKey_set" func="yes">
-            <Overload retVal="public native " descr="
+        <KeyWord name="METHODMAP_Panel_Handle_PROP_CurrentKey_set" func="yes">
+            <Overload retVal="public native Handle" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Panel_PROP_Style" func="yes">
+        <KeyWord name="METHODMAP_Panel_Handle_PROP_Style" func="yes">
             <Overload retVal="property Handle" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Panel_PROP_Style_get" func="yes">
-            <Overload retVal="public native " descr="
+        <KeyWord name="METHODMAP_Panel_Handle_PROP_Style_get" func="yes">
+            <Overload retVal="public native Handle" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Panel_PROP_TextRemaining" func="yes">
+        <KeyWord name="METHODMAP_Panel_Handle_PROP_TextRemaining" func="yes">
             <Overload retVal="property int" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Panel_PROP_TextRemaining_get" func="yes">
-            <Overload retVal="public native " descr="
+        <KeyWord name="METHODMAP_Panel_Handle_PROP_TextRemaining_get" func="yes">
+            <Overload retVal="public native Handle" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Protobuf_METHOD_AddAngle" func="yes">
+        <KeyWord name="METHODMAP_Protobuf_Handle_METHOD_AddAngle" func="yes">
             <Overload retVal="public native void" descr="
 ">
                 <Param name="const char[] field"/>
                 <Param name="const float angle[3]"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Protobuf_METHOD_AddBool" func="yes">
+        <KeyWord name="METHODMAP_Protobuf_Handle_METHOD_AddBool" func="yes">
             <Overload retVal="public native void" descr="
 ">
                 <Param name="const char[] field"/>
                 <Param name="bool value"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Protobuf_METHOD_AddColor" func="yes">
+        <KeyWord name="METHODMAP_Protobuf_Handle_METHOD_AddColor" func="yes">
             <Overload retVal="public native void" descr="
 ">
                 <Param name="const char[] field"/>
                 <Param name="const int color[4]"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Protobuf_METHOD_AddFloat" func="yes">
+        <KeyWord name="METHODMAP_Protobuf_Handle_METHOD_AddFloat" func="yes">
             <Overload retVal="public native void" descr="
 ">
                 <Param name="const char[] field"/>
                 <Param name="float value"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Protobuf_METHOD_AddInt" func="yes">
+        <KeyWord name="METHODMAP_Protobuf_Handle_METHOD_AddInt" func="yes">
             <Overload retVal="public native void" descr="
 ">
                 <Param name="const char[] field"/>
                 <Param name="int value"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Protobuf_METHOD_AddMessage" func="yes">
+        <KeyWord name="METHODMAP_Protobuf_Handle_METHOD_AddMessage" func="yes">
             <Overload retVal="public native Protobuf" descr="
 ">
                 <Param name="const char[] field"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Protobuf_METHOD_AddString" func="yes">
+        <KeyWord name="METHODMAP_Protobuf_Handle_METHOD_AddString" func="yes">
             <Overload retVal="public native void" descr="
 ">
                 <Param name="const char[] field"/>
                 <Param name="const char[] value"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Protobuf_METHOD_AddVector" func="yes">
+        <KeyWord name="METHODMAP_Protobuf_Handle_METHOD_AddVector" func="yes">
             <Overload retVal="public native void" descr="
 ">
                 <Param name="const char[] field"/>
                 <Param name="const float vec[3]"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Protobuf_METHOD_AddVector2D" func="yes">
+        <KeyWord name="METHODMAP_Protobuf_Handle_METHOD_AddVector2D" func="yes">
             <Overload retVal="public native void" descr="
 ">
                 <Param name="const char[] field"/>
                 <Param name="const float vec[2]"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Protobuf_METHOD_GetRepeatedFieldCount" func="yes">
+        <KeyWord name="METHODMAP_Protobuf_Handle_METHOD_GetRepeatedFieldCount" func="yes">
             <Overload retVal="public native int" descr="
 ">
                 <Param name="const char[] field"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Protobuf_METHOD_ReadAngle" func="yes">
+        <KeyWord name="METHODMAP_Protobuf_Handle_METHOD_ReadAngle" func="yes">
             <Overload retVal="public native void" descr="
 ">
                 <Param name="const char[] field"/>
@@ -11546,14 +11546,14 @@ Return:
                 <Param name="int index = PB_FIELD_NOT_REPEATED"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Protobuf_METHOD_ReadBool" func="yes">
+        <KeyWord name="METHODMAP_Protobuf_Handle_METHOD_ReadBool" func="yes">
             <Overload retVal="public native bool" descr="
 ">
                 <Param name="const char[] field"/>
                 <Param name="int index = PB_FIELD_NOT_REPEATED"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Protobuf_METHOD_ReadColor" func="yes">
+        <KeyWord name="METHODMAP_Protobuf_Handle_METHOD_ReadColor" func="yes">
             <Overload retVal="public native void" descr="
 ">
                 <Param name="const char[] field"/>
@@ -11561,34 +11561,34 @@ Return:
                 <Param name="int index = PB_FIELD_NOT_REPEATED"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Protobuf_METHOD_ReadFloat" func="yes">
+        <KeyWord name="METHODMAP_Protobuf_Handle_METHOD_ReadFloat" func="yes">
             <Overload retVal="public native float" descr="
 ">
                 <Param name="const char[] field"/>
                 <Param name="int index = PB_FIELD_NOT_REPEATED"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Protobuf_METHOD_ReadInt" func="yes">
+        <KeyWord name="METHODMAP_Protobuf_Handle_METHOD_ReadInt" func="yes">
             <Overload retVal="public native int" descr="
 ">
                 <Param name="const char[] field"/>
                 <Param name="int index = PB_FIELD_NOT_REPEATED"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Protobuf_METHOD_ReadMessage" func="yes">
+        <KeyWord name="METHODMAP_Protobuf_Handle_METHOD_ReadMessage" func="yes">
             <Overload retVal="public native Protobuf" descr="
 ">
                 <Param name="const char[] field"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Protobuf_METHOD_ReadRepeatedMessage" func="yes">
+        <KeyWord name="METHODMAP_Protobuf_Handle_METHOD_ReadRepeatedMessage" func="yes">
             <Overload retVal="public native Protobuf" descr="
 ">
                 <Param name="const char[] field"/>
                 <Param name="int index"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Protobuf_METHOD_ReadString" func="yes">
+        <KeyWord name="METHODMAP_Protobuf_Handle_METHOD_ReadString" func="yes">
             <Overload retVal="public native void" descr="
 ">
                 <Param name="const char[] field"/>
@@ -11597,7 +11597,7 @@ Return:
                 <Param name="int index = PB_FIELD_NOT_REPEATED"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Protobuf_METHOD_ReadVector" func="yes">
+        <KeyWord name="METHODMAP_Protobuf_Handle_METHOD_ReadVector" func="yes">
             <Overload retVal="public native void" descr="
 ">
                 <Param name="const char[] field"/>
@@ -11605,7 +11605,7 @@ Return:
                 <Param name="int index = PB_FIELD_NOT_REPEATED"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Protobuf_METHOD_ReadVector2D" func="yes">
+        <KeyWord name="METHODMAP_Protobuf_Handle_METHOD_ReadVector2D" func="yes">
             <Overload retVal="public native void" descr="
 ">
                 <Param name="const char[] field"/>
@@ -11613,14 +11613,14 @@ Return:
                 <Param name="int index = PB_FIELD_NOT_REPEATED"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Protobuf_METHOD_RemoveRepeatedFieldValue" func="yes">
+        <KeyWord name="METHODMAP_Protobuf_Handle_METHOD_RemoveRepeatedFieldValue" func="yes">
             <Overload retVal="public native void" descr="
 ">
                 <Param name="const char[] field"/>
                 <Param name="int index"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Protobuf_METHOD_SetAngle" func="yes">
+        <KeyWord name="METHODMAP_Protobuf_Handle_METHOD_SetAngle" func="yes">
             <Overload retVal="public native void" descr="
 ">
                 <Param name="const char[] field"/>
@@ -11628,7 +11628,7 @@ Return:
                 <Param name="int index = PB_FIELD_NOT_REPEATED"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Protobuf_METHOD_SetBool" func="yes">
+        <KeyWord name="METHODMAP_Protobuf_Handle_METHOD_SetBool" func="yes">
             <Overload retVal="public native void" descr="
 ">
                 <Param name="const char[] field"/>
@@ -11636,7 +11636,7 @@ Return:
                 <Param name="int index = PB_FIELD_NOT_REPEATED"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Protobuf_METHOD_SetColor" func="yes">
+        <KeyWord name="METHODMAP_Protobuf_Handle_METHOD_SetColor" func="yes">
             <Overload retVal="public native void" descr="
 ">
                 <Param name="const char[] field"/>
@@ -11644,7 +11644,7 @@ Return:
                 <Param name="int index = PB_FIELD_NOT_REPEATED"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Protobuf_METHOD_SetFloat" func="yes">
+        <KeyWord name="METHODMAP_Protobuf_Handle_METHOD_SetFloat" func="yes">
             <Overload retVal="public native void" descr="
 ">
                 <Param name="const char[] field"/>
@@ -11652,7 +11652,7 @@ Return:
                 <Param name="int index = PB_FIELD_NOT_REPEATED"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Protobuf_METHOD_SetInt" func="yes">
+        <KeyWord name="METHODMAP_Protobuf_Handle_METHOD_SetInt" func="yes">
             <Overload retVal="public native int" descr="
 ">
                 <Param name="const char[] field"/>
@@ -11660,7 +11660,7 @@ Return:
                 <Param name="int index = PB_FIELD_NOT_REPEATED"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Protobuf_METHOD_SetString" func="yes">
+        <KeyWord name="METHODMAP_Protobuf_Handle_METHOD_SetString" func="yes">
             <Overload retVal="public native void" descr="
 ">
                 <Param name="const char[] field"/>
@@ -11668,7 +11668,7 @@ Return:
                 <Param name="int index = PB_FIELD_NOT_REPEATED"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Protobuf_METHOD_SetVector" func="yes">
+        <KeyWord name="METHODMAP_Protobuf_Handle_METHOD_SetVector" func="yes">
             <Overload retVal="public native void" descr="
 ">
                 <Param name="const char[] field"/>
@@ -11676,7 +11676,7 @@ Return:
                 <Param name="int index = PB_FIELD_NOT_REPEATED"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Protobuf_METHOD_SetVector2D" func="yes">
+        <KeyWord name="METHODMAP_Protobuf_Handle_METHOD_SetVector2D" func="yes">
             <Overload retVal="public native void" descr="
 ">
                 <Param name="const char[] field"/>
@@ -11684,8 +11684,8 @@ Return:
                 <Param name="int index = PB_FIELD_NOT_REPEATED"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Regex_CONSTRUCTOR_Regex" func="yes">
-            <Overload retVal="public native " descr="
+        <KeyWord name="METHODMAP_Regex_Handle_CONSTRUCTOR_Regex" func="yes">
+            <Overload retVal="public native Handle" descr="
 ">
                 <Param name="const char[] pattern"/>
                 <Param name="int flags = 0"/>
@@ -11694,13 +11694,13 @@ Return:
                 <Param name="RegexError &amp;errcode = REGEX_ERROR_NONE"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Regex_METHOD_CaptureCount" func="yes">
+        <KeyWord name="METHODMAP_Regex_Handle_METHOD_CaptureCount" func="yes">
             <Overload retVal="public native int" descr="
 ">
                 <Param name="int match = 0"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Regex_METHOD_GetSubString" func="yes">
+        <KeyWord name="METHODMAP_Regex_Handle_METHOD_GetSubString" func="yes">
             <Overload retVal="public native bool" descr="
 ">
                 <Param name="int str_id"/>
@@ -11709,7 +11709,7 @@ Return:
                 <Param name="int match = 0"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Regex_METHOD_Match" func="yes">
+        <KeyWord name="METHODMAP_Regex_Handle_METHOD_Match" func="yes">
             <Overload retVal="public native int" descr="
 ">
                 <Param name="const char[] str"/>
@@ -11717,30 +11717,30 @@ Return:
                 <Param name="int offset = 0"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Regex_METHOD_MatchAll" func="yes">
+        <KeyWord name="METHODMAP_Regex_Handle_METHOD_MatchAll" func="yes">
             <Overload retVal="public native int" descr="
 ">
                 <Param name="const char[] str"/>
                 <Param name="RegexError &amp;ret = REGEX_ERROR_NONE"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Regex_METHOD_MatchCount" func="yes">
+        <KeyWord name="METHODMAP_Regex_Handle_METHOD_MatchCount" func="yes">
             <Overload retVal="public native int" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Regex_METHOD_MatchOffset" func="yes">
+        <KeyWord name="METHODMAP_Regex_Handle_METHOD_MatchOffset" func="yes">
             <Overload retVal="public native int" descr="
 ">
                 <Param name="int match = 0"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_SMCParser_CONSTRUCTOR_SMCParser" func="yes">
-            <Overload retVal="public native " descr="
+        <KeyWord name="METHODMAP_SMCParser_Handle_CONSTRUCTOR_SMCParser" func="yes">
+            <Overload retVal="public native Handle" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_SMCParser_METHOD_GetErrorString" func="yes">
+        <KeyWord name="METHODMAP_SMCParser_Handle_METHOD_GetErrorString" func="yes">
             <Overload retVal="public native void" descr="
 ">
                 <Param name="SMCError error"/>
@@ -11748,7 +11748,7 @@ Return:
                 <Param name="int buf_max"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_SMCParser_METHOD_ParseFile" func="yes">
+        <KeyWord name="METHODMAP_SMCParser_Handle_METHOD_ParseFile" func="yes">
             <Overload retVal="public native SMCError" descr="
 ">
                 <Param name="const char[] file"/>
@@ -11756,77 +11756,77 @@ Return:
                 <Param name="int &amp;col = 0"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_SMCParser_PROP_OnEnd" func="yes">
+        <KeyWord name="METHODMAP_SMCParser_Handle_PROP_OnEnd" func="yes">
             <Overload retVal="property SMC_ParseEnd" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_SMCParser_PROP_OnEnd_set" func="yes">
-            <Overload retVal="public native " descr="
+        <KeyWord name="METHODMAP_SMCParser_Handle_PROP_OnEnd_set" func="yes">
+            <Overload retVal="public native Handle" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_SMCParser_PROP_OnEnterSection" func="yes">
+        <KeyWord name="METHODMAP_SMCParser_Handle_PROP_OnEnterSection" func="yes">
             <Overload retVal="property SMC_NewSection" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_SMCParser_PROP_OnEnterSection_set" func="yes">
-            <Overload retVal="public native " descr="
+        <KeyWord name="METHODMAP_SMCParser_Handle_PROP_OnEnterSection_set" func="yes">
+            <Overload retVal="public native Handle" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_SMCParser_PROP_OnKeyValue" func="yes">
+        <KeyWord name="METHODMAP_SMCParser_Handle_PROP_OnKeyValue" func="yes">
             <Overload retVal="property SMC_KeyValue" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_SMCParser_PROP_OnKeyValue_set" func="yes">
-            <Overload retVal="public native " descr="
+        <KeyWord name="METHODMAP_SMCParser_Handle_PROP_OnKeyValue_set" func="yes">
+            <Overload retVal="public native Handle" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_SMCParser_PROP_OnLeaveSection" func="yes">
+        <KeyWord name="METHODMAP_SMCParser_Handle_PROP_OnLeaveSection" func="yes">
             <Overload retVal="property SMC_EndSection" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_SMCParser_PROP_OnLeaveSection_set" func="yes">
-            <Overload retVal="public native " descr="
+        <KeyWord name="METHODMAP_SMCParser_Handle_PROP_OnLeaveSection_set" func="yes">
+            <Overload retVal="public native Handle" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_SMCParser_PROP_OnRawLine" func="yes">
+        <KeyWord name="METHODMAP_SMCParser_Handle_PROP_OnRawLine" func="yes">
             <Overload retVal="property SMC_RawLine" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_SMCParser_PROP_OnRawLine_set" func="yes">
-            <Overload retVal="public native " descr="
+        <KeyWord name="METHODMAP_SMCParser_Handle_PROP_OnRawLine_set" func="yes">
+            <Overload retVal="public native Handle" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_SMCParser_PROP_OnStart" func="yes">
+        <KeyWord name="METHODMAP_SMCParser_Handle_PROP_OnStart" func="yes">
             <Overload retVal="property SMC_ParseStart" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_SMCParser_PROP_OnStart_set" func="yes">
-            <Overload retVal="public native " descr="
+        <KeyWord name="METHODMAP_SMCParser_Handle_PROP_OnStart_set" func="yes">
+            <Overload retVal="public native Handle" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_StringMap_CONSTRUCTOR_StringMap" func="yes">
-            <Overload retVal="public native " descr="
+        <KeyWord name="METHODMAP_StringMap_Handle_CONSTRUCTOR_StringMap" func="yes">
+            <Overload retVal="public native Handle" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_StringMap_METHOD_Clear" func="yes">
+        <KeyWord name="METHODMAP_StringMap_Handle_METHOD_Clear" func="yes">
             <Overload retVal="public native void" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_StringMap_METHOD_GetArray" func="yes">
+        <KeyWord name="METHODMAP_StringMap_Handle_METHOD_GetArray" func="yes">
             <Overload retVal="public native bool" descr="
 ">
                 <Param name="const char[] key"/>
@@ -11835,7 +11835,7 @@ Return:
                 <Param name="int &amp;size=0"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_StringMap_METHOD_GetString" func="yes">
+        <KeyWord name="METHODMAP_StringMap_Handle_METHOD_GetString" func="yes">
             <Overload retVal="public native bool" descr="
 ">
                 <Param name="const char[] key"/>
@@ -11844,20 +11844,20 @@ Return:
                 <Param name="int &amp;size=0"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_StringMap_METHOD_GetValue" func="yes">
+        <KeyWord name="METHODMAP_StringMap_Handle_METHOD_GetValue" func="yes">
             <Overload retVal="public native bool" descr="
 ">
                 <Param name="const char[] key"/>
                 <Param name="any &amp;value"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_StringMap_METHOD_Remove" func="yes">
+        <KeyWord name="METHODMAP_StringMap_Handle_METHOD_Remove" func="yes">
             <Overload retVal="public native bool" descr="
 ">
                 <Param name="const char[] key"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_StringMap_METHOD_SetArray" func="yes">
+        <KeyWord name="METHODMAP_StringMap_Handle_METHOD_SetArray" func="yes">
             <Overload retVal="public native bool" descr="
 ">
                 <Param name="const char[] key"/>
@@ -11866,7 +11866,7 @@ Return:
                 <Param name="bool replace=true"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_StringMap_METHOD_SetString" func="yes">
+        <KeyWord name="METHODMAP_StringMap_Handle_METHOD_SetString" func="yes">
             <Overload retVal="public native bool" descr="
 ">
                 <Param name="const char[] key"/>
@@ -11874,7 +11874,7 @@ Return:
                 <Param name="bool replace=true"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_StringMap_METHOD_SetValue" func="yes">
+        <KeyWord name="METHODMAP_StringMap_Handle_METHOD_SetValue" func="yes">
             <Overload retVal="public native bool" descr="
 ">
                 <Param name="const char[] key"/>
@@ -11882,22 +11882,22 @@ Return:
                 <Param name="bool replace=true"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_StringMap_METHOD_Snapshot" func="yes">
+        <KeyWord name="METHODMAP_StringMap_Handle_METHOD_Snapshot" func="yes">
             <Overload retVal="public native StringMapSnapshot" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_StringMap_PROP_Size" func="yes">
+        <KeyWord name="METHODMAP_StringMap_Handle_PROP_Size" func="yes">
             <Overload retVal="property int" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_StringMap_PROP_Size_get" func="yes">
-            <Overload retVal="public native " descr="
+        <KeyWord name="METHODMAP_StringMap_Handle_PROP_Size_get" func="yes">
+            <Overload retVal="public native Handle" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_StringMapSnapshot_METHOD_GetKey" func="yes">
+        <KeyWord name="METHODMAP_StringMapSnapshot_Handle_METHOD_GetKey" func="yes">
             <Overload retVal="public native int" descr="
 ">
                 <Param name="int index"/>
@@ -11905,29 +11905,29 @@ Return:
                 <Param name="int maxlength"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_StringMapSnapshot_METHOD_KeyBufferSize" func="yes">
+        <KeyWord name="METHODMAP_StringMapSnapshot_Handle_METHOD_KeyBufferSize" func="yes">
             <Overload retVal="public native int" descr="
 ">
                 <Param name="int index"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_StringMapSnapshot_PROP_Length" func="yes">
+        <KeyWord name="METHODMAP_StringMapSnapshot_Handle_PROP_Length" func="yes">
             <Overload retVal="property int" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_StringMapSnapshot_PROP_Length_get" func="yes">
-            <Overload retVal="public native " descr="
+        <KeyWord name="METHODMAP_StringMapSnapshot_Handle_PROP_Length_get" func="yes">
+            <Overload retVal="public native Handle" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_TopMenu_CONSTRUCTOR_TopMenu" func="yes">
-            <Overload retVal="public native " descr="
+        <KeyWord name="METHODMAP_TopMenu_Handle_CONSTRUCTOR_TopMenu" func="yes">
+            <Overload retVal="public native Handle" descr="
 ">
                 <Param name="TopMenuHandler handler"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_TopMenu_METHOD_AddCategory" func="yes">
+        <KeyWord name="METHODMAP_TopMenu_Handle_METHOD_AddCategory" func="yes">
             <Overload retVal="public native TopMenuObject" descr="
 ">
                 <Param name="const char[] name"/>
@@ -11937,7 +11937,7 @@ Return:
                 <Param name="const char[] info_string = &apos;&apos;"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_TopMenu_METHOD_AddItem" func="yes">
+        <KeyWord name="METHODMAP_TopMenu_Handle_METHOD_AddItem" func="yes">
             <Overload retVal="public native TopMenuObject" descr="
 ">
                 <Param name="const char[] name"/>
@@ -11948,27 +11948,27 @@ Return:
                 <Param name="const char[] info_string = &apos;&apos;"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_TopMenu_METHOD_Display" func="yes">
+        <KeyWord name="METHODMAP_TopMenu_Handle_METHOD_Display" func="yes">
             <Overload retVal="public native bool" descr="
 ">
                 <Param name="int client"/>
                 <Param name="TopMenuPosition position"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_TopMenu_METHOD_DisplayCategory" func="yes">
+        <KeyWord name="METHODMAP_TopMenu_Handle_METHOD_DisplayCategory" func="yes">
             <Overload retVal="public native bool" descr="
 ">
                 <Param name="TopMenuObject category"/>
                 <Param name="int client"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_TopMenu_METHOD_FindCategory" func="yes">
+        <KeyWord name="METHODMAP_TopMenu_Handle_METHOD_FindCategory" func="yes">
             <Overload retVal="public native TopMenuObject" descr="
 ">
                 <Param name="const char[] name"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_TopMenu_METHOD_GetInfoString" func="yes">
+        <KeyWord name="METHODMAP_TopMenu_Handle_METHOD_GetInfoString" func="yes">
             <Overload retVal="public native int" descr="
 ">
                 <Param name="TopMenuObject parent"/>
@@ -11976,7 +11976,7 @@ Return:
                 <Param name="int maxlength"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_TopMenu_METHOD_GetObjName" func="yes">
+        <KeyWord name="METHODMAP_TopMenu_Handle_METHOD_GetObjName" func="yes">
             <Overload retVal="public native int" descr="
 ">
                 <Param name="TopMenuObject topobj"/>
@@ -11984,7 +11984,7 @@ Return:
                 <Param name="int maxlength"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_TopMenu_METHOD_LoadConfig" func="yes">
+        <KeyWord name="METHODMAP_TopMenu_Handle_METHOD_LoadConfig" func="yes">
             <Overload retVal="public native bool" descr="
 ">
                 <Param name="const char[] file"/>
@@ -11992,28 +11992,28 @@ Return:
                 <Param name="int maxlength"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_TopMenu_METHOD_Remove" func="yes">
+        <KeyWord name="METHODMAP_TopMenu_Handle_METHOD_Remove" func="yes">
             <Overload retVal="public native void" descr="
 ">
                 <Param name="TopMenuObject topobj"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_TopMenu_PROP_CacheTitles" func="yes">
+        <KeyWord name="METHODMAP_TopMenu_Handle_PROP_CacheTitles" func="yes">
             <Overload retVal="property bool" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_TopMenu_PROP_CacheTitles_set" func="yes">
-            <Overload retVal="public native " descr="
+        <KeyWord name="METHODMAP_TopMenu_Handle_PROP_CacheTitles_set" func="yes">
+            <Overload retVal="public native Handle" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Transaction_CONSTRUCTOR_Transaction" func="yes">
-            <Overload retVal="public native " descr="
+        <KeyWord name="METHODMAP_Transaction_Handle_CONSTRUCTOR_Transaction" func="yes">
+            <Overload retVal="public native Handle" descr="
 ">
             </Overload>
         </KeyWord>
-        <KeyWord name="METHODMAP_Transaction_METHOD_AddQuery" func="yes">
+        <KeyWord name="METHODMAP_Transaction_Handle_METHOD_AddQuery" func="yes">
             <Overload retVal="public native int" descr="
 ">
                 <Param name="const char[] query"/>
