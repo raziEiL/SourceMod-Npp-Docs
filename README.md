@@ -29,11 +29,11 @@ Here the new API docs with all (I hope) function, define, enum, methodmap and fi
 # Notepad++
 
 ## Autocompletion
-API files are located in the **plugins\APIs\\** subfolder of the Notepad++ installation folder. Use **sm_makedocs** command to generate docs (or get the latest [release](https://github.com/raziEiL/SourceMod-Npp-Docs/releases/latest)). Files will be created in the **plugins\NPP\\** subfolder of sourcemod folder. Copy **sourcemod.xm**l file to Notepad++ API folder. The completion list can be triggered automatically as you type, via settings in **Settings -> Preferences -> Auto-Completion:** Auto-Completion is enabled by a checkbox. Additionally there is a setting "From X th character", accepting a the minimum length of a prefix needed before the completion list is shown (some people like 2, some 3, some 4...); and, there is a setting to specify which candidates should be used: words, functions, or both.
+API files are located in the **plugins\APIs\\** subfolder of the Notepad++ installation folder. Use **sm_makedocs** command to generate docs (or get the latest [release](https://github.com/raziEiL/SourceMod-Npp-Docs/releases/latest)). Files will be created in the **plugins\NPP\\** subfolder of sourcemod folder. Copy **sourcemod.xml** file to Notepad++ API folder. The completion list can be triggered automatically as you type, via settings in **Settings -> Preferences -> Auto-Completion:** Auto-Completion is enabled by a checkbox. Additionally there is a setting "From X th character", accepting a the minimum length of a prefix needed before the completion list is shown (some people like 2, some 3, some 4...); and, there is a setting to specify which candidates should be used: words, functions, or both.
 
 ## Highlights
 Check **plugins\NPP\\** folder for **NPP_STYLE** files. These files contain defining the keyword lists for the SourcePawn language. Open one of those files, select keywords and copy. Go to **Notepd++ -> Lanuguage -> Define your language...** Create new/update your language and past keywords to the Keywords Lists group. Do it for other groups too. Configurate you own style: color, font, etc... Read more about [UDL 2.0](https://udl20.weebly.com/index.html)
-
+>**Note:** Define your language as **sourcemod**
 # Methodmap notes
 ![Docs screenshot](https://github.com/raziEiL/SourceMod-Npp-Docs/blob/master/img/docs%20list.png "Inline docs: methodmap strings")  
 These strings are not exist SourceMod function! Purpose of these strings provide access to docs and show methodmap structure. Notepad++ don't reacts on dots in names (exp: fileArray.GetString) and docs not shown, so `.` were separated with `_` symbol.
