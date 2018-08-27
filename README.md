@@ -40,6 +40,7 @@ If you want to configurate it or update keyword check **plugins\NPP\\** folder f
 
 ## Autocompletion
 Copy **sourcemod.xml** file from **SourceMod docs** folder to **Notepad++ API** folder. Done! The completion list can be triggered automatically as you type, via settings in **Settings -> Preferences -> Auto-Completion:** Auto-Completion is enabled by a checkbox. Additionally there is a setting "From X th character", accepting a the minimum length of a prefix needed before the completion list is shown (some people like 2, some 3, some 4...); and, there is a setting to specify which candidates should be used: words, functions, or both.
+>**Note:** Autocompletion supports only **case-sensitive** input! (Due to Notepad++ issue, **case-insensitive** input makes docs pop up incorrectly).
 
 # Methodmap notes
 ![Docs screenshot](https://github.com/raziEiL/SourceMod-Npp-Docs/blob/master/img/docs%20list.png "Inline docs: methodmap strings")  
