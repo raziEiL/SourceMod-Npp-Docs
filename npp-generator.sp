@@ -1,4 +1,4 @@
-#define PLUGIN_VERSION "1.2.6"
+#define PLUGIN_VERSION "1.2.7"
 
 #pragma newdecls required
 #pragma semicolon 1
@@ -11,7 +11,7 @@
 //-----------------------------------
 // Pre-compiler option
 //-----------------------------------
-#define DEBUG_BYTES (DEBUG_BYTE_LOG_FILE|DEBUG_BYTE_ERROR|DEBUG_BYTE_COMMON) // bytes mask
+#define DEBUG_BYTES (DEBUG_BYTE_LOG_FILE|DEBUG_BYTE_ERROR|DEBUG_BYTE_COMMON|DEBUG_BYTE_COMMENTARY) // bytes mask
 // write to NPP_STYLE_FUNCTION file all strings but fake mothodmaps (e.g., METHODMAP_ArrayList_Handle_METHOD_GetArray)
 #define ADD_NPP_STYLE_METHODMAP 1
 #define ADD_DOCS_OPERATORS_MISC 1
@@ -54,6 +54,12 @@
 #define COMMENT_RETURN			3
 #define COMMENT_TOTAL			4
 
+#define READSTRING_BYTE_INVALID	1
+#define READSTRING_BYTE_VALID	2
+#define READSTRING_BYTE_BUFFER	4
+#define READSTRING_BYTE_INLINE	8
+#define READSTRING_BYTE_LAST	16
+
 #define	MAX_WIDTH				28
 #define WIDTH					MAX_WIDTH - 4
 #define SPACE_CHAR				' '
@@ -89,7 +95,7 @@ public Plugin myinfo =
 
 char	g_Debug[][24] = {"COMMON", "FUNC PARAM", "METHODMAP", "BRACKET", "COMMENTARY", "XML", "ERROR"},
 		g_FuncPrefix[][] = {"forward", "native", "stock", "public native", "property", "public" },
-		g_CommentType[COMMENT_TOTAL][] = { "Params:", "Notes:", "Error:", "Return:" }, 
+		g_CommentType[COMMENT_TOTAL][] = { "Params:", "Notes:", "Error:", "Return:" },
 		DEBUG[1024], g_MethodmapName[48], g_MethodmapTag[48];
 
 #if USE_SHORT_PREFIX
@@ -297,7 +303,7 @@ void ReadIncludeFile(char[] filepath, int fileArrayIdx=-1, char[] search="")
 	}
 
 	int value, i;
-	bool comment_buffer, found_comment, found_params, found_return, found_error, found_func, found_property, in_property;
+	bool found_params, found_return, found_error, found_func, found_property, in_property;
 	char temp[1024], buffer[1024], funcprefix[14], retval[32], funcname[128], funcnameBak[128], funcparam[32], lastPropName[128], retval2[32];
 
 	ArrayList array_comment[COMMENT_TOTAL];
@@ -305,32 +311,40 @@ void ReadIncludeFile(char[] filepath, int fileArrayIdx=-1, char[] search="")
 		array_comment[elem] = CreateArray(ByteCountToCells(1024));
 
 	bool isMethodmap, diveInDeep;
-	int nextDeep, propDeep, currentDeep, commentDeep, tempVal, tempVal2;
-
-
+	int comment_byte, nextDeep, propDeep, currentDeep, commentDeep, tempVal, tempVal2;
+	Debug(DEBUG_BYTE_COMMON, "----- NEW FILE ------");
 	Debug(DEBUG_BYTE_COMMON, "ReadIncludeFile(PATH=%s, fileIndex=%d, search=%s)", filepath, fileArrayIdx, search);
+
+	ReadString("", 0, true);
 
 	while (ReadFileLine(file, buffer, 1023))
 	{
-		if (!ReadString(buffer, 1023, found_comment))
+		Debug(DEBUG_BYTE_COMMON, "----- new line ------");
+		comment_byte = ReadString(buffer, 1023);
+
+		if (comment_byte & READSTRING_BYTE_INVALID)
 		{
-			if (found_comment)
-			{
-				found_params = false;
-				found_return = false;
-				found_error = false;
-
-				for (i = 0; i < COMMENT_TOTAL; i++)
-					ClearArray(array_comment[i]);
-
-				commentDeep = nextDeep;
-			}
 			continue;
 		}
+		else if ((comment_byte & READSTRING_BYTE_LAST) && (comment_byte & (READSTRING_BYTE_BUFFER|READSTRING_BYTE_INLINE)))
+		{
+			found_params = false;
+			found_return = false;
+			found_error = false;
+
+			for (i = 0; i < COMMENT_TOTAL; i++)
+				ClearArray(array_comment[i]);
+
+			Debug(DEBUG_BYTE_COMMENTARY, "clear all comments");
+
+			commentDeep = nextDeep;
+		}
+
+		Debug(DEBUG_BYTE_COMMENTARY, "'%s' byte=%d, %s, Buffer: %d, Inline: %d, Last was comment: %d", buffer,comment_byte, READSTRING_BYTE_INVALID & comment_byte ? "Invalid" : "Valid", (READSTRING_BYTE_BUFFER & comment_byte) != 0, (READSTRING_BYTE_INLINE & comment_byte) != 0, (READSTRING_BYTE_LAST & comment_byte) != 0 );
 
 		diveInDeep = false;
 
-		if (!found_comment){
+		if (!(comment_byte & (READSTRING_BYTE_BUFFER|READSTRING_BYTE_INLINE))){
 
 			tempVal = CountCharInString(buffer, '{');
 			tempVal2 = CountCharInString(buffer, '}');
@@ -368,7 +382,8 @@ void ReadIncludeFile(char[] filepath, int fileArrayIdx=-1, char[] search="")
 				}
 			}
 		}
-		if (found_comment)
+
+		if (comment_byte & (READSTRING_BYTE_BUFFER|READSTRING_BYTE_INLINE))
 		{
 			if (!search[0])
 			{
@@ -376,11 +391,10 @@ void ReadIncludeFile(char[] filepath, int fileArrayIdx=-1, char[] search="")
 				continue;
 			}
 
-			Debug(DEBUG_BYTE_COMMENTARY, "'%s'", buffer);
-
-			if ((value = FindCharInString2(buffer, '*')) != -1)
+			if (buffer[0] == '*'/* (value = FindCharInString2(buffer, '*')) != -1 */)
 			{
-				strcopy(buffer, 1023, buffer[++value]);
+				strcopy(buffer, 1023, buffer[1]);
+				//strcopy(buffer, 1023, buffer[++value]);
 			}
 
 			TrimString(buffer);
@@ -395,6 +409,7 @@ void ReadIncludeFile(char[] filepath, int fileArrayIdx=-1, char[] search="")
 				StrContains(buffer, TEXT_NORETURN) == -1 &&
 				StrContains(buffer, TEXT_ERROR) == -1)
 			{
+				Debug(DEBUG_BYTE_COMMENTARY, "'%s'", buffer);
 				if (found_params)
 				{
 					FormatEx(temp, 1023, "%s%s", SPACE_X28, buffer);
@@ -565,7 +580,7 @@ void ReadIncludeFile(char[] filepath, int fileArrayIdx=-1, char[] search="")
 				{
 					while (ReadFileLine(file, buffer, 1023))
 					{
-						if (!ReadString(buffer, 1023, found_comment, comment_buffer) || comment_buffer)
+						if (ReadString(buffer, 1023) & (READSTRING_BYTE_INVALID|READSTRING_BYTE_BUFFER|READSTRING_BYTE_INLINE))
 						{
 							continue;
 						}
@@ -582,7 +597,7 @@ void ReadIncludeFile(char[] filepath, int fileArrayIdx=-1, char[] search="")
 
 								while (ReadFileLine(file, buffer, 1023))
 								{
-									if (!ReadString(buffer, 1023, found_comment, comment_buffer) || comment_buffer)
+									if (ReadString(buffer, 1023) & (READSTRING_BYTE_INVALID|READSTRING_BYTE_BUFFER|READSTRING_BYTE_INLINE))
 									{
 										continue;
 									}
@@ -631,7 +646,7 @@ void ReadIncludeFile(char[] filepath, int fileArrayIdx=-1, char[] search="")
 						if (isMethodmap){
 
 							Debug(DEBUG_BYTE_COMMON, "%s", funcname);
-								
+
 							if (found_property)
 								temp = g_Prefix[PREFIX_PROP];
 							else if (!retval[0]){
@@ -643,21 +658,22 @@ void ReadIncludeFile(char[] filepath, int fileArrayIdx=-1, char[] search="")
 								temp = g_Prefix[PREFIX_METHOD];
 
 							strcopy(funcnameBak, sizeof(funcnameBak), funcname);
-							
+
 							if (g_MethodmapTag[0])
-								Format(funcname, 128, "%s%s_%s_%s_%s", g_Prefix[PREFIX_METHODMAP], g_MethodmapName, g_MethodmapTag, temp, funcname);
+								Format(temp, 128, "%s%s_%s_%s_", g_Prefix[PREFIX_METHODMAP], g_MethodmapName, g_MethodmapTag, temp);
 							else
-								Format(funcname, 128, "%s%s_%s_%s", g_Prefix[PREFIX_METHODMAP], g_MethodmapName, temp, funcname);
+								Format(temp, 128, "%s%s_%s_", g_Prefix[PREFIX_METHODMAP], g_MethodmapName, temp);
+
+							Format(funcname, 128, "%s%s", temp, funcname);
 
 							Debug(DEBUG_BYTE_COMMON, "Ftype:Methodmap: %s", funcname);
 
-							// TODO: Ð´Ð¾Ð´ÐµÐ»Ð°Ñ‚ÑŒ Ð¿Ñ€Ð¾Ð¿ÐµÑ€Ñ‚Ð¸
 							if (!in_property)
 								lastPropName = funcname;
 							else {
 								i = 0;
 								GetTrieValue(g_Property, lastPropName, i);
-								
+
 								if (strcmp(funcnameBak, "get") == 0)
 									i |= PROP_BYTE_GET;
 								else if (strcmp(funcnameBak, "set") == 0)
@@ -666,7 +682,7 @@ void ReadIncludeFile(char[] filepath, int fileArrayIdx=-1, char[] search="")
 								SetTrieValue(g_Property, lastPropName, i);
 								Debug(DEBUG_BYTE_COMMON, "Set lastprop get/set byte: val=%d, '%s'", i, lastPropName);
 								continue;
-							}	
+							}
 						}
 						else
 							Debug(DEBUG_BYTE_COMMON, "Ftype:Normal: funcname='%s', retval='%s' ", funcname, retval[0] ? retval : (retval2[0] ? retval2 : "void"));
@@ -675,7 +691,7 @@ void ReadIncludeFile(char[] filepath, int fileArrayIdx=-1, char[] search="")
 						{
 							if (strcmp(funcname, search) == 0)
 							{
-								
+
 								WriteFileLine(g_FileSourcemodXML, "%s<KeyWord name=\"%s\" func=\"yes\">", SPACE_X8, funcname);
 								WriteFileLine(g_FileSourcemodXML, "%s<Overload retVal=\"%s %s\" descr=\"", SPACE_X12, funcprefix, retval[0] ? retval : (retval2[0] ? retval2 : "void"));
 
@@ -688,23 +704,26 @@ void ReadIncludeFile(char[] filepath, int fileArrayIdx=-1, char[] search="")
 
 								if (isMethodmap){
 
+									WriteFileLine(g_FileSourcemodXML, "Methodmap notes:");
+									WriteFileLine(g_FileSourcemodXML, "%sThis string are not exist SourceMod function!\n%sTo use function remove the '%s' prefix\n%sRead more here: https://github.com/raziEiL/SourceMod-Npp-Docs", SPACE_X4, SPACE_X4, temp, SPACE_X4);
+
 									Debug(DEBUG_BYTE_COMMON, "trie search: '%s', result=%d", funcname, GetTrieValue(g_Property, funcname, i));
-									
+
 									if (GetTrieValue(g_Property, funcname, i)){
-									
+
 										WriteFileLine(g_FileSourcemodXML, "Property methods:");
-										
+
 										if (i){
 											if (i & PROP_BYTE_GET)
 												WriteFileLine(g_FileSourcemodXML, "%sHas getter", SPACE_X4);
 											if (i & PROP_BYTE_SET)
 												WriteFileLine(g_FileSourcemodXML, "%sHas setter", SPACE_X4);
 										}
-										else 
+										else
 											WriteFileLine(g_FileSourcemodXML, "%sNone", SPACE_X4);
 									}
 								}
-									
+
 								if (currentDeep == commentDeep)
 								{
 									for (int comment = 0; comment < COMMENT_TOTAL; comment++){
@@ -712,12 +731,14 @@ void ReadIncludeFile(char[] filepath, int fileArrayIdx=-1, char[] search="")
 										if ((value = GetArraySize(array_comment[comment])))
 										{
 											WriteFileLine(g_FileSourcemodXML, g_CommentType[comment]);
+											Debug(DEBUG_BYTE_COMMENTARY, "comment type: '%s'", g_CommentType[comment]);
 											for (i = 0; i < value; i++)
 											{
 												temp[0] = 0;
 												GetArrayString(array_comment[comment], i, temp, 1023);
 												ValidateXML(temp, 1023);
 												WriteFileLine(g_FileSourcemodXML, temp);
+												Debug(DEBUG_BYTE_COMMENTARY, "'%s'", temp);
 											}
 										}
 									}
@@ -770,89 +791,75 @@ void ReadIncludeFile(char[] filepath, int fileArrayIdx=-1, char[] search="")
 	CloseHandle(file);
 }
 
-int ReadString(char[] buffer, int maxlength, bool &found_comment=false, bool &comment_buffer=false)
+int ReadString(char[] buffer, int maxlength, bool clear = false)
 {
+	static int pos, byte;
+	static bool comment_start, last_line, c_buffer, comment_buffer;
+	comment_start = false;
+
+	if (clear){
+		last_line = c_buffer = false;
+		return 0;
+	}
+
 	ReplaceString(buffer, maxlength, "\t", " ");
 	ReplaceString(buffer, maxlength, "\"", "'");
 	ReplaceString(buffer, maxlength, "%", "%%");
+	TrimString(buffer);
 
-	static int len, i;
-	if ((len = strlen(buffer)) && !found_comment)
+	if (strlen(buffer))
 	{
-		for (i = 0; i < len; i++)
-		{
-			if (buffer[i] == '/' && buffer[i+1] == '/')
+		pos = 0;
+
+		if (!comment_buffer){
+
+			if (buffer[0] == '/' && (buffer[1] == '/' || (c_buffer = comment_buffer = buffer[1] == '*')))
 			{
-				buffer[i] = 0;
-				break;
+				comment_start = true;
+				strcopy(buffer, 1023, buffer[2]);
+				Debug(DEBUG_BYTE_COMMENTARY, "%s comment: '%s'", comment_buffer ? "block" : "inline" , buffer);
+
 			}
 		}
-	}
 
-	static bool comment_start, comment_end;
-	static int pos;
-	static char temp[1024];
-	pos = 0;
-	comment_start = comment_end = false;
-
-	TrimString(buffer);
-	if ((len = strlen(buffer)))
-	{
-		if (found_comment)
-			comment_buffer = true;
-
-		if ((pos = StrContains(buffer, "/*")) != -1)
+		if (comment_buffer && (pos = StrContains(buffer, "*/")) != -1)
 		{
-			comment_start = true;
-			strcopy(temp, 1023, buffer[pos+2]);
+			c_buffer = false;
 			buffer[pos] = 0;
 			TrimString(buffer);
 
-			if ((pos = StrContains(temp, "*/")) != -1)
-			{
-				comment_end = true;
-				strcopy(temp, 1023, temp[pos+2]);
-				TrimString(temp);
-			}
-			else
-			{
-				temp[0] = 0;
-			}
+			Debug(DEBUG_BYTE_COMMENTARY, "end of block comment: '%s'", buffer);
+		}
 
-			if (strlen(buffer) || strlen(temp))
-			{
-				comment_buffer = false;
-				Format(buffer, maxlength, "%s%s", buffer, temp);
-			}
-			temp[0] = 0;
+		if (!comment_start && !comment_buffer){
+
+			if ((pos = StrContains(buffer, "/*")) != -1 || (pos = StrContains(buffer, "//")) != -1)
+				buffer[pos] = 0;
 		}
-		else if ((pos = StrContains(buffer, "*/")) != -1)
-		{
-			comment_end = true;
-			comment_buffer = false;
-			strcopy(buffer, maxlength, buffer[pos+2]);
-		}
+		//else if (comment_buffer)
+		//	Debug(DEBUG_BYTE_COMMENTARY, "in block comment: '%s'", buffer);
 
 		TrimString(buffer);
-		len = strlen(buffer);
 	}
 
-	if (comment_start && comment_end)
-	{
-		comment_start = false;
-		comment_end = false;
-	}
+	byte = strlen(buffer) ? READSTRING_BYTE_VALID : READSTRING_BYTE_INVALID;
 
-	if (comment_start)
-	{
-		found_comment = comment_start;
-	}
-	else if (comment_end)
-	{
-		found_comment = comment_start;
-	}
+	if (comment_buffer)
+		byte |= READSTRING_BYTE_BUFFER;
+	else if (comment_start)
+		byte |= READSTRING_BYTE_INLINE;
 
-	return len;
+	if (last_line)
+		byte |= READSTRING_BYTE_LAST;
+
+	if (!(byte & READSTRING_BYTE_INLINE) && !(byte & READSTRING_BYTE_BUFFER))
+		last_line = true;
+	else if ((byte & READSTRING_BYTE_INLINE) || (byte & READSTRING_BYTE_BUFFER))
+		last_line = false;
+
+	comment_buffer = c_buffer;
+
+	return byte;
 }
 
 bool ReadFuncString(char[] buffer, char[] retval, char[] funcname, bool found_property = false, bool in_property = false)
@@ -1262,7 +1269,7 @@ public void ValidateXML(char[] text, int size)
 			}
 		}
 	}
-	// TODO: Ð¿Ñ€Ð¾Ð²ÐµÑ€Ð¸Ñ‚ÑŒ ÐºÐ¾Ð»-Ð²Ð¾ Ð¿Ð¾Ð»ÑƒÑ‡Ð°ÐµÐ¼Ñ‹Ñ… Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ð¹ Ð´Ð»Â§ g_XMLFixCount
+	// TODO: ïðîâåðèòü êîë-âî ïîëó÷àåìûõ çíà÷åíèé äëÿ g_XMLFixCount
 	g_XMLFixCount += ReplaceString(text, 1023, "<", "&lt;");
 	g_XMLFixCount += ReplaceString(text, 1023, ">", "&gt;");
 	g_XMLFixCount += ReplaceString(text, 1023, "'", "&apos;");
