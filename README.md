@@ -17,9 +17,9 @@ Here the new API docs with all (I hope) function, define, enum, methodmap and fi
  - Added more console stats.
  - Added xml filter.
  - Code optimization.
- - Detect all func params.
- - Detect enum & define correctly.
- - Detect methodmap selection.
+ - Detects all func params.
+ - Detects enum & define correctly.
+ - Detects methodmap selection.
  - Makes keywords to pop up correctly.
 
  
