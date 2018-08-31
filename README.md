@@ -46,7 +46,7 @@ Copy **sourcemod.xml** file from **SourceMod docs** folder to **Notepad++ API** 
 
 # Methodmap notes
 ![Docs screenshot](https://github.com/raziEiL/SourceMod-Npp-Docs/blob/master/img/docs%20list.png "Inline docs: methodmap strings")  
-These strings are not exist SourceMod function! Purpose of these strings provide access to docs and show methodmap structure. Notepad++ don't reacts on dots in names (exp: fileArray.GetString) and docs not shown, so `.` were separated with `_` symbol.
+These strings are not actual SourceMod functions. The purpose of these strings is to provide access to documentation showing the methodmap structure. Notepad++ don't reacts on dots in names (exp: fileArray.GetString) and docs not shown, so `.` were separated with `_` symbol.
 >**Note:** If you want to use string as code you must remove prefix and separate `_` with `.`  
 >**Note:** If you want to watch docs you must do the vice versa.
 
