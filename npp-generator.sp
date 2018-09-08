@@ -1,4 +1,4 @@
-#define PLUGIN_VERSION "1.2.7"
+#define PLUGIN_VERSION "1.2.8"
 
 #pragma newdecls required
 #pragma semicolon 1
@@ -6,12 +6,10 @@
 #include <sourcemod>
 #include <profiler>
 
-// TODO: check -> file, property
-
 //-----------------------------------
 // Pre-compiler option
 //-----------------------------------
-#define DEBUG_BYTES (DEBUG_BYTE_LOG_FILE|DEBUG_BYTE_ERROR|DEBUG_BYTE_COMMON|DEBUG_BYTE_COMMENTARY) // bytes mask
+#define DEBUG_BITS (DEBUG_BIT_LOG|DEBUG_BIT_ERROR|DEBUG_BIT_COMMON|DEBUG_BIT_COMMENTARY)
 // write to NPP_STYLE_FUNCTION file all strings but fake mothodmaps (e.g., METHODMAP_ArrayList_Handle_METHOD_GetArray)
 #define ADD_NPP_STYLE_METHODMAP 1
 #define ADD_DOCS_OPERATORS_MISC 1
@@ -21,44 +19,65 @@
 // -----------------------------------
 
 // bits
-#define DEBUG_BYTE_PRINT_SERVER	1
-#define DEBUG_BYTE_LOG_FILE		2
-#define DEBUG_BYTE_COMMON		4
-#define DEBUG_BYTE_FUNC_PARAM 	8
-#define DEBUG_BYTE_METHODMAP 	16
-#define DEBUG_BYTE_BRACKET 		32
-#define DEBUG_BYTE_COMMENTARY	64
-#define DEBUG_BYTE_XML			128
-#define DEBUG_BYTE_ERROR		256
-#define DEBUG_BYTE_ALL			510
+enum (<<= 1)
+{
+	DEBUG_BIT_COMMON = 1,
+	DEBUG_BIT_FUNC_PARAM,
+	DEBUG_BIT_METHODMAP,
+	DEBUG_BIT_BRACKET,
+	DEBUG_BIT_COMMENTARY,
+	DEBUG_BIT_XML,
+	DEBUG_BIT_ERROR,
+	// <- adds new bit here
+	DEBUG_BIT_PRINT,
+	DEBUG_BIT_LOG,
+	DEBUG_BIT_ALL = 510
+}
 
-#define PROP_BYTE_GET			1
-#define PROP_BYTE_SET			2
+enum (<<= 1)
+{
+	PROP_BIT_GET = 1,
+	PROP_BIT_SET
+}
 
-#define DEBUG_TAG_COMMOM 		0
-#define DEBUG_TAG_FUNC_PARAM 	1
-#define DEBUG_TAG_METHODMAP 	2
-#define DEBUG_TAG_BRACKET 		3
-#define DEBUG_TAG_COMMENTARY 	4
-#define DEBUG_TAG_XML 			5
-#define DEBUG_TAG_ERROR 		6
+enum ()
+{
+	DEBUG_TAG_COMMOM,
+	DEBUG_TAG_FUNC_PARAM,
+	DEBUG_TAG_METHODMAP,
+	DEBUG_TAG_BRACKET,
+	DEBUG_TAG_COMMENTARY,
+	DEBUG_TAG_XML,
+	DEBUG_TAG_ERROR,
+	DEBUG_TOTAL
+}
 
-#define PREFIX_METHODMAP		0
-#define PREFIX_METHOD			1
-#define PREFIX_CONSTRUCTOR		2
-#define PREFIX_PROP				3
+enum ()
+{
+	PREFIX_METHODMAP,
+	PREFIX_METHOD,
+	PREFIX_CONSTRUCTOR,
+	PREFIX_PROP,
+	PREFIX_TOTAL
+}
 
-#define COMMENT_PARAM			0
-#define COMMENT_NOTES			1
-#define COMMENT_ERROR			2
-#define COMMENT_RETURN			3
-#define COMMENT_TOTAL			4
+enum ()
+{
+	COMMENT_PARAM,
+	COMMENT_NOTES,
+	COMMENT_ERROR,
+	COMMENT_RETURN,
+	COMMENT_TOTAL
+}
 
-#define READSTRING_BYTE_INVALID	1
-#define READSTRING_BYTE_VALID	2
-#define READSTRING_BYTE_BUFFER	4
-#define READSTRING_BYTE_INLINE	8
-#define READSTRING_BYTE_LAST	16
+enum (<<= 1)
+{
+	READSTRING_BIT_INVALID = 1,
+	READSTRING_BIT_VALID,
+	READSTRING_BIT_BUFFER,
+	READSTRING_BIT_INLINE,
+	READSTRING_BIT_LAST
+}
 
 #define	MAX_WIDTH				28
 #define WIDTH					MAX_WIDTH - 4
@@ -80,9 +99,9 @@
 #define FILE_MISC				"addons/sourcemod/plugins/NPP/NPP_STYLE_MISC.sp"
 // ( ) [ ] ; , - style separator
 #define NPP_STYLE_OPERATORS		"( ) [ ] ; , * / % + - << >> >>> < > <= >= == != & && ^ | || ? : = += -= *= /= %= &= ^= |= <<= >>= >>>= ++ -- ~ !"
-#define NPP_STYLE_OPERATORS_MISC "for if else do while switch case default return break delete continue new decl public stock const enum forward static funcenum functag native sizeof view_as true false union function methodmap typedef property struct this"
+#define NPP_STYLE_OPERATORS_MISC "for if else do while switch case default return break delete continue new decl public stock const enum forward static funcenum functag native sizeof view_as true false union function methodmap typedef property struct this null"
 #define NPP_STYLE_VARIABLES		"bool char int float Handle"
-#define LOG						"logs\\generator.log"
+#define LOG						"logs\\npp-generator.log"
 
 public Plugin myinfo =
 {
@@ -93,39 +112,39 @@ public Plugin myinfo =
 	url = "https://github.com/raziEiL/SourceMod-Npp-Docs"
 }
 
-char	g_Debug[][24] = {"COMMON", "FUNC PARAM", "METHODMAP", "BRACKET", "COMMENTARY", "XML", "ERROR"},
-		g_FuncPrefix[][] = {"forward", "native", "stock", "public native", "property", "public" },
-		g_CommentType[COMMENT_TOTAL][] = { "Params:", "Notes:", "Error:", "Return:" },
-		DEBUG[1024], g_MethodmapName[48], g_MethodmapTag[48];
+char	g_Debug[DEBUG_TOTAL][] = {"COMMON", "FUNC PARAM", "METHODMAP", "BRACKET", "COMMENTARY", "XML", "ERROR"},
+		g_FuncPrefix[][] = {"forward", "native", "stock", "public native", "property", "public"},
+		g_CommentType[COMMENT_TOTAL][] = {"Params:", "Notes:", "Error:", "Return:"},
+		DEBUG[PLATFORM_MAX_PATH], g_MethodmapName[48], g_MethodmapTag[48];
 
 #if USE_SHORT_PREFIX
-char g_Prefix[][] = {"MM_", "M", "C", "P"};
+char g_Prefix[PREFIX_TOTAL][] = {"MM_", "M", "C", "P"};
 #else
-char g_Prefix[][] = {"METHODMAP_", "METHOD", "CONSTRUCTOR", "PROP"};
+char g_Prefix[PREFIX_TOTAL][] = {"METHODMAP_", "METHOD", "CONSTRUCTOR", "PROP"};
 #endif
 
-File fileDebug, g_FileSourcemodXML;
+File g_FileDebug, g_FileSourcemodXML;
 StringMap g_FuncTrie, g_Property;
 ArrayList g_FuncArray, g_ConstArray, g_MiscArray; // Class ,tag, vars
 int g_XMLFixCount;
 
 public void OnPluginStart()
 {
-#if (DEBUG_BYTES & DEBUG_BYTE_LOG_FILE)
-	BuildPath(Path_SM, DEBUG, sizeof(DEBUG), LOG);
+#if (DEBUG_BITS & DEBUG_BIT_LOG)
+	BuildPath(Path_SM, DEBUG, PLATFORM_MAX_PATH, LOG);
 #endif
 	RegServerCmd("sm_makedocs", Cmd_Start, "starts to parse SourceMod includes and generates output files");
 }
 
 public Action Cmd_Start(int argc)
 {
-	PrintToServer("> starts to parse includes! (debug bytes = %d)", DEBUG_BYTES);
+	PrintToServer("> starts to parse includes! (debug bytes = %d)", DEBUG_BITS);
 
-#if (DEBUG_BYTES & DEBUG_BYTE_LOG_FILE)
-	fileDebug = OpenFile(DEBUG, "wb");
+#if (DEBUG_BITS & DEBUG_BIT_LOG)
+	g_FileDebug = OpenFile(DEBUG, "wb");
 #endif
 
-	Debug(DEBUG_BYTE_COMMON, "--------------------------------------------");
+	Debug(DEBUG_BIT_COMMON, "--------------------------------------------");
 	g_XMLFixCount = 0;
 	Handle prof = CreateProfiler();
 	StartProfiling(prof);
@@ -141,11 +160,11 @@ public Action Cmd_Start(int argc)
 	g_ConstArray = CreateArray(ByteCountToCells(64));
 	g_MiscArray = CreateArray(ByteCountToCells(64));
 
-	Debug(DEBUG_BYTE_COMMON, "> --------------------------------");
-	Debug(DEBUG_BYTE_COMMON, "> PARSING STARTED");
-	Debug(DEBUG_BYTE_COMMON, "> --------------------------------");
-	Debug(DEBUG_BYTE_COMMON, "> I. ADD IN ARRAY");
-	Debug(DEBUG_BYTE_COMMON, "> --------------------------------");
+	Debug(DEBUG_BIT_COMMON, "> --------------------------------");
+	Debug(DEBUG_BIT_COMMON, "> PARSING STARTED");
+	Debug(DEBUG_BIT_COMMON, "> --------------------------------");
+	Debug(DEBUG_BIT_COMMON, "> I. ADD IN ARRAY");
+	Debug(DEBUG_BIT_COMMON, "> --------------------------------");
 
 	if ((size = ReadDirFileList(fileArray, PATH_INCLUDE, "inc")))
 	{
@@ -156,9 +175,9 @@ public Action Cmd_Start(int argc)
 		}
 	}
 
-	Debug(DEBUG_BYTE_COMMON, "> --------------------------------");
-	Debug(DEBUG_BYTE_COMMON, "> II. SORT ARRAY AND WRITE");
-	Debug(DEBUG_BYTE_COMMON, "> --------------------------------");
+	Debug(DEBUG_BIT_COMMON, "> --------------------------------");
+	Debug(DEBUG_BIT_COMMON, "> II. SORT ARRAY AND WRITE");
+	Debug(DEBUG_BIT_COMMON, "> --------------------------------");
 
 	SortADTArrayCustom(g_FuncArray, SortFuncADTArray);
 	File file = OpenFile(FILE_FUNCTIONS, "wb");
@@ -284,7 +303,7 @@ public Action Cmd_Start(int argc)
 	file.WriteLine("%s\n", NPP_STYLE_OPERATORS);
 	file.WriteLine(NPP_STYLE_OPERATORS_MISC);
 	delete file;
-	delete fileDebug;
+	delete g_FileDebug;
 
 	StopProfiling(prof);
 	PrintToServer("> Job Done!\n> Time used: %.2fs. / XML error fixed: %d\n> Totally generated: function: %d, misc %d, define %d", GetProfilerTime(prof), g_XMLFixCount, count[0], count[1], count[2]);
@@ -312,21 +331,21 @@ void ReadIncludeFile(char[] filepath, int fileArrayIdx=-1, char[] search="")
 
 	bool isMethodmap, diveInDeep;
 	int comment_byte, nextDeep, propDeep, currentDeep, commentDeep, tempVal, tempVal2;
-	Debug(DEBUG_BYTE_COMMON, "----- NEW FILE ------");
-	Debug(DEBUG_BYTE_COMMON, "ReadIncludeFile(PATH=%s, fileIndex=%d, search=%s)", filepath, fileArrayIdx, search);
+	Debug(DEBUG_BIT_COMMON, "----- NEW FILE ------");
+	Debug(DEBUG_BIT_COMMON, "ReadIncludeFile(PATH=%s, fileIndex=%d, search=%s)", filepath, fileArrayIdx, search);
 
 	ReadString("", 0, true);
 
 	while (ReadFileLine(file, buffer, 1023))
 	{
-		Debug(DEBUG_BYTE_COMMON, "----- new line ------");
+		Debug(DEBUG_BIT_COMMON, "----- new line ------");
 		comment_byte = ReadString(buffer, 1023);
 
-		if (comment_byte & READSTRING_BYTE_INVALID)
+		if (comment_byte & READSTRING_BIT_INVALID)
 		{
 			continue;
 		}
-		else if ((comment_byte & READSTRING_BYTE_LAST) && (comment_byte & (READSTRING_BYTE_BUFFER|READSTRING_BYTE_INLINE)))
+		else if ((comment_byte & READSTRING_BIT_LAST) && (comment_byte & (READSTRING_BIT_BUFFER|READSTRING_BIT_INLINE)))
 		{
 			found_params = false;
 			found_return = false;
@@ -335,16 +354,16 @@ void ReadIncludeFile(char[] filepath, int fileArrayIdx=-1, char[] search="")
 			for (i = 0; i < COMMENT_TOTAL; i++)
 				ClearArray(array_comment[i]);
 
-			Debug(DEBUG_BYTE_COMMENTARY, "clear all comments");
+			Debug(DEBUG_BIT_COMMENTARY, "clear all comments");
 
 			commentDeep = nextDeep;
 		}
 
-		Debug(DEBUG_BYTE_COMMENTARY, "'%s' byte=%d, %s, Buffer: %d, Inline: %d, Last was comment: %d", buffer,comment_byte, READSTRING_BYTE_INVALID & comment_byte ? "Invalid" : "Valid", (READSTRING_BYTE_BUFFER & comment_byte) != 0, (READSTRING_BYTE_INLINE & comment_byte) != 0, (READSTRING_BYTE_LAST & comment_byte) != 0 );
+		Debug(DEBUG_BIT_COMMENTARY, "'%s' byte=%d, %s, Buffer: %d, Inline: %d, Last was comment: %d", buffer,comment_byte, READSTRING_BIT_INVALID & comment_byte ? "Invalid" : "Valid", (READSTRING_BIT_BUFFER & comment_byte) != 0, (READSTRING_BIT_INLINE & comment_byte) != 0, (READSTRING_BIT_LAST & comment_byte) != 0 );
 
 		diveInDeep = false;
 
-		if (!(comment_byte & (READSTRING_BYTE_BUFFER|READSTRING_BYTE_INLINE))){
+		if (!(comment_byte & (READSTRING_BIT_BUFFER|READSTRING_BIT_INLINE))){
 
 			tempVal = CountCharInString(buffer, '{');
 			tempVal2 = CountCharInString(buffer, '}');
@@ -352,7 +371,7 @@ void ReadIncludeFile(char[] filepath, int fileArrayIdx=-1, char[] search="")
 			diveInDeep = tempVal > tempVal2;
 			nextDeep += tempVal - tempVal2;
 			currentDeep = nextDeep - (diveInDeep ? 1 : 0);
-			Debug(DEBUG_BYTE_BRACKET, "%d - current, %d - next", currentDeep, nextDeep);
+			Debug(DEBUG_BIT_BRACKET, "%d - current, %d - next", currentDeep, nextDeep);
 
 			// check if in methodmap selection
 
@@ -375,7 +394,7 @@ void ReadIncludeFile(char[] filepath, int fileArrayIdx=-1, char[] search="")
 
 				if (nextDeep <= propDeep){
 					found_property = in_property = false;
-					Debug(DEBUG_BYTE_BRACKET, "prop brackets ended");
+					Debug(DEBUG_BIT_BRACKET, "prop brackets ended");
 				}
 				else {
 					in_property = true;
@@ -383,11 +402,11 @@ void ReadIncludeFile(char[] filepath, int fileArrayIdx=-1, char[] search="")
 			}
 		}
 
-		if (comment_byte & (READSTRING_BYTE_BUFFER|READSTRING_BYTE_INLINE))
+		if (comment_byte & (READSTRING_BIT_BUFFER|READSTRING_BIT_INLINE))
 		{
 			if (!search[0])
 			{
-				Debug(DEBUG_BYTE_COMMENTARY, "skip comment");
+				Debug(DEBUG_BIT_COMMENTARY, "skip comment");
 				continue;
 			}
 
@@ -409,7 +428,7 @@ void ReadIncludeFile(char[] filepath, int fileArrayIdx=-1, char[] search="")
 				StrContains(buffer, TEXT_NORETURN) == -1 &&
 				StrContains(buffer, TEXT_ERROR) == -1)
 			{
-				Debug(DEBUG_BYTE_COMMENTARY, "'%s'", buffer);
+				Debug(DEBUG_BIT_COMMENTARY, "'%s'", buffer);
 				if (found_params)
 				{
 					FormatEx(temp, 1023, "%s%s", SPACE_X28, buffer);
@@ -580,7 +599,7 @@ void ReadIncludeFile(char[] filepath, int fileArrayIdx=-1, char[] search="")
 				{
 					while (ReadFileLine(file, buffer, 1023))
 					{
-						if (ReadString(buffer, 1023) & (READSTRING_BYTE_INVALID|READSTRING_BYTE_BUFFER|READSTRING_BYTE_INLINE))
+						if (ReadString(buffer, 1023) & (READSTRING_BIT_INVALID|READSTRING_BIT_BUFFER|READSTRING_BIT_INLINE))
 						{
 							continue;
 						}
@@ -597,7 +616,7 @@ void ReadIncludeFile(char[] filepath, int fileArrayIdx=-1, char[] search="")
 
 								while (ReadFileLine(file, buffer, 1023))
 								{
-									if (ReadString(buffer, 1023) & (READSTRING_BYTE_INVALID|READSTRING_BYTE_BUFFER|READSTRING_BYTE_INLINE))
+									if (ReadString(buffer, 1023) & (READSTRING_BIT_INVALID|READSTRING_BIT_BUFFER|READSTRING_BIT_INLINE))
 									{
 										continue;
 									}
@@ -626,7 +645,7 @@ void ReadIncludeFile(char[] filepath, int fileArrayIdx=-1, char[] search="")
 					if (strcmp(funcprefix, g_FuncPrefix[i]) == 0){
 						found_func = true;
 						strcopy(buffer, sizeof(buffer)-tempVal, buffer[tempVal]);
-						Debug(DEBUG_BYTE_COMMON, "Ffound: funcprefix='%s' funcname='%s'", funcprefix, buffer);
+						Debug(DEBUG_BIT_COMMON, "Ffound: funcprefix='%s' funcname='%s'", funcprefix, buffer);
 						break;
 					}
 				}
@@ -645,7 +664,7 @@ void ReadIncludeFile(char[] filepath, int fileArrayIdx=-1, char[] search="")
 
 						if (isMethodmap){
 
-							Debug(DEBUG_BYTE_COMMON, "%s", funcname);
+							Debug(DEBUG_BIT_COMMON, "%s", funcname);
 
 							if (found_property)
 								temp = g_Prefix[PREFIX_PROP];
@@ -666,7 +685,7 @@ void ReadIncludeFile(char[] filepath, int fileArrayIdx=-1, char[] search="")
 
 							Format(funcname, 128, "%s%s", temp, funcname);
 
-							Debug(DEBUG_BYTE_COMMON, "Ftype:Methodmap: %s", funcname);
+							Debug(DEBUG_BIT_COMMON, "Ftype:Methodmap: %s", funcname);
 
 							if (!in_property)
 								lastPropName = funcname;
@@ -675,17 +694,17 @@ void ReadIncludeFile(char[] filepath, int fileArrayIdx=-1, char[] search="")
 								GetTrieValue(g_Property, lastPropName, i);
 
 								if (strcmp(funcnameBak, "get") == 0)
-									i |= PROP_BYTE_GET;
+									i |= PROP_BIT_GET;
 								else if (strcmp(funcnameBak, "set") == 0)
-									i |= PROP_BYTE_SET;
+									i |= PROP_BIT_SET;
 
 								SetTrieValue(g_Property, lastPropName, i);
-								Debug(DEBUG_BYTE_COMMON, "Set lastprop get/set byte: val=%d, '%s'", i, lastPropName);
+								Debug(DEBUG_BIT_COMMON, "Set lastprop get/set byte: val=%d, '%s'", i, lastPropName);
 								continue;
 							}
 						}
 						else
-							Debug(DEBUG_BYTE_COMMON, "Ftype:Normal: funcname='%s', retval='%s' ", funcname, retval[0] ? retval : (retval2[0] ? retval2 : "void"));
+							Debug(DEBUG_BIT_COMMON, "Ftype:Normal: funcname='%s', retval='%s' ", funcname, retval[0] ? retval : (retval2[0] ? retval2 : "void"));
 
 						if (search[0])
 						{
@@ -700,23 +719,23 @@ void ReadIncludeFile(char[] filepath, int fileArrayIdx=-1, char[] search="")
 									PushArrayString(g_MiscArray, retval);
 								}
 
-								Debug(DEBUG_BYTE_BRACKET, "currentDeep=%d, commentDeep=%d", currentDeep, commentDeep);
+								Debug(DEBUG_BIT_BRACKET, "currentDeep=%d, commentDeep=%d", currentDeep, commentDeep);
 
 								if (isMethodmap){
 
 									WriteFileLine(g_FileSourcemodXML, "Methodmap notes:");
-									WriteFileLine(g_FileSourcemodXML, "%sThis string are not exist SourceMod function!\n%sTo use function remove the '%s' prefix\n%sRead more here: https://github.com/raziEiL/SourceMod-Npp-Docs", SPACE_X4, SPACE_X4, temp, SPACE_X4);
+									WriteFileLine(g_FileSourcemodXML, "%sThis string is not a real Sourcemod Function!\n%sTo use function remove the '%s' prefix\n%sRead more here: https://github.com/raziEiL/SourceMod-Npp-Docs", SPACE_X4, SPACE_X4, temp, SPACE_X4);
 
-									Debug(DEBUG_BYTE_COMMON, "trie search: '%s', result=%d", funcname, GetTrieValue(g_Property, funcname, i));
+									Debug(DEBUG_BIT_COMMON, "trie search: '%s', result=%d", funcname, GetTrieValue(g_Property, funcname, i));
 
 									if (GetTrieValue(g_Property, funcname, i)){
 
 										WriteFileLine(g_FileSourcemodXML, "Property methods:");
 
 										if (i){
-											if (i & PROP_BYTE_GET)
+											if (i & PROP_BIT_GET)
 												WriteFileLine(g_FileSourcemodXML, "%sHas getter", SPACE_X4);
-											if (i & PROP_BYTE_SET)
+											if (i & PROP_BIT_SET)
 												WriteFileLine(g_FileSourcemodXML, "%sHas setter", SPACE_X4);
 										}
 										else
@@ -731,14 +750,14 @@ void ReadIncludeFile(char[] filepath, int fileArrayIdx=-1, char[] search="")
 										if ((value = GetArraySize(array_comment[comment])))
 										{
 											WriteFileLine(g_FileSourcemodXML, g_CommentType[comment]);
-											Debug(DEBUG_BYTE_COMMENTARY, "comment type: '%s'", g_CommentType[comment]);
+											Debug(DEBUG_BIT_COMMENTARY, "comment type: '%s'", g_CommentType[comment]);
 											for (i = 0; i < value; i++)
 											{
 												temp[0] = 0;
 												GetArrayString(array_comment[comment], i, temp, 1023);
 												ValidateXML(temp, 1023);
 												WriteFileLine(g_FileSourcemodXML, temp);
-												Debug(DEBUG_BYTE_COMMENTARY, "'%s'", temp);
+												Debug(DEBUG_BIT_COMMENTARY, "'%s'", temp);
 											}
 										}
 									}
@@ -774,7 +793,7 @@ void ReadIncludeFile(char[] filepath, int fileArrayIdx=-1, char[] search="")
 							SetTrieValue(g_FuncTrie, funcname, fileArrayIdx);
 						}
 						else
-							Debug(DEBUG_BYTE_ERROR,"UHM...same func name '%s'", funcname);
+							Debug(DEBUG_BIT_ERROR,"UHM...same func name '%s'", funcname);
 					}
 
 					for (i = 0; i < COMMENT_TOTAL; i++)
@@ -817,7 +836,7 @@ int ReadString(char[] buffer, int maxlength, bool clear = false)
 			{
 				comment_start = true;
 				strcopy(buffer, 1023, buffer[2]);
-				Debug(DEBUG_BYTE_COMMENTARY, "%s comment: '%s'", comment_buffer ? "block" : "inline" , buffer);
+				Debug(DEBUG_BIT_COMMENTARY, "%s comment: '%s'", comment_buffer ? "block" : "inline" , buffer);
 
 			}
 		}
@@ -828,7 +847,7 @@ int ReadString(char[] buffer, int maxlength, bool clear = false)
 			buffer[pos] = 0;
 			TrimString(buffer);
 
-			Debug(DEBUG_BYTE_COMMENTARY, "end of block comment: '%s'", buffer);
+			Debug(DEBUG_BIT_COMMENTARY, "end of block comment: '%s'", buffer);
 		}
 
 		if (!comment_start && !comment_buffer){
@@ -837,24 +856,24 @@ int ReadString(char[] buffer, int maxlength, bool clear = false)
 				buffer[pos] = 0;
 		}
 		//else if (comment_buffer)
-		//	Debug(DEBUG_BYTE_COMMENTARY, "in block comment: '%s'", buffer);
+		//	Debug(DEBUG_BIT_COMMENTARY, "in block comment: '%s'", buffer);
 
 		TrimString(buffer);
 	}
 
-	byte = strlen(buffer) ? READSTRING_BYTE_VALID : READSTRING_BYTE_INVALID;
+	byte = strlen(buffer) ? READSTRING_BIT_VALID : READSTRING_BIT_INVALID;
 
 	if (comment_buffer)
-		byte |= READSTRING_BYTE_BUFFER;
+		byte |= READSTRING_BIT_BUFFER;
 	else if (comment_start)
-		byte |= READSTRING_BYTE_INLINE;
+		byte |= READSTRING_BIT_INLINE;
 
 	if (last_line)
-		byte |= READSTRING_BYTE_LAST;
+		byte |= READSTRING_BIT_LAST;
 
-	if (!(byte & READSTRING_BYTE_INLINE) && !(byte & READSTRING_BYTE_BUFFER))
+	if (!(byte & READSTRING_BIT_INLINE) && !(byte & READSTRING_BIT_BUFFER))
 		last_line = true;
-	else if ((byte & READSTRING_BYTE_INLINE) || (byte & READSTRING_BYTE_BUFFER))
+	else if ((byte & READSTRING_BIT_INLINE) || (byte & READSTRING_BIT_BUFFER))
 		last_line = false;
 
 	comment_buffer = c_buffer;
@@ -883,7 +902,7 @@ bool ReadFuncString(char[] buffer, char[] retval, char[] funcname, bool found_pr
 
 		TrimString(funcname);
 
-		Debug(DEBUG_BYTE_COMMON, "ReadFuncString -> '%s'", funcname);
+		Debug(DEBUG_BIT_COMMON, "ReadFuncString -> '%s'", funcname);
 
 		if (strcmp(funcname, "VerifyCoreVersion") == 0 ||
 			StrContains(funcname, "operator") != -1)
@@ -932,7 +951,7 @@ bool ReadMethodmapHeader(char[] buffer)
 			ReplaceString(str, sizeof(str), "{", "");
 			TrimString(str);
 
-			Debug(DEBUG_BYTE_METHODMAP, "methodmap detected! '%s'", buffer);
+			Debug(DEBUG_BIT_METHODMAP, "methodmap detected! '%s'", buffer);
 
 			if ((pos = FindCharInString2(str, '<')) != -1)
 			{
@@ -940,7 +959,7 @@ bool ReadMethodmapHeader(char[] buffer)
 				strcopy(str, pos, str);
 				TrimString(g_MethodmapTag);
 				TrimString(str);
-				Debug(DEBUG_BYTE_METHODMAP, "tag detected! calss='%s', tag='%s'", str, g_MethodmapTag);
+				Debug(DEBUG_BIT_METHODMAP, "tag detected! calss='%s', tag='%s'", str, g_MethodmapTag);
 
 				if (IsValidString(g_MethodmapTag)){
 					if (FindStringInArray(g_MiscArray, g_MethodmapTag) == -1)
@@ -955,13 +974,13 @@ bool ReadMethodmapHeader(char[] buffer)
 				if (FindStringInArray(g_MiscArray, g_MethodmapName) == -1)
 					PushArrayString(g_MiscArray, g_MethodmapName);
 
-				Debug(DEBUG_BYTE_METHODMAP, "success! calss='%s', tag='%s'", g_MethodmapName, g_MethodmapTag);
+				Debug(DEBUG_BIT_METHODMAP, "success! calss='%s', tag='%s'", g_MethodmapName, g_MethodmapTag);
 				return true;
 			}
 			else {
 				g_MethodmapName[0] = 0;
 				g_MethodmapTag[0] = 0;
-				Debug(DEBUG_BYTE_ERROR, "Failed to detect methodmap class/tag. Called from %s", g_Debug[DEBUG_TAG_METHODMAP]);
+				Debug(DEBUG_BIT_ERROR, "Failed to detect methodmap class/tag. Called from %s", g_Debug[DEBUG_TAG_METHODMAP]);
 				return false;
 			}
 		}
@@ -974,8 +993,8 @@ void WriteFuncParams(Handle handle, char[] buffer, int maxlength, bool isLineBre
 	static char buildStr[2048];
 	Format(buildStr, sizeof(buildStr), "%s%s", buildStr, buffer);
 
-	Debug(DEBUG_BYTE_FUNC_PARAM, "Split func params (is line breaked=%d):", isLineBreaked);
-	Debug(DEBUG_BYTE_FUNC_PARAM, "src: '%s'", buildStr);
+	Debug(DEBUG_BIT_FUNC_PARAM, "Split func params (is line breaked=%d):", isLineBreaked);
+	Debug(DEBUG_BIT_FUNC_PARAM, "src: '%s'", buildStr);
 
 	if (isLineBreaked)
 		return;
@@ -1014,7 +1033,7 @@ void WriteFuncParams(Handle handle, char[] buffer, int maxlength, bool isLineBre
 						lastpos = strlen(temp)-1;
 						if (lastpos < 0){
 
-							Debug(DEBUG_BYTE_ERROR, "Array index out-of-bounds! No params? Called from %s", g_Debug[DEBUG_TAG_FUNC_PARAM]);
+							Debug(DEBUG_BIT_ERROR, "Array index out-of-bounds! No params? Called from %s", g_Debug[DEBUG_TAG_FUNC_PARAM]);
 							break;
 						}
 
@@ -1027,7 +1046,7 @@ void WriteFuncParams(Handle handle, char[] buffer, int maxlength, bool isLineBre
 				if (temp[0]){
 
 					ValidateXML(temp, 128);
-					Debug(DEBUG_BYTE_FUNC_PARAM, "%d. '%s'", ++count, temp);
+					Debug(DEBUG_BIT_FUNC_PARAM, "%d. '%s'", ++count, temp);
 					WriteFileLine(handle, "%s<Param name=\"%s\"/>", SPACE_X16, temp);
 				}
 			}
@@ -1231,18 +1250,18 @@ public void ValidateXML(char[] text, int size)
 	text_len = strlen(text);
 	search_len = strlen(search);
 
-	Debug(DEBUG_BYTE_XML, "text = '%s', search = '%s'", text, search);
+	Debug(DEBUG_BIT_XML, "text = '%s', search = '%s'", text, search);
 
 	for (i = 0; i < text_len; i++){
 
 		if (text[i] == search[0]){
 
-			Debug(DEBUG_BYTE_XML, "match at pos: %d", i);
+			Debug(DEBUG_BIT_XML, "match at pos: %d", i);
 
 			for (offset = 1; offset < search_len; offset++){
 
 				if (i+offset >= size){
-					Debug(DEBUG_BYTE_XML, "offset out of range: %d/%d!", offset, size);
+					Debug(DEBUG_BIT_XML, "offset out of range: %d/%d!", offset, size);
 					break;
 				}
 
@@ -1250,22 +1269,22 @@ public void ValidateXML(char[] text, int size)
 
 					strcopy(buffer, i+1, text);
 					offset = strlen(buffer) + strlen(search) + strlen(text[i+1]);
-					Debug(DEBUG_BYTE_XML, "split str: '%s', new len = %d", buffer, offset);
+					Debug(DEBUG_BIT_XML, "split str: '%s', new len = %d", buffer, offset);
 
 					if (offset < sizeof(buffer)){
 
 						Format(buffer, sizeof(buffer), "%s%s%s", buffer, search, text[i+1]);
 						strcopy(text, size, buffer);
 						text_len = strlen(text);
-						Debug(DEBUG_BYTE_XML, "builded str: '%s'", text);
+						Debug(DEBUG_BIT_XML, "builded str: '%s'", text);
 						g_XMLFixCount++;
 					}
 					else
-						Debug(DEBUG_BYTE_XML, "new len out of range: %d/%d!", offset, sizeof(buffer));
+						Debug(DEBUG_BIT_XML, "new len out of range: %d/%d!", offset, sizeof(buffer));
 					break;
 				}
 				else if (offset == (search_len - 1))
-					Debug(DEBUG_BYTE_XML, "skip: validate str", i);
+					Debug(DEBUG_BIT_XML, "skip: validate str", i);
 			}
 		}
 	}
@@ -1275,46 +1294,40 @@ public void ValidateXML(char[] text, int size)
 	g_XMLFixCount += ReplaceString(text, 1023, "'", "&apos;");
 	g_XMLFixCount += ReplaceString(text, 1023, "\"", "&quot;");
 
-	Debug(DEBUG_BYTE_XML, "result: '%s'", text);
+	Debug(DEBUG_BIT_XML, "result: '%s'", text);
 }
 
-
-public void Debug(int BYTE, const char[] format, any ...)
+public void Debug(int BIT, const char[] format, any ...)
 {
-	if (DEBUG_BYTES == 0
-	|| !((DEBUG_BYTE_PRINT_SERVER|DEBUG_BYTE_LOG_FILE) & DEBUG_BYTES)
-	|| !(DEBUG_BYTES & BYTE))
+	if (DEBUG_BITS == 0
+	|| !((DEBUG_BIT_LOG|DEBUG_BIT_PRINT) & DEBUG_BITS)
+	|| !(DEBUG_BITS & BIT))
 		return;
 
-	static int len;
-	static char tag[24];
-	len = strlen(format) + 512;
-	char[] myFormattedString = new char[len];
-	VFormat(myFormattedString, len, format, 3);
+	static char sData[32], sFormattedStr[2048];
 
-	switch (BYTE){
-		case DEBUG_BYTE_FUNC_PARAM:
-			tag = g_Debug[DEBUG_TAG_FUNC_PARAM];
-		case DEBUG_BYTE_METHODMAP:
-			tag = g_Debug[DEBUG_TAG_METHODMAP];
-		case DEBUG_BYTE_BRACKET:
-			tag = g_Debug[DEBUG_TAG_BRACKET];
-		case DEBUG_BYTE_COMMENTARY:
-			tag = g_Debug[DEBUG_TAG_COMMENTARY];
-		case DEBUG_BYTE_XML:
-			tag = g_Debug[DEBUG_TAG_XML];
-		case DEBUG_BYTE_ERROR:
-			tag = g_Debug[DEBUG_TAG_ERROR];
-		default:
-			tag = g_Debug[DEBUG_TAG_COMMOM];
+	VFormat(sFormattedStr, sizeof(sFormattedStr), format, 3);
+	FormatTime(sData, sizeof(sData), "%m/%d/%Y - %H:%M:%S");
+	Format(sFormattedStr, sizeof(sFormattedStr), "%s [%s] %s", sData, g_Debug[GetBitPos(BIT)-1], sFormattedStr);
+
+#if (DEBUG_BITS & DEBUG_BIT_LOG)
+	g_FileDebug.WriteLine(sFormattedStr);
+#endif
+#if (DEBUG_BITS & DEBUG_BIT_PRINT)
+	PrintToServer(sFormattedStr);
+#endif
+}
+
+int GetBitPos(int n)
+{
+	static int pos;
+	pos = 0;
+
+	while (n)
+	{
+		n >>= 1;
+		++pos;
 	}
 
-	Format(myFormattedString, len, "[%s] %s", tag, myFormattedString);
-
-#if (DEBUG_BYTES & DEBUG_BYTE_LOG_FILE)
-	fileDebug.WriteLine(myFormattedString);
-#endif
-#if (DEBUG_BYTES & DEBUG_BYTE_PRINT_SERVER)
-	PrintToServer(myFormattedString);
-#endif
+	return pos;
 }
