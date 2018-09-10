@@ -40,7 +40,6 @@ If you want to configurate it or update keyword check **plugins\NPP\\** folder f
 
 ## Autocompletion
 Copy **sourcemod.xml** file from **SourceMod docs** folder to **Notepad++ API** folder. Done! The completion list can be triggered automatically as you type, via settings in **Settings -> Preferences -> Auto-Completion:** Auto-Completion is enabled by a checkbox. Additionally there is a setting "From X th character", accepting a the minimum length of a prefix needed before the completion list is shown (some people like 2, some 3, some 4...); and, there is a setting to specify which candidates should be used: words, functions, or both.
->**Note:** Autocompletion supports only **case-sensitive** input! (Due to Notepad++ issue, **case-insensitive** input makes docs pop up incorrectly).  
 >**Note:** Press **TAB** to fast autocompletion.  
 >**Note:** To watch docs again place the cursor between `( )` characters and press **CTRL+SHIFT+SPACE** hotkeys
 
@@ -78,6 +77,12 @@ Result: MM_Menu_Handle_M_ToPanel
 Docs string: MM_AdminId_P_ImmunityLevel  
 Removes prefix: MM_AdminId_M_  
 Result: my_code.ImmunityLevel() 
+
+# Issues
+1. Due to Notepad++ issue, **Case-Insensitive** input makes autocomplete work incorrectly.
+2. **Case-Sensitive** input makes pop up docs work incorrectly for functions with a similar names (e.g., ReplaceStringEx hint docs from ReplaceString).
+I chose **Case-Sensitive** input for code-complete-file, because it did less harm. So, keep in mind about **issues #2**
+
 
 # Credits:
  - Thanks [@MCPAN](https://forums.alliedmods.net/member.php?u=73370) for original plugin.
