@@ -80,7 +80,7 @@ Result: my_code.ImmunityLevel()
 
 # Issues
 1. Due to Notepad++ issue, **Case-Insensitive** input makes autocomplete work incorrectly.
-2. **Case-Sensitive** input makes pop up docs work incorrectly for functions with a similar names (e.g., ReplaceStringEx hint docs from ReplaceString).
+2. **Case-Sensitive** input makes pop up docs work incorrectly for functions with a similar names (e.g., ReplaceStringEx hint docs from ReplaceString).  
 I chose **Case-Sensitive** input for code-complete-file, because it did less harm. So, keep in mind about **issues #2**
 
 
