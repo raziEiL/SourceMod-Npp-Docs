@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="Windows-1252" ?>
 <NotepadPlus>
     <AutoComplete language="sourcemod">
-    <Environment ignoreCase="no"/>
+    <Environment ignoreCase="yes"/>
         <KeyWord name="ATTN_TO_SNDLEVEL" func="yes">
             <Overload retVal="stock int" descr="
 Params:
@@ -9616,7 +9616,7 @@ Return:
         <KeyWord name="MM_AdminId_M_BindIdentity" func="yes">
             <Overload retVal="public native bool" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_AdminId_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -9635,7 +9635,7 @@ Return:
         <KeyWord name="MM_AdminId_M_CanTarget" func="yes">
             <Overload retVal="public native bool" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_AdminId_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -9662,7 +9662,7 @@ Return:
         <KeyWord name="MM_AdminId_M_GetFlags" func="yes">
             <Overload retVal="public native int" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_AdminId_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -9678,7 +9678,7 @@ Return:
         <KeyWord name="MM_AdminId_M_GetGroup" func="yes">
             <Overload retVal="public native GroupId" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_AdminId_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -9701,7 +9701,7 @@ Return:
         <KeyWord name="MM_AdminId_M_GetPassword" func="yes">
             <Overload retVal="public native bool" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_AdminId_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -9720,7 +9720,7 @@ Return:
         <KeyWord name="MM_AdminId_M_GetUsername" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_AdminId_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -9739,7 +9739,7 @@ Return:
         <KeyWord name="MM_AdminId_M_HasFlag" func="yes">
             <Overload retVal="public native bool" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_AdminId_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -9757,7 +9757,7 @@ Return:
         <KeyWord name="MM_AdminId_M_InheritGroup" func="yes">
             <Overload retVal="public native bool" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_AdminId_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -9774,7 +9774,7 @@ Return:
         <KeyWord name="MM_AdminId_M_SetFlag" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_AdminId_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -9790,7 +9790,7 @@ Notes:
         <KeyWord name="MM_AdminId_M_SetPassword" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_AdminId_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -9804,7 +9804,7 @@ Notes:
         <KeyWord name="MM_AdminId_P_GroupCount" func="yes">
             <Overload retVal="property int" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_AdminId_P_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Property methods:
@@ -9817,7 +9817,7 @@ Notes:
         <KeyWord name="MM_AdminId_P_ImmunityLevel" func="yes">
             <Overload retVal="property int" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_AdminId_P_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Property methods:
@@ -9831,7 +9831,7 @@ Notes:
         <KeyWord name="MM_ArrayList_Handle_C_ArrayList" func="yes">
             <Overload retVal="public native Handle" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_ArrayList_Handle_C_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -9857,7 +9857,7 @@ Return:
         <KeyWord name="MM_ArrayList_Handle_M_Clear" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_ArrayList_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Notes:
@@ -9868,7 +9868,7 @@ Notes:
         <KeyWord name="MM_ArrayList_Handle_M_Clone" func="yes">
             <Overload retVal="public native ArrayList" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_ArrayList_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Notes:
@@ -9884,7 +9884,7 @@ Return:
         <KeyWord name="MM_ArrayList_Handle_M_Erase" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_ArrayList_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -9902,7 +9902,7 @@ Error:
         <KeyWord name="MM_ArrayList_Handle_M_FindString" func="yes">
             <Overload retVal="public native int" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_ArrayList_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -9919,7 +9919,7 @@ Return:
         <KeyWord name="MM_ArrayList_Handle_M_FindValue" func="yes">
             <Overload retVal="public native int" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_ArrayList_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -9940,7 +9940,7 @@ Return:
         <KeyWord name="MM_ArrayList_Handle_M_Get" func="yes">
             <Overload retVal="public native any" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_ArrayList_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -9963,7 +9963,7 @@ Return:
         <KeyWord name="MM_ArrayList_Handle_M_GetArray" func="yes">
             <Overload retVal="public native int" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_ArrayList_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -9986,7 +9986,7 @@ Return:
         <KeyWord name="MM_ArrayList_Handle_M_GetString" func="yes">
             <Overload retVal="public native int" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_ArrayList_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -10008,7 +10008,7 @@ Return:
         <KeyWord name="MM_ArrayList_Handle_M_Push" func="yes">
             <Overload retVal="public native int" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_ArrayList_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -10028,7 +10028,7 @@ Return:
         <KeyWord name="MM_ArrayList_Handle_M_PushArray" func="yes">
             <Overload retVal="public native int" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_ArrayList_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -10050,7 +10050,7 @@ Return:
         <KeyWord name="MM_ArrayList_Handle_M_PushString" func="yes">
             <Overload retVal="public native int" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_ArrayList_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -10066,7 +10066,7 @@ Return:
         <KeyWord name="MM_ArrayList_Handle_M_Resize" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_ArrayList_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -10082,7 +10082,7 @@ Notes:
         <KeyWord name="MM_ArrayList_Handle_M_Set" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_ArrayList_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -10105,7 +10105,7 @@ Error:
         <KeyWord name="MM_ArrayList_Handle_M_SetArray" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_ArrayList_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -10128,7 +10128,7 @@ Return:
         <KeyWord name="MM_ArrayList_Handle_M_SetString" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_ArrayList_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -10148,7 +10148,7 @@ Return:
         <KeyWord name="MM_ArrayList_Handle_M_ShiftUp" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_ArrayList_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -10166,7 +10166,7 @@ Error:
         <KeyWord name="MM_ArrayList_Handle_M_SwapAt" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_ArrayList_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -10184,7 +10184,7 @@ Error:
         <KeyWord name="MM_ArrayList_Handle_P_BlockSize" func="yes">
             <Overload retVal="property int" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_ArrayList_Handle_P_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Property methods:
@@ -10197,7 +10197,7 @@ Notes:
         <KeyWord name="MM_ArrayList_Handle_P_Length" func="yes">
             <Overload retVal="property int" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_ArrayList_Handle_P_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Property methods:
@@ -10210,7 +10210,7 @@ Notes:
         <KeyWord name="MM_ArrayStack_Handle_C_ArrayStack" func="yes">
             <Overload retVal="public native Handle" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_ArrayStack_Handle_C_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -10233,7 +10233,7 @@ Notes:
         <KeyWord name="MM_ArrayStack_Handle_M_Pop" func="yes">
             <Overload retVal="public native any" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_ArrayStack_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -10254,7 +10254,7 @@ Return:
         <KeyWord name="MM_ArrayStack_Handle_M_PopArray" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_ArrayStack_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -10273,7 +10273,7 @@ Error:
         <KeyWord name="MM_ArrayStack_Handle_M_PopString" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_ArrayStack_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -10294,7 +10294,7 @@ Error:
         <KeyWord name="MM_ArrayStack_Handle_M_Push" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_ArrayStack_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -10310,7 +10310,7 @@ Notes:
         <KeyWord name="MM_ArrayStack_Handle_M_PushArray" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_ArrayStack_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -10331,7 +10331,7 @@ Notes:
         <KeyWord name="MM_ArrayStack_Handle_M_PushString" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_ArrayStack_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -10346,7 +10346,7 @@ Notes:
         <KeyWord name="MM_ArrayStack_Handle_P_BlockSize" func="yes">
             <Overload retVal="property int" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_ArrayStack_Handle_P_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Property methods:
@@ -10359,7 +10359,7 @@ Notes:
         <KeyWord name="MM_ArrayStack_Handle_P_Empty" func="yes">
             <Overload retVal="property bool" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_ArrayStack_Handle_P_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Property methods:
@@ -10372,7 +10372,7 @@ Notes:
         <KeyWord name="MM_BfRead_Handle_M_ReadAngle" func="yes">
             <Overload retVal="public native float" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_BfRead_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -10388,7 +10388,7 @@ Return:
         <KeyWord name="MM_BfRead_Handle_M_ReadAngles" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_BfRead_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -10402,7 +10402,7 @@ Notes:
         <KeyWord name="MM_BfRead_Handle_M_ReadBool" func="yes">
             <Overload retVal="public native bool" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_BfRead_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Notes:
@@ -10415,7 +10415,7 @@ Return:
         <KeyWord name="MM_BfRead_Handle_M_ReadByte" func="yes">
             <Overload retVal="public native int" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_BfRead_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Notes:
@@ -10428,7 +10428,7 @@ Return:
         <KeyWord name="MM_BfRead_Handle_M_ReadChar" func="yes">
             <Overload retVal="public native int" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_BfRead_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Notes:
@@ -10441,7 +10441,7 @@ Return:
         <KeyWord name="MM_BfRead_Handle_M_ReadCoord" func="yes">
             <Overload retVal="public native float" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_BfRead_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Notes:
@@ -10454,7 +10454,7 @@ Return:
         <KeyWord name="MM_BfRead_Handle_M_ReadEntity" func="yes">
             <Overload retVal="public native int" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_BfRead_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Notes:
@@ -10467,7 +10467,7 @@ Return:
         <KeyWord name="MM_BfRead_Handle_M_ReadFloat" func="yes">
             <Overload retVal="public native float" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_BfRead_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Notes:
@@ -10480,7 +10480,7 @@ Return:
         <KeyWord name="MM_BfRead_Handle_M_ReadNum" func="yes">
             <Overload retVal="public native int" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_BfRead_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Notes:
@@ -10493,7 +10493,7 @@ Return:
         <KeyWord name="MM_BfRead_Handle_M_ReadShort" func="yes">
             <Overload retVal="public native int" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_BfRead_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -10508,7 +10508,7 @@ Return:
         <KeyWord name="MM_BfRead_Handle_M_ReadString" func="yes">
             <Overload retVal="public native int" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_BfRead_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -10532,7 +10532,7 @@ Return:
         <KeyWord name="MM_BfRead_Handle_M_ReadVecCoord" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_BfRead_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -10546,7 +10546,7 @@ Notes:
         <KeyWord name="MM_BfRead_Handle_M_ReadVecNormal" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_BfRead_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -10560,7 +10560,7 @@ Notes:
         <KeyWord name="MM_BfRead_Handle_M_ReadWord" func="yes">
             <Overload retVal="public native int" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_BfRead_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -10575,7 +10575,7 @@ Return:
         <KeyWord name="MM_BfRead_Handle_P_BytesLeft" func="yes">
             <Overload retVal="property int" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_BfRead_Handle_P_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Property methods:
@@ -10588,7 +10588,7 @@ Notes:
         <KeyWord name="MM_BfWrite_Handle_M_WriteAngle" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_BfWrite_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -10604,7 +10604,7 @@ Notes:
         <KeyWord name="MM_BfWrite_Handle_M_WriteAngles" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_BfWrite_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -10618,7 +10618,7 @@ Notes:
         <KeyWord name="MM_BfWrite_Handle_M_WriteBool" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_BfWrite_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -10632,7 +10632,7 @@ Notes:
         <KeyWord name="MM_BfWrite_Handle_M_WriteByte" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_BfWrite_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -10646,7 +10646,7 @@ Notes:
         <KeyWord name="MM_BfWrite_Handle_M_WriteChar" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_BfWrite_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -10660,7 +10660,7 @@ Notes:
         <KeyWord name="MM_BfWrite_Handle_M_WriteCoord" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_BfWrite_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -10674,7 +10674,7 @@ Notes:
         <KeyWord name="MM_BfWrite_Handle_M_WriteEntity" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_BfWrite_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -10688,7 +10688,7 @@ Notes:
         <KeyWord name="MM_BfWrite_Handle_M_WriteFloat" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_BfWrite_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -10702,7 +10702,7 @@ Notes:
         <KeyWord name="MM_BfWrite_Handle_M_WriteNum" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_BfWrite_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -10716,7 +10716,7 @@ Notes:
         <KeyWord name="MM_BfWrite_Handle_M_WriteShort" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_BfWrite_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -10730,7 +10730,7 @@ Notes:
         <KeyWord name="MM_BfWrite_Handle_M_WriteString" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_BfWrite_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -10744,7 +10744,7 @@ Notes:
         <KeyWord name="MM_BfWrite_Handle_M_WriteVecCoord" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_BfWrite_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -10758,7 +10758,7 @@ Notes:
         <KeyWord name="MM_BfWrite_Handle_M_WriteVecNormal" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_BfWrite_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -10772,7 +10772,7 @@ Notes:
         <KeyWord name="MM_BfWrite_Handle_M_WriteWord" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_BfWrite_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -10786,7 +10786,7 @@ Notes:
         <KeyWord name="MM_ConVar_Handle_M_AddChangeHook" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_ConVar_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -10800,7 +10800,7 @@ Notes:
         <KeyWord name="MM_ConVar_Handle_M_GetBounds" func="yes">
             <Overload retVal="public native bool" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_ConVar_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -10818,7 +10818,7 @@ Return:
         <KeyWord name="MM_ConVar_Handle_M_GetDefault" func="yes">
             <Overload retVal="public native int" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_ConVar_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -10836,7 +10836,7 @@ Return:
         <KeyWord name="MM_ConVar_Handle_M_GetName" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_ConVar_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -10852,7 +10852,7 @@ Notes:
         <KeyWord name="MM_ConVar_Handle_M_GetString" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_ConVar_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -10869,7 +10869,7 @@ Notes:
         <KeyWord name="MM_ConVar_Handle_M_RemoveChangeHook" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_ConVar_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -10886,7 +10886,7 @@ Error:
         <KeyWord name="MM_ConVar_Handle_M_ReplicateToClient" func="yes">
             <Overload retVal="public native bool" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_ConVar_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -10906,7 +10906,7 @@ Return:
         <KeyWord name="MM_ConVar_Handle_M_RestoreDefault" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_ConVar_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -10928,7 +10928,7 @@ Notes:
         <KeyWord name="MM_ConVar_Handle_M_SetBool" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_ConVar_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -10952,7 +10952,7 @@ Notes:
         <KeyWord name="MM_ConVar_Handle_M_SetBounds" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_ConVar_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -10970,7 +10970,7 @@ Notes:
         <KeyWord name="MM_ConVar_Handle_M_SetFloat" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_ConVar_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -10994,7 +10994,7 @@ Notes:
         <KeyWord name="MM_ConVar_Handle_M_SetInt" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_ConVar_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -11018,7 +11018,7 @@ Notes:
         <KeyWord name="MM_ConVar_Handle_M_SetString" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_ConVar_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -11042,7 +11042,7 @@ Notes:
         <KeyWord name="MM_ConVar_Handle_P_BoolValue" func="yes">
             <Overload retVal="property bool" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_ConVar_Handle_P_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Property methods:
@@ -11056,7 +11056,7 @@ Notes:
         <KeyWord name="MM_ConVar_Handle_P_Flags" func="yes">
             <Overload retVal="property int" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_ConVar_Handle_P_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Property methods:
@@ -11070,7 +11070,7 @@ Notes:
         <KeyWord name="MM_ConVar_Handle_P_FloatValue" func="yes">
             <Overload retVal="property float" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_ConVar_Handle_P_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Property methods:
@@ -11084,7 +11084,7 @@ Notes:
         <KeyWord name="MM_ConVar_Handle_P_IntValue" func="yes">
             <Overload retVal="property int" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_ConVar_Handle_P_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Property methods:
@@ -11098,7 +11098,7 @@ Notes:
         <KeyWord name="MM_DBDriver_Handle_M_GetIdentifier" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_DBDriver_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -11115,7 +11115,7 @@ Notes:
         <KeyWord name="MM_DBDriver_Handle_M_GetProduct" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_DBDriver_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -11132,7 +11132,7 @@ Notes:
         <KeyWord name="MM_DBResultSet_Handle_M_FetchFloat" func="yes">
             <Overload retVal="public native float" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_DBResultSet_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -11155,7 +11155,7 @@ Return:
         <KeyWord name="MM_DBResultSet_Handle_M_FetchInt" func="yes">
             <Overload retVal="public native int" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_DBResultSet_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -11178,7 +11178,7 @@ Return:
         <KeyWord name="MM_DBResultSet_Handle_M_FetchMoreResults" func="yes">
             <Overload retVal="public native bool" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_DBResultSet_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Notes:
@@ -11195,7 +11195,7 @@ Return:
         <KeyWord name="MM_DBResultSet_Handle_M_FetchRow" func="yes">
             <Overload retVal="public native bool" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_DBResultSet_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Notes:
@@ -11211,7 +11211,7 @@ Return:
         <KeyWord name="MM_DBResultSet_Handle_M_FetchSize" func="yes">
             <Overload retVal="public native int" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_DBResultSet_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -11232,7 +11232,7 @@ Return:
         <KeyWord name="MM_DBResultSet_Handle_M_FetchString" func="yes">
             <Overload retVal="public native int" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_DBResultSet_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -11259,7 +11259,7 @@ Return:
         <KeyWord name="MM_DBResultSet_Handle_M_FieldNameToNum" func="yes">
             <Overload retVal="public native bool" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_DBResultSet_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -11279,7 +11279,7 @@ Return:
         <KeyWord name="MM_DBResultSet_Handle_M_FieldNumToName" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_DBResultSet_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -11299,7 +11299,7 @@ Error:
         <KeyWord name="MM_DBResultSet_Handle_M_IsFieldNull" func="yes">
             <Overload retVal="public native bool" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_DBResultSet_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -11318,7 +11318,7 @@ Return:
         <KeyWord name="MM_DBResultSet_Handle_M_Rewind" func="yes">
             <Overload retVal="public native bool" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_DBResultSet_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Notes:
@@ -11333,7 +11333,7 @@ Return:
         <KeyWord name="MM_DBResultSet_Handle_P_AffectedRows" func="yes">
             <Overload retVal="property int" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_DBResultSet_Handle_P_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Property methods:
@@ -11347,7 +11347,7 @@ Notes:
         <KeyWord name="MM_DBResultSet_Handle_P_FieldCount" func="yes">
             <Overload retVal="property int" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_DBResultSet_Handle_P_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Property methods:
@@ -11360,7 +11360,7 @@ Notes:
         <KeyWord name="MM_DBResultSet_Handle_P_HasResults" func="yes">
             <Overload retVal="property bool" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_DBResultSet_Handle_P_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Property methods:
@@ -11375,7 +11375,7 @@ Notes:
         <KeyWord name="MM_DBResultSet_Handle_P_InsertId" func="yes">
             <Overload retVal="property int" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_DBResultSet_Handle_P_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Property methods:
@@ -11388,7 +11388,7 @@ Notes:
         <KeyWord name="MM_DBResultSet_Handle_P_MoreRows" func="yes">
             <Overload retVal="property bool" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_DBResultSet_Handle_P_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Property methods:
@@ -11403,7 +11403,7 @@ Return:
         <KeyWord name="MM_DBResultSet_Handle_P_RowCount" func="yes">
             <Overload retVal="property int" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_DBResultSet_Handle_P_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Property methods:
@@ -11420,7 +11420,7 @@ Return:
         <KeyWord name="MM_DBStatement_Handle_M_BindFloat" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_DBStatement_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -11438,7 +11438,7 @@ Error:
         <KeyWord name="MM_DBStatement_Handle_M_BindInt" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_DBStatement_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -11459,7 +11459,7 @@ Error:
         <KeyWord name="MM_DBStatement_Handle_M_BindString" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_DBStatement_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -11482,7 +11482,7 @@ Error:
         <KeyWord name="MM_DataPack_Handle_C_DataPack" func="yes">
             <Overload retVal="public native Handle" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_DataPack_Handle_C_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Notes:
@@ -11493,7 +11493,7 @@ Notes:
         <KeyWord name="MM_DataPack_Handle_M_IsReadable" func="yes">
             <Overload retVal="public native bool" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_DataPack_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -11508,7 +11508,7 @@ Notes:
         <KeyWord name="MM_DataPack_Handle_M_ReadCell" func="yes">
             <Overload retVal="public native any" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_DataPack_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -11521,7 +11521,7 @@ Notes:
         <KeyWord name="MM_DataPack_Handle_M_ReadFloat" func="yes">
             <Overload retVal="public native float" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_DataPack_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -11534,7 +11534,7 @@ Notes:
         <KeyWord name="MM_DataPack_Handle_M_ReadFunction" func="yes">
             <Overload retVal="public native function" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_DataPack_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Notes:
@@ -11547,7 +11547,7 @@ Return:
         <KeyWord name="MM_DataPack_Handle_M_ReadString" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_DataPack_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -11563,7 +11563,7 @@ Notes:
         <KeyWord name="MM_DataPack_Handle_M_Reset" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_DataPack_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -11577,7 +11577,7 @@ Notes:
         <KeyWord name="MM_DataPack_Handle_M_WriteCell" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_DataPack_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -11591,7 +11591,7 @@ Notes:
         <KeyWord name="MM_DataPack_Handle_M_WriteFloat" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_DataPack_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -11605,7 +11605,7 @@ Notes:
         <KeyWord name="MM_DataPack_Handle_M_WriteFunction" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_DataPack_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -11619,7 +11619,7 @@ Notes:
         <KeyWord name="MM_DataPack_Handle_M_WriteString" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_DataPack_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -11633,7 +11633,7 @@ Notes:
         <KeyWord name="MM_DataPack_Handle_P_Position" func="yes">
             <Overload retVal="property DataPackPos" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_DataPack_Handle_P_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Property methods:
@@ -11647,7 +11647,7 @@ Notes:
         <KeyWord name="MM_Database_Handle_M_Escape" func="yes">
             <Overload retVal="public native bool" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_Database_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -11679,7 +11679,7 @@ Return:
         <KeyWord name="MM_Database_Handle_M_Execute" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_Database_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -11703,7 +11703,7 @@ Notes:
         <KeyWord name="MM_Database_Handle_M_Format" func="yes">
             <Overload retVal="public native int" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_Database_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -11726,7 +11726,7 @@ Return:
         <KeyWord name="MM_Database_Handle_M_IsSameConnection" func="yes">
             <Overload retVal="public native bool" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_Database_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Notes:
@@ -11738,7 +11738,7 @@ Notes:
         <KeyWord name="MM_Database_Handle_M_Query" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_Database_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -11764,7 +11764,7 @@ Notes:
         <KeyWord name="MM_Database_Handle_M_SetCharset" func="yes">
             <Overload retVal="public native bool" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_Database_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -11782,7 +11782,7 @@ Return:
         <KeyWord name="MM_Database_Handle_P_Driver" func="yes">
             <Overload retVal="property DBDriver" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_Database_Handle_P_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Property methods:
@@ -11795,7 +11795,7 @@ Notes:
         <KeyWord name="MM_DirectoryListing_Handle_M_GetNext" func="yes">
             <Overload retVal="public native bool" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_DirectoryListing_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -11817,7 +11817,7 @@ Return:
         <KeyWord name="MM_Event_Handle_M_Cancel" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_Event_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Notes:
@@ -11829,7 +11829,7 @@ Notes:
         <KeyWord name="MM_Event_Handle_M_Fire" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_Event_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -11844,7 +11844,7 @@ Notes:
         <KeyWord name="MM_Event_Handle_M_FireToClient" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_Event_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -11859,7 +11859,7 @@ Notes:
         <KeyWord name="MM_Event_Handle_M_GetBool" func="yes">
             <Overload retVal="public native bool" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_Event_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -11877,7 +11877,7 @@ Return:
         <KeyWord name="MM_Event_Handle_M_GetFloat" func="yes">
             <Overload retVal="public native float" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_Event_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -11895,7 +11895,7 @@ Return:
         <KeyWord name="MM_Event_Handle_M_GetInt" func="yes">
             <Overload retVal="public native int" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_Event_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -11913,7 +11913,7 @@ Return:
         <KeyWord name="MM_Event_Handle_M_GetName" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_Event_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -11929,7 +11929,7 @@ Notes:
         <KeyWord name="MM_Event_Handle_M_GetString" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_Event_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -11949,7 +11949,7 @@ Notes:
         <KeyWord name="MM_Event_Handle_M_SetBool" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_Event_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -11965,7 +11965,7 @@ Notes:
         <KeyWord name="MM_Event_Handle_M_SetFloat" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_Event_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -11981,7 +11981,7 @@ Notes:
         <KeyWord name="MM_Event_Handle_M_SetInt" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_Event_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -12001,7 +12001,7 @@ Notes:
         <KeyWord name="MM_Event_Handle_M_SetString" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_Event_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -12017,7 +12017,7 @@ Notes:
         <KeyWord name="MM_Event_Handle_P_BroadcastDisabled" func="yes">
             <Overload retVal="property bool" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_Event_Handle_P_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Property methods:
@@ -12032,7 +12032,7 @@ Notes:
         <KeyWord name="MM_File_Handle_M_Close" func="yes">
             <Overload retVal="public void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_File_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Notes:
@@ -12043,7 +12043,7 @@ Notes:
         <KeyWord name="MM_File_Handle_M_EndOfFile" func="yes">
             <Overload retVal="public native bool" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_File_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Notes:
@@ -12056,7 +12056,7 @@ Return:
         <KeyWord name="MM_File_Handle_M_Read" func="yes">
             <Overload retVal="public native int" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_File_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -12077,7 +12077,7 @@ Return:
         <KeyWord name="MM_File_Handle_M_ReadInt16" func="yes">
             <Overload retVal="public native bool" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_File_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -12094,7 +12094,7 @@ Return:
         <KeyWord name="MM_File_Handle_M_ReadInt32" func="yes">
             <Overload retVal="public native bool" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_File_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -12110,7 +12110,7 @@ Return:
         <KeyWord name="MM_File_Handle_M_ReadInt8" func="yes">
             <Overload retVal="public native bool" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_File_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -12127,7 +12127,7 @@ Return:
         <KeyWord name="MM_File_Handle_M_ReadLine" func="yes">
             <Overload retVal="public native bool" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_File_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -12145,7 +12145,7 @@ Return:
         <KeyWord name="MM_File_Handle_M_ReadString" func="yes">
             <Overload retVal="public native int" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_File_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -12172,7 +12172,7 @@ Return:
         <KeyWord name="MM_File_Handle_M_ReadUint16" func="yes">
             <Overload retVal="public native bool" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_File_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -12189,7 +12189,7 @@ Return:
         <KeyWord name="MM_File_Handle_M_ReadUint8" func="yes">
             <Overload retVal="public native bool" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_File_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -12206,7 +12206,7 @@ Return:
         <KeyWord name="MM_File_Handle_M_Seek" func="yes">
             <Overload retVal="public native bool" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_File_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -12224,7 +12224,7 @@ Return:
         <KeyWord name="MM_File_Handle_M_Write" func="yes">
             <Overload retVal="public native bool" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_File_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -12248,7 +12248,7 @@ Return:
         <KeyWord name="MM_File_Handle_M_WriteInt16" func="yes">
             <Overload retVal="public native bool" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_File_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -12264,7 +12264,7 @@ Return:
         <KeyWord name="MM_File_Handle_M_WriteInt32" func="yes">
             <Overload retVal="public native bool" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_File_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -12280,7 +12280,7 @@ Return:
         <KeyWord name="MM_File_Handle_M_WriteInt8" func="yes">
             <Overload retVal="public native bool" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_File_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -12296,7 +12296,7 @@ Return:
         <KeyWord name="MM_File_Handle_M_WriteLine" func="yes">
             <Overload retVal="public native bool" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_File_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -12315,7 +12315,7 @@ Return:
         <KeyWord name="MM_File_Handle_M_WriteString" func="yes">
             <Overload retVal="public native bool" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_File_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -12333,7 +12333,7 @@ Return:
         <KeyWord name="MM_File_Handle_P_Position" func="yes">
             <Overload retVal="property int" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_File_Handle_P_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Property methods:
@@ -12346,7 +12346,7 @@ Notes:
         <KeyWord name="MM_FrameIterator_Handle_C_FrameIterator" func="yes">
             <Overload retVal="public native Handle" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_FrameIterator_Handle_C_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Notes:
@@ -12359,7 +12359,7 @@ Return:
         <KeyWord name="MM_FrameIterator_Handle_M_GetFilePath" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_FrameIterator_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -12375,7 +12375,7 @@ Notes:
         <KeyWord name="MM_FrameIterator_Handle_M_GetFunctionName" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_FrameIterator_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -12391,7 +12391,7 @@ Notes:
         <KeyWord name="MM_FrameIterator_Handle_M_Next" func="yes">
             <Overload retVal="public native bool" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_FrameIterator_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Notes:
@@ -12406,7 +12406,7 @@ Return:
         <KeyWord name="MM_FrameIterator_Handle_M_Reset" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_FrameIterator_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Notes:
@@ -12417,7 +12417,7 @@ Notes:
         <KeyWord name="MM_FrameIterator_Handle_P_LineNumber" func="yes">
             <Overload retVal="property bool" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_FrameIterator_Handle_P_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Property methods:
@@ -12430,7 +12430,7 @@ Notes:
         <KeyWord name="MM_GroupId_M_AddCommandOverride" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_GroupId_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -12448,7 +12448,7 @@ Notes:
         <KeyWord name="MM_GroupId_M_AddGroupImmunity" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_GroupId_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -12462,7 +12462,7 @@ Notes:
         <KeyWord name="MM_GroupId_M_GetCommandOverride" func="yes">
             <Overload retVal="public native bool" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_GroupId_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -12482,7 +12482,7 @@ Return:
         <KeyWord name="MM_GroupId_M_GetFlags" func="yes">
             <Overload retVal="public native int" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_GroupId_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Notes:
@@ -12495,7 +12495,7 @@ Return:
         <KeyWord name="MM_GroupId_M_GetGroupImmunity" func="yes">
             <Overload retVal="public native GroupId" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_GroupId_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -12511,7 +12511,7 @@ Return:
         <KeyWord name="MM_GroupId_M_HasFlag" func="yes">
             <Overload retVal="public native bool" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_GroupId_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -12527,7 +12527,7 @@ Return:
         <KeyWord name="MM_GroupId_M_SetFlag" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_GroupId_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -12543,7 +12543,7 @@ Notes:
         <KeyWord name="MM_GroupId_P_GroupImmunitiesCount" func="yes">
             <Overload retVal="property int" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_GroupId_P_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Property methods:
@@ -12556,7 +12556,7 @@ Notes:
         <KeyWord name="MM_GroupId_P_ImmunityLevel" func="yes">
             <Overload retVal="property int" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_GroupId_P_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Property methods:
@@ -12570,7 +12570,7 @@ Notes:
         <KeyWord name="MM_KeyValues_Handle_C_KeyValues" func="yes">
             <Overload retVal="public native Handle" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_KeyValues_Handle_C_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -12589,7 +12589,7 @@ Notes:
         <KeyWord name="MM_KeyValues_Handle_M_DeleteKey" func="yes">
             <Overload retVal="public native bool" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_KeyValues_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -12605,7 +12605,7 @@ Return:
         <KeyWord name="MM_KeyValues_Handle_M_DeleteThis" func="yes">
             <Overload retVal="public native int" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_KeyValues_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -12628,7 +12628,7 @@ Return:
         <KeyWord name="MM_KeyValues_Handle_M_ExportToFile" func="yes">
             <Overload retVal="public native bool" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_KeyValues_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -12644,7 +12644,7 @@ Return:
         <KeyWord name="MM_KeyValues_Handle_M_ExportToString" func="yes">
             <Overload retVal="public native int" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_KeyValues_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -12662,7 +12662,7 @@ Return:
         <KeyWord name="MM_KeyValues_Handle_M_FindKeyById" func="yes">
             <Overload retVal="public native bool" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_KeyValues_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -12682,7 +12682,7 @@ Return:
         <KeyWord name="MM_KeyValues_Handle_M_GetColor" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_KeyValues_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -12704,7 +12704,7 @@ Notes:
         <KeyWord name="MM_KeyValues_Handle_M_GetColor4" func="yes">
             <Overload retVal="public void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_KeyValues_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -12720,7 +12720,7 @@ Notes:
         <KeyWord name="MM_KeyValues_Handle_M_GetDataType" func="yes">
             <Overload retVal="public native KvDataTypes" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_KeyValues_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -12736,7 +12736,7 @@ Return:
         <KeyWord name="MM_KeyValues_Handle_M_GetFloat" func="yes">
             <Overload retVal="public native float" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_KeyValues_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -12754,7 +12754,7 @@ Return:
         <KeyWord name="MM_KeyValues_Handle_M_GetNameSymbol" func="yes">
             <Overload retVal="public native bool" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_KeyValues_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -12772,7 +12772,7 @@ Return:
         <KeyWord name="MM_KeyValues_Handle_M_GetNum" func="yes">
             <Overload retVal="public native int" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_KeyValues_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -12790,7 +12790,7 @@ Return:
         <KeyWord name="MM_KeyValues_Handle_M_GetSectionName" func="yes">
             <Overload retVal="public native bool" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_KeyValues_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -12808,7 +12808,7 @@ Return:
         <KeyWord name="MM_KeyValues_Handle_M_GetSectionSymbol" func="yes">
             <Overload retVal="public native bool" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_KeyValues_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -12825,7 +12825,7 @@ Return:
         <KeyWord name="MM_KeyValues_Handle_M_GetString" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_KeyValues_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -12845,7 +12845,7 @@ Notes:
         <KeyWord name="MM_KeyValues_Handle_M_GetUInt64" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_KeyValues_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -12863,7 +12863,7 @@ Notes:
         <KeyWord name="MM_KeyValues_Handle_M_GetVector" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_KeyValues_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -12881,7 +12881,7 @@ Notes:
         <KeyWord name="MM_KeyValues_Handle_M_GoBack" func="yes">
             <Overload retVal="public native bool" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_KeyValues_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Notes:
@@ -12897,7 +12897,7 @@ Return:
         <KeyWord name="MM_KeyValues_Handle_M_GotoFirstSubKey" func="yes">
             <Overload retVal="public native bool" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_KeyValues_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -12914,7 +12914,7 @@ Return:
         <KeyWord name="MM_KeyValues_Handle_M_GotoNextKey" func="yes">
             <Overload retVal="public native bool" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_KeyValues_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -12932,7 +12932,7 @@ Return:
         <KeyWord name="MM_KeyValues_Handle_M_Import" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_KeyValues_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -12948,7 +12948,7 @@ Notes:
         <KeyWord name="MM_KeyValues_Handle_M_ImportFromFile" func="yes">
             <Overload retVal="public native bool" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_KeyValues_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -12965,7 +12965,7 @@ Return:
         <KeyWord name="MM_KeyValues_Handle_M_ImportFromString" func="yes">
             <Overload retVal="public native bool" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_KeyValues_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -12984,7 +12984,7 @@ Return:
         <KeyWord name="MM_KeyValues_Handle_M_JumpToKey" func="yes">
             <Overload retVal="public native bool" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_KeyValues_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -13002,7 +13002,7 @@ Return:
         <KeyWord name="MM_KeyValues_Handle_M_JumpToKeySymbol" func="yes">
             <Overload retVal="public native bool" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_KeyValues_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -13018,7 +13018,7 @@ Return:
         <KeyWord name="MM_KeyValues_Handle_M_NodesInStack" func="yes">
             <Overload retVal="public native int" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_KeyValues_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Notes:
@@ -13033,7 +13033,7 @@ Return:
         <KeyWord name="MM_KeyValues_Handle_M_Rewind" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_KeyValues_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -13048,7 +13048,7 @@ Notes:
         <KeyWord name="MM_KeyValues_Handle_M_SavePosition" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_KeyValues_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -13063,7 +13063,7 @@ Notes:
         <KeyWord name="MM_KeyValues_Handle_M_SetColor" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_KeyValues_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -13085,7 +13085,7 @@ Notes:
         <KeyWord name="MM_KeyValues_Handle_M_SetColor4" func="yes">
             <Overload retVal="public void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_KeyValues_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -13101,7 +13101,7 @@ Notes:
         <KeyWord name="MM_KeyValues_Handle_M_SetEscapeSequences" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_KeyValues_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -13117,7 +13117,7 @@ Notes:
         <KeyWord name="MM_KeyValues_Handle_M_SetFloat" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_KeyValues_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -13133,7 +13133,7 @@ Notes:
         <KeyWord name="MM_KeyValues_Handle_M_SetNum" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_KeyValues_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -13149,7 +13149,7 @@ Notes:
         <KeyWord name="MM_KeyValues_Handle_M_SetSectionName" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_KeyValues_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -13163,7 +13163,7 @@ Notes:
         <KeyWord name="MM_KeyValues_Handle_M_SetString" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_KeyValues_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -13180,7 +13180,7 @@ Notes:
         <KeyWord name="MM_KeyValues_Handle_M_SetUInt64" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_KeyValues_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -13196,7 +13196,7 @@ Notes:
         <KeyWord name="MM_KeyValues_Handle_M_SetVector" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_KeyValues_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -13212,7 +13212,7 @@ Notes:
         <KeyWord name="MM_KeyValues_Handle_P_ExportLength" func="yes">
             <Overload retVal="property int" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_KeyValues_Handle_P_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Property methods:
@@ -13225,7 +13225,7 @@ Notes:
         <KeyWord name="MM_Menu_Handle_C_Menu" func="yes">
             <Overload retVal="public native Handle" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_Menu_Handle_C_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -13244,7 +13244,7 @@ Notes:
         <KeyWord name="MM_Menu_Handle_M_AddItem" func="yes">
             <Overload retVal="public native bool" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_Menu_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -13267,7 +13267,7 @@ Return:
         <KeyWord name="MM_Menu_Handle_M_Cancel" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_Menu_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Notes:
@@ -13283,7 +13283,7 @@ Notes:
         <KeyWord name="MM_Menu_Handle_M_Display" func="yes">
             <Overload retVal="public native bool" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_Menu_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -13303,7 +13303,7 @@ Return:
         <KeyWord name="MM_Menu_Handle_M_DisplayAt" func="yes">
             <Overload retVal="public native bool" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_Menu_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -13326,7 +13326,7 @@ Return:
         <KeyWord name="MM_Menu_Handle_M_DisplayVote" func="yes">
             <Overload retVal="public native bool" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_Menu_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -13355,7 +13355,7 @@ Return:
         <KeyWord name="MM_Menu_Handle_M_DisplayVoteToAll" func="yes">
             <Overload retVal="public bool" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_Menu_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -13374,7 +13374,7 @@ Return:
         <KeyWord name="MM_Menu_Handle_M_GetItem" func="yes">
             <Overload retVal="public native bool" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_Menu_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -13400,7 +13400,7 @@ Return:
         <KeyWord name="MM_Menu_Handle_M_GetTitle" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_Menu_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -13419,7 +13419,7 @@ Return:
         <KeyWord name="MM_Menu_Handle_M_InsertItem" func="yes">
             <Overload retVal="public native bool" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_Menu_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -13445,7 +13445,7 @@ Return:
         <KeyWord name="MM_Menu_Handle_M_RemoveAllItems" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_Menu_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Notes:
@@ -13456,7 +13456,7 @@ Notes:
         <KeyWord name="MM_Menu_Handle_M_RemoveItem" func="yes">
             <Overload retVal="public native bool" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_Menu_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -13474,7 +13474,7 @@ Return:
         <KeyWord name="MM_Menu_Handle_M_SetTitle" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_Menu_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -13490,7 +13490,7 @@ Notes:
         <KeyWord name="MM_Menu_Handle_M_ToPanel" func="yes">
             <Overload retVal="public native Panel" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_Menu_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -13506,7 +13506,7 @@ Return:
         <KeyWord name="MM_Menu_Handle_P_ExitBackButton" func="yes">
             <Overload retVal="property bool" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_Menu_Handle_P_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Property methods:
@@ -13523,7 +13523,7 @@ Notes:
         <KeyWord name="MM_Menu_Handle_P_ExitButton" func="yes">
             <Overload retVal="property bool" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_Menu_Handle_P_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Property methods:
@@ -13538,7 +13538,7 @@ Notes:
         <KeyWord name="MM_Menu_Handle_P_ItemCount" func="yes">
             <Overload retVal="property int" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_Menu_Handle_P_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Property methods:
@@ -13551,7 +13551,7 @@ Notes:
         <KeyWord name="MM_Menu_Handle_P_NoVoteButton" func="yes">
             <Overload retVal="property bool" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_Menu_Handle_P_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Property methods:
@@ -13565,7 +13565,7 @@ Notes:
         <KeyWord name="MM_Menu_Handle_P_OptionFlags" func="yes">
             <Overload retVal="property int" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_Menu_Handle_P_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Property methods:
@@ -13580,7 +13580,7 @@ Notes:
         <KeyWord name="MM_Menu_Handle_P_Pagination" func="yes">
             <Overload retVal="property int" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_Menu_Handle_P_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Property methods:
@@ -13596,7 +13596,7 @@ Notes:
         <KeyWord name="MM_Menu_Handle_P_Selection" func="yes">
             <Overload retVal="property int" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_Menu_Handle_P_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Property methods:
@@ -13610,7 +13610,7 @@ Notes:
         <KeyWord name="MM_Menu_Handle_P_Style" func="yes">
             <Overload retVal="property Handle" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_Menu_Handle_P_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Property methods:
@@ -13623,7 +13623,7 @@ Notes:
         <KeyWord name="MM_Menu_Handle_P_VoteResultCallback" func="yes">
             <Overload retVal="property VoteHandler" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_Menu_Handle_P_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Property methods:
@@ -13637,7 +13637,7 @@ Notes:
         <KeyWord name="MM_Panel_Handle_C_Panel" func="yes">
             <Overload retVal="public native Handle" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_Panel_Handle_C_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -13651,7 +13651,7 @@ Notes:
         <KeyWord name="MM_Panel_Handle_M_CanDrawFlags" func="yes">
             <Overload retVal="public native bool" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_Panel_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -13668,7 +13668,7 @@ Return:
         <KeyWord name="MM_Panel_Handle_M_DrawItem" func="yes">
             <Overload retVal="public native int" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_Panel_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -13689,7 +13689,7 @@ Return:
         <KeyWord name="MM_Panel_Handle_M_DrawText" func="yes">
             <Overload retVal="public native bool" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_Panel_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -13706,7 +13706,7 @@ Return:
         <KeyWord name="MM_Panel_Handle_M_Send" func="yes">
             <Overload retVal="public native bool" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_Panel_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -13731,7 +13731,7 @@ Return:
         <KeyWord name="MM_Panel_Handle_M_SetKeys" func="yes">
             <Overload retVal="public native bool" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_Panel_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -13750,7 +13750,7 @@ Return:
         <KeyWord name="MM_Panel_Handle_M_SetTitle" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_Panel_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -13766,7 +13766,7 @@ Notes:
         <KeyWord name="MM_Panel_Handle_P_CurrentKey" func="yes">
             <Overload retVal="property int" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_Panel_Handle_P_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Property methods:
@@ -13781,7 +13781,7 @@ Notes:
         <KeyWord name="MM_Panel_Handle_P_Style" func="yes">
             <Overload retVal="property Handle" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_Panel_Handle_P_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Property methods:
@@ -13794,7 +13794,7 @@ Notes:
         <KeyWord name="MM_Panel_Handle_P_TextRemaining" func="yes">
             <Overload retVal="property int" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_Panel_Handle_P_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Property methods:
@@ -13810,7 +13810,7 @@ Notes:
         <KeyWord name="MM_Protobuf_Handle_M_AddAngle" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_Protobuf_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -13828,7 +13828,7 @@ Error:
         <KeyWord name="MM_Protobuf_Handle_M_AddBool" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_Protobuf_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -13846,7 +13846,7 @@ Error:
         <KeyWord name="MM_Protobuf_Handle_M_AddColor" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_Protobuf_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -13864,7 +13864,7 @@ Error:
         <KeyWord name="MM_Protobuf_Handle_M_AddFloat" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_Protobuf_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -13882,7 +13882,7 @@ Error:
         <KeyWord name="MM_Protobuf_Handle_M_AddInt" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_Protobuf_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -13900,7 +13900,7 @@ Error:
         <KeyWord name="MM_Protobuf_Handle_M_AddMessage" func="yes">
             <Overload retVal="public native Protobuf" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_Protobuf_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -13918,7 +13918,7 @@ Return:
         <KeyWord name="MM_Protobuf_Handle_M_AddString" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_Protobuf_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -13936,7 +13936,7 @@ Error:
         <KeyWord name="MM_Protobuf_Handle_M_AddVector" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_Protobuf_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -13954,7 +13954,7 @@ Error:
         <KeyWord name="MM_Protobuf_Handle_M_AddVector2D" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_Protobuf_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -13972,7 +13972,7 @@ Error:
         <KeyWord name="MM_Protobuf_Handle_M_GetRepeatedFieldCount" func="yes">
             <Overload retVal="public native int" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_Protobuf_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -13990,7 +13990,7 @@ Return:
         <KeyWord name="MM_Protobuf_Handle_M_ReadAngle" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_Protobuf_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -14010,7 +14010,7 @@ Error:
         <KeyWord name="MM_Protobuf_Handle_M_ReadBool" func="yes">
             <Overload retVal="public native bool" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_Protobuf_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -14030,7 +14030,7 @@ Return:
         <KeyWord name="MM_Protobuf_Handle_M_ReadColor" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_Protobuf_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -14050,7 +14050,7 @@ Error:
         <KeyWord name="MM_Protobuf_Handle_M_ReadFloat" func="yes">
             <Overload retVal="public native float" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_Protobuf_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -14070,7 +14070,7 @@ Return:
         <KeyWord name="MM_Protobuf_Handle_M_ReadInt" func="yes">
             <Overload retVal="public native int" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_Protobuf_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -14090,7 +14090,7 @@ Return:
         <KeyWord name="MM_Protobuf_Handle_M_ReadMessage" func="yes">
             <Overload retVal="public native Protobuf" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_Protobuf_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -14108,7 +14108,7 @@ Return:
         <KeyWord name="MM_Protobuf_Handle_M_ReadRepeatedMessage" func="yes">
             <Overload retVal="public native Protobuf" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_Protobuf_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -14129,7 +14129,7 @@ Return:
         <KeyWord name="MM_Protobuf_Handle_M_ReadString" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_Protobuf_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -14151,7 +14151,7 @@ Error:
         <KeyWord name="MM_Protobuf_Handle_M_ReadVector" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_Protobuf_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -14172,7 +14172,7 @@ Error:
         <KeyWord name="MM_Protobuf_Handle_M_ReadVector2D" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_Protobuf_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -14192,7 +14192,7 @@ Error:
         <KeyWord name="MM_Protobuf_Handle_M_RemoveRepeatedFieldValue" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_Protobuf_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -14210,7 +14210,7 @@ Error:
         <KeyWord name="MM_Protobuf_Handle_M_SetAngle" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_Protobuf_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -14230,7 +14230,7 @@ Error:
         <KeyWord name="MM_Protobuf_Handle_M_SetBool" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_Protobuf_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -14250,7 +14250,7 @@ Error:
         <KeyWord name="MM_Protobuf_Handle_M_SetColor" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_Protobuf_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -14270,7 +14270,7 @@ Error:
         <KeyWord name="MM_Protobuf_Handle_M_SetFloat" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_Protobuf_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -14290,7 +14290,7 @@ Error:
         <KeyWord name="MM_Protobuf_Handle_M_SetInt" func="yes">
             <Overload retVal="public native int" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_Protobuf_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -14310,7 +14310,7 @@ Error:
         <KeyWord name="MM_Protobuf_Handle_M_SetString" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_Protobuf_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -14330,7 +14330,7 @@ Error:
         <KeyWord name="MM_Protobuf_Handle_M_SetVector" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_Protobuf_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -14350,7 +14350,7 @@ Error:
         <KeyWord name="MM_Protobuf_Handle_M_SetVector2D" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_Protobuf_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -14370,7 +14370,7 @@ Error:
         <KeyWord name="MM_Regex_Handle_C_Regex" func="yes">
             <Overload retVal="public native Handle" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_Regex_Handle_C_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -14392,7 +14392,7 @@ Notes:
         <KeyWord name="MM_Regex_Handle_M_CaptureCount" func="yes">
             <Overload retVal="public native int" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_Regex_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -14409,7 +14409,7 @@ Return:
         <KeyWord name="MM_Regex_Handle_M_GetSubString" func="yes">
             <Overload retVal="public native bool" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_Regex_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -14436,7 +14436,7 @@ Return:
         <KeyWord name="MM_Regex_Handle_M_Match" func="yes">
             <Overload retVal="public native int" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_Regex_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -14459,7 +14459,7 @@ Return:
         <KeyWord name="MM_Regex_Handle_M_MatchAll" func="yes">
             <Overload retVal="public native int" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_Regex_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -14479,7 +14479,7 @@ Return:
         <KeyWord name="MM_Regex_Handle_M_MatchCount" func="yes">
             <Overload retVal="public native int" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_Regex_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Notes:
@@ -14493,7 +14493,7 @@ Return:
         <KeyWord name="MM_Regex_Handle_M_MatchOffset" func="yes">
             <Overload retVal="public native int" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_Regex_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -14509,7 +14509,7 @@ Return:
         <KeyWord name="MM_SMCParser_Handle_C_SMCParser" func="yes">
             <Overload retVal="public native Handle" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_SMCParser_Handle_C_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Notes:
@@ -14520,7 +14520,7 @@ Notes:
         <KeyWord name="MM_SMCParser_Handle_M_GetErrorString" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_SMCParser_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -14540,7 +14540,7 @@ Return:
         <KeyWord name="MM_SMCParser_Handle_M_ParseFile" func="yes">
             <Overload retVal="public native SMCError" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_SMCParser_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -14560,7 +14560,7 @@ Return:
         <KeyWord name="MM_SMCParser_Handle_P_OnEnd" func="yes">
             <Overload retVal="property SMC_ParseEnd" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_SMCParser_Handle_P_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Property methods:
@@ -14573,7 +14573,7 @@ Notes:
         <KeyWord name="MM_SMCParser_Handle_P_OnEnterSection" func="yes">
             <Overload retVal="property SMC_NewSection" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_SMCParser_Handle_P_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Property methods:
@@ -14586,7 +14586,7 @@ Notes:
         <KeyWord name="MM_SMCParser_Handle_P_OnKeyValue" func="yes">
             <Overload retVal="property SMC_KeyValue" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_SMCParser_Handle_P_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Property methods:
@@ -14599,7 +14599,7 @@ Notes:
         <KeyWord name="MM_SMCParser_Handle_P_OnLeaveSection" func="yes">
             <Overload retVal="property SMC_EndSection" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_SMCParser_Handle_P_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Property methods:
@@ -14612,7 +14612,7 @@ Notes:
         <KeyWord name="MM_SMCParser_Handle_P_OnRawLine" func="yes">
             <Overload retVal="property SMC_RawLine" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_SMCParser_Handle_P_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Property methods:
@@ -14625,7 +14625,7 @@ Notes:
         <KeyWord name="MM_SMCParser_Handle_P_OnStart" func="yes">
             <Overload retVal="property SMC_ParseStart" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_SMCParser_Handle_P_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Property methods:
@@ -14638,7 +14638,7 @@ Notes:
         <KeyWord name="MM_StringMapSnapshot_Handle_M_GetKey" func="yes">
             <Overload retVal="public native int" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_StringMapSnapshot_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -14660,7 +14660,7 @@ Return:
         <KeyWord name="MM_StringMapSnapshot_Handle_M_KeyBufferSize" func="yes">
             <Overload retVal="public native int" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_StringMapSnapshot_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -14679,7 +14679,7 @@ Return:
         <KeyWord name="MM_StringMapSnapshot_Handle_P_Length" func="yes">
             <Overload retVal="property int" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_StringMapSnapshot_Handle_P_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Property methods:
@@ -14692,7 +14692,7 @@ Notes:
         <KeyWord name="MM_StringMap_Handle_C_StringMap" func="yes">
             <Overload retVal="public native Handle" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_StringMap_Handle_C_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Notes:
@@ -14711,7 +14711,7 @@ Notes:
         <KeyWord name="MM_StringMap_Handle_M_Clear" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_StringMap_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Notes:
@@ -14722,7 +14722,7 @@ Notes:
         <KeyWord name="MM_StringMap_Handle_M_GetArray" func="yes">
             <Overload retVal="public native bool" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_StringMap_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -14746,7 +14746,7 @@ Return:
         <KeyWord name="MM_StringMap_Handle_M_GetString" func="yes">
             <Overload retVal="public native bool" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_StringMap_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -14769,7 +14769,7 @@ Return:
         <KeyWord name="MM_StringMap_Handle_M_GetValue" func="yes">
             <Overload retVal="public native bool" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_StringMap_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -14788,7 +14788,7 @@ Return:
         <KeyWord name="MM_StringMap_Handle_M_Remove" func="yes">
             <Overload retVal="public native bool" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_StringMap_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -14804,7 +14804,7 @@ Return:
         <KeyWord name="MM_StringMap_Handle_M_SetArray" func="yes">
             <Overload retVal="public native bool" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_StringMap_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -14826,7 +14826,7 @@ Return:
         <KeyWord name="MM_StringMap_Handle_M_SetString" func="yes">
             <Overload retVal="public native bool" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_StringMap_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -14846,7 +14846,7 @@ Return:
         <KeyWord name="MM_StringMap_Handle_M_SetValue" func="yes">
             <Overload retVal="public native bool" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_StringMap_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -14866,7 +14866,7 @@ Return:
         <KeyWord name="MM_StringMap_Handle_M_Snapshot" func="yes">
             <Overload retVal="public native StringMapSnapshot" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_StringMap_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Notes:
@@ -14877,7 +14877,7 @@ Notes:
         <KeyWord name="MM_StringMap_Handle_P_Size" func="yes">
             <Overload retVal="property int" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_StringMap_Handle_P_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Property methods:
@@ -14890,7 +14890,7 @@ Notes:
         <KeyWord name="MM_TopMenu_Handle_C_TopMenu" func="yes">
             <Overload retVal="public native Handle" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_TopMenu_Handle_C_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -14906,7 +14906,7 @@ Return:
         <KeyWord name="MM_TopMenu_Handle_M_AddCategory" func="yes">
             <Overload retVal="public native TopMenuObject" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_TopMenu_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -14930,7 +14930,7 @@ Return:
         <KeyWord name="MM_TopMenu_Handle_M_AddItem" func="yes">
             <Overload retVal="public native TopMenuObject" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_TopMenu_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -14956,7 +14956,7 @@ Return:
         <KeyWord name="MM_TopMenu_Handle_M_Display" func="yes">
             <Overload retVal="public native bool" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_TopMenu_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -14974,7 +14974,7 @@ Return:
         <KeyWord name="MM_TopMenu_Handle_M_DisplayCategory" func="yes">
             <Overload retVal="public native bool" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_TopMenu_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -14992,7 +14992,7 @@ Return:
         <KeyWord name="MM_TopMenu_Handle_M_FindCategory" func="yes">
             <Overload retVal="public native TopMenuObject" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_TopMenu_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -15009,7 +15009,7 @@ Return:
         <KeyWord name="MM_TopMenu_Handle_M_GetInfoString" func="yes">
             <Overload retVal="public native int" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_TopMenu_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -15029,7 +15029,7 @@ Return:
         <KeyWord name="MM_TopMenu_Handle_M_GetObjName" func="yes">
             <Overload retVal="public native int" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_TopMenu_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -15049,7 +15049,7 @@ Return:
         <KeyWord name="MM_TopMenu_Handle_M_LoadConfig" func="yes">
             <Overload retVal="public native bool" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_TopMenu_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -15083,7 +15083,7 @@ Return:
         <KeyWord name="MM_TopMenu_Handle_M_Remove" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_TopMenu_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -15099,7 +15099,7 @@ Notes:
         <KeyWord name="MM_TopMenu_Handle_P_CacheTitles" func="yes">
             <Overload retVal="property bool" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_TopMenu_Handle_P_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Property methods:
@@ -15114,7 +15114,7 @@ Notes:
         <KeyWord name="MM_Transaction_Handle_C_Transaction" func="yes">
             <Overload retVal="public native Handle" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_Transaction_Handle_C_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Notes:
@@ -15125,7 +15125,7 @@ Notes:
         <KeyWord name="MM_Transaction_Handle_M_AddQuery" func="yes">
             <Overload retVal="public native int" descr="
 Methodmap notes:
-    This string are not exist SourceMod function!
+    This string is not a real Sourcemod Function!
     To use function remove the 'MM_Transaction_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
@@ -23368,9 +23368,31 @@ Return:
                 <Param name="bool caseSensitive=true"/>
             </Overload>
         </KeyWord>
+        <KeyWord name="ADMFLAG_BAN"/>
+        <KeyWord name="ADMFLAG_CHANGEMAP"/>
+        <KeyWord name="ADMFLAG_CHAT"/>
+        <KeyWord name="ADMFLAG_CHEATS"/>
+        <KeyWord name="ADMFLAG_CONFIG"/>
+        <KeyWord name="ADMFLAG_CONVARS"/>
+        <KeyWord name="ADMFLAG_CUSTOM1"/>
+        <KeyWord name="ADMFLAG_CUSTOM2"/>
+        <KeyWord name="ADMFLAG_CUSTOM3"/>
+        <KeyWord name="ADMFLAG_CUSTOM4"/>
+        <KeyWord name="ADMFLAG_CUSTOM5"/>
+        <KeyWord name="ADMFLAG_CUSTOM6"/>
+        <KeyWord name="ADMFLAG_GENERIC"/>
+        <KeyWord name="ADMFLAG_KICK"/>
+        <KeyWord name="ADMFLAG_PASSWORD"/>
+        <KeyWord name="ADMFLAG_RCON"/>
+        <KeyWord name="ADMFLAG_RESERVATION"/>
+        <KeyWord name="ADMFLAG_ROOT"/>
+        <KeyWord name="ADMFLAG_SLAY"/>
+        <KeyWord name="ADMFLAG_UNBAN"/>
+        <KeyWord name="ADMFLAG_VOTE"/>
         <KeyWord name="ADMINMENU_PLAYERCOMMANDS"/>
         <KeyWord name="ADMINMENU_SERVERCOMMANDS"/>
         <KeyWord name="ADMINMENU_VOTINGCOMMANDS"/>
+        <KeyWord name="ALL_VISIBLE_CONTENTS"/>
         <KeyWord name="APLRes"/>
         <KeyWord name="APLRes_Failure"/>
         <KeyWord name="APLRes_SilentFailure"/>
@@ -23420,8 +23442,18 @@ Return:
         <KeyWord name="AuthId_Steam2"/>
         <KeyWord name="AuthId_Steam3"/>
         <KeyWord name="AuthId_SteamID64"/>
+        <KeyWord name="BANFLAG_AUTHID"/>
+        <KeyWord name="BANFLAG_AUTO"/>
+        <KeyWord name="BANFLAG_IP"/>
+        <KeyWord name="BANFLAG_NOKICK"/>
         <KeyWord name="BfRead"/>
         <KeyWord name="BfWrite"/>
+        <KeyWord name="COMMAND_FILTER_ALIVE"/>
+        <KeyWord name="COMMAND_FILTER_CONNECTED"/>
+        <KeyWord name="COMMAND_FILTER_DEAD"/>
+        <KeyWord name="COMMAND_FILTER_NO_BOTS"/>
+        <KeyWord name="COMMAND_FILTER_NO_IMMUNITY"/>
+        <KeyWord name="COMMAND_FILTER_NO_MULTI"/>
         <KeyWord name="COMMAND_TARGET_AMBIGUOUS"/>
         <KeyWord name="COMMAND_TARGET_EMPTY_FILTER"/>
         <KeyWord name="COMMAND_TARGET_IMMUNE"/>
@@ -23560,6 +23592,7 @@ Return:
         <KeyWord name="CSWeapon_USP"/>
         <KeyWord name="CSWeapon_USP_SILENCER"/>
         <KeyWord name="CSWeapon_XM1014"/>
+        <KeyWord name="CS_DMG_HEADSHOT"/>
         <KeyWord name="CS_SLOT_C4"/>
         <KeyWord name="CS_SLOT_GRENADE"/>
         <KeyWord name="CS_SLOT_KNIFE"/>
@@ -23609,8 +23642,38 @@ Return:
         <KeyWord name="DBVal_Error"/>
         <KeyWord name="DBVal_Null"/>
         <KeyWord name="DBVal_TypeMismatch"/>
+        <KeyWord name="DMG_ACID"/>
+        <KeyWord name="DMG_AIRBOAT"/>
+        <KeyWord name="DMG_ALWAYSGIB"/>
+        <KeyWord name="DMG_BLAST"/>
+        <KeyWord name="DMG_BLAST_SURFACE"/>
+        <KeyWord name="DMG_BUCKSHOT"/>
+        <KeyWord name="DMG_BULLET"/>
+        <KeyWord name="DMG_BURN"/>
+        <KeyWord name="DMG_CLUB"/>
         <KeyWord name="DMG_CRIT"/>
+        <KeyWord name="DMG_CRUSH"/>
+        <KeyWord name="DMG_DIRECT"/>
+        <KeyWord name="DMG_DISSOLVE"/>
+        <KeyWord name="DMG_DROWN"/>
+        <KeyWord name="DMG_DROWNRECOVER"/>
+        <KeyWord name="DMG_ENERGYBEAM"/>
+        <KeyWord name="DMG_FALL"/>
         <KeyWord name="DMG_GENERIC"/>
+        <KeyWord name="DMG_NERVEGAS"/>
+        <KeyWord name="DMG_NEVERGIB"/>
+        <KeyWord name="DMG_PARALYZE"/>
+        <KeyWord name="DMG_PHYSGUN"/>
+        <KeyWord name="DMG_PLASMA"/>
+        <KeyWord name="DMG_POISON"/>
+        <KeyWord name="DMG_PREVENT_PHYSICS_FORCE"/>
+        <KeyWord name="DMG_RADIATION"/>
+        <KeyWord name="DMG_REMOVENORAGDOLL"/>
+        <KeyWord name="DMG_SHOCK"/>
+        <KeyWord name="DMG_SLASH"/>
+        <KeyWord name="DMG_SLOWBURN"/>
+        <KeyWord name="DMG_SONIC"/>
+        <KeyWord name="DMG_VEHICLE"/>
         <KeyWord name="DataPack"/>
         <KeyWord name="DataPackPos"/>
         <KeyWord name="Database"/>
@@ -23672,10 +23735,85 @@ Return:
         <KeyWord name="FBEAM_STARTENTITY"/>
         <KeyWord name="FBEAM_STARTVISIBLE"/>
         <KeyWord name="FBEAM_USE_HITBOXES"/>
+        <KeyWord name="FCVAR_ACCESSIBLE_FROM_THREADS"/>
+        <KeyWord name="FCVAR_ARCHIVE"/>
+        <KeyWord name="FCVAR_ARCHIVE_GAMECONSOLE"/>
+        <KeyWord name="FCVAR_ARCHIVE_XBOX"/>
+        <KeyWord name="FCVAR_CHEAT"/>
+        <KeyWord name="FCVAR_CLIENTCMD_CAN_EXECUTE"/>
+        <KeyWord name="FCVAR_CLIENTDLL"/>
+        <KeyWord name="FCVAR_DEMO"/>
+        <KeyWord name="FCVAR_DEVELOPMENTONLY"/>
+        <KeyWord name="FCVAR_DONTRECORD"/>
+        <KeyWord name="FCVAR_GAMEDLL"/>
+        <KeyWord name="FCVAR_HIDDEN"/>
+        <KeyWord name="FCVAR_LAUNCHER"/>
+        <KeyWord name="FCVAR_MATERIAL_SYSTEM"/>
+        <KeyWord name="FCVAR_MATERIAL_SYSTEM_THREAD"/>
+        <KeyWord name="FCVAR_NEVER_AS_STRING"/>
         <KeyWord name="FCVAR_NONE"/>
+        <KeyWord name="FCVAR_NOTIFY"/>
+        <KeyWord name="FCVAR_NOT_CONNECTED"/>
+        <KeyWord name="FCVAR_PRINTABLEONLY"/>
+        <KeyWord name="FCVAR_PROTECTED"/>
+        <KeyWord name="FCVAR_RELEASE"/>
+        <KeyWord name="FCVAR_RELOAD_MATERIALS"/>
+        <KeyWord name="FCVAR_RELOAD_TEXTURES"/>
+        <KeyWord name="FCVAR_REPLICATED"/>
+        <KeyWord name="FCVAR_SERVER_CANNOT_QUERY"/>
+        <KeyWord name="FCVAR_SERVER_CAN_EXECUTE"/>
+        <KeyWord name="FCVAR_SPONLY"/>
+        <KeyWord name="FCVAR_SS"/>
+        <KeyWord name="FCVAR_SS_ADDED"/>
+        <KeyWord name="FCVAR_UNLOGGED"/>
+        <KeyWord name="FCVAR_UNREGISTERED"/>
+        <KeyWord name="FCVAR_USERINFO"/>
         <KeyWord name="FEATURECAP_COMMANDLISTENER"/>
         <KeyWord name="FEATURECAP_PLAYERRUNCMD_11PARAMS"/>
         <KeyWord name="FLOAT_PI"/>
+        <KeyWord name="FL_AIMTARGET"/>
+        <KeyWord name="FL_ATCONTROLS"/>
+        <KeyWord name="FL_BASEVELOCITY"/>
+        <KeyWord name="FL_CLIENT"/>
+        <KeyWord name="FL_CONVEYOR"/>
+        <KeyWord name="FL_DISSOLVING"/>
+        <KeyWord name="FL_DONTTOUCH"/>
+        <KeyWord name="FL_DUCKING"/>
+        <KeyWord name="FL_EDICT_ALWAYS"/>
+        <KeyWord name="FL_EDICT_CHANGED"/>
+        <KeyWord name="FL_EDICT_DIRTY_PVS_INFORMATION"/>
+        <KeyWord name="FL_EDICT_DONTSEND"/>
+        <KeyWord name="FL_EDICT_FREE"/>
+        <KeyWord name="FL_EDICT_FULL"/>
+        <KeyWord name="FL_EDICT_FULLCHECK"/>
+        <KeyWord name="FL_EDICT_PENDING_DORMANT_CHECK"/>
+        <KeyWord name="FL_EDICT_PVSCHECK"/>
+        <KeyWord name="FL_EP2V_UNKNOWN1"/>
+        <KeyWord name="FL_FAKECLIENT"/>
+        <KeyWord name="FL_FLY"/>
+        <KeyWord name="FL_FREEZING"/>
+        <KeyWord name="FL_FROZEN"/>
+        <KeyWord name="FL_FULL_EDICT_CHANGED"/>
+        <KeyWord name="FL_GODMODE"/>
+        <KeyWord name="FL_GRAPHED"/>
+        <KeyWord name="FL_GRENADE"/>
+        <KeyWord name="FL_INRAIN"/>
+        <KeyWord name="FL_INWATER"/>
+        <KeyWord name="FL_KILLME"/>
+        <KeyWord name="FL_NOTARGET"/>
+        <KeyWord name="FL_NPC"/>
+        <KeyWord name="FL_OBJECT"/>
+        <KeyWord name="FL_ONFIRE"/>
+        <KeyWord name="FL_ONGROUND"/>
+        <KeyWord name="FL_ONTRAIN"/>
+        <KeyWord name="FL_PARTIALGROUND"/>
+        <KeyWord name="FL_STATICPROP"/>
+        <KeyWord name="FL_STEPMOVEMENT"/>
+        <KeyWord name="FL_SWIM"/>
+        <KeyWord name="FL_TRANSRAGDOLL"/>
+        <KeyWord name="FL_UNBLOCKABLE_BY_PLAYER"/>
+        <KeyWord name="FL_WATERJUMP"/>
+        <KeyWord name="FL_WORLDBRUSH"/>
         <KeyWord name="FPERM_G_EXEC"/>
         <KeyWord name="FPERM_G_READ"/>
         <KeyWord name="FPERM_G_WRITE"/>
@@ -23712,12 +23850,46 @@ Return:
         <KeyWord name="Handle"/>
         <KeyWord name="INVALID_ADMIN_ID"/>
         <KeyWord name="INVALID_ENT_REFERENCE"/>
+        <KeyWord name="INVALID_FCVAR_FLAGS"/>
         <KeyWord name="INVALID_GROUP_ID"/>
         <KeyWord name="INVALID_HANDLE"/>
         <KeyWord name="INVALID_MESSAGE_ID"/>
         <KeyWord name="INVALID_STRING_INDEX"/>
         <KeyWord name="INVALID_STRING_TABLE"/>
         <KeyWord name="INVALID_TOPMENUOBJECT"/>
+        <KeyWord name="IN_ALT1"/>
+        <KeyWord name="IN_ALT2"/>
+        <KeyWord name="IN_ATTACK"/>
+        <KeyWord name="IN_ATTACK2"/>
+        <KeyWord name="IN_ATTACK3"/>
+        <KeyWord name="IN_BACK"/>
+        <KeyWord name="IN_BULLRUSH"/>
+        <KeyWord name="IN_CANCEL"/>
+        <KeyWord name="IN_DUCK"/>
+        <KeyWord name="IN_FORWARD"/>
+        <KeyWord name="IN_GRENADE1"/>
+        <KeyWord name="IN_GRENADE2"/>
+        <KeyWord name="IN_JUMP"/>
+        <KeyWord name="IN_LEFT"/>
+        <KeyWord name="IN_MOVELEFT"/>
+        <KeyWord name="IN_MOVERIGHT"/>
+        <KeyWord name="IN_RELOAD"/>
+        <KeyWord name="IN_RIGHT"/>
+        <KeyWord name="IN_RUN"/>
+        <KeyWord name="IN_SCORE"/>
+        <KeyWord name="IN_SPEED"/>
+        <KeyWord name="IN_USE"/>
+        <KeyWord name="IN_WALK"/>
+        <KeyWord name="IN_WEAPON1"/>
+        <KeyWord name="IN_WEAPON2"/>
+        <KeyWord name="IN_ZOOM"/>
+        <KeyWord name="ITEMDRAW_CONTROL"/>
+        <KeyWord name="ITEMDRAW_DEFAULT"/>
+        <KeyWord name="ITEMDRAW_DISABLED"/>
+        <KeyWord name="ITEMDRAW_IGNORE"/>
+        <KeyWord name="ITEMDRAW_NOTEXT"/>
+        <KeyWord name="ITEMDRAW_RAWLINE"/>
+        <KeyWord name="ITEMDRAW_SPACER"/>
         <KeyWord name="Identity"/>
         <KeyWord name="Identity_Core"/>
         <KeyWord name="Identity_Extension"/>
@@ -23742,10 +23914,35 @@ Return:
         <KeyWord name="Listen_Default"/>
         <KeyWord name="Listen_No"/>
         <KeyWord name="Listen_Yes"/>
+        <KeyWord name="MAPLIST_FLAG_CLEARARRAY"/>
+        <KeyWord name="MAPLIST_FLAG_MAPSFOLDER"/>
+        <KeyWord name="MAPLIST_FLAG_NO_DEFAULT"/>
+        <KeyWord name="MASK_ALL"/>
+        <KeyWord name="MASK_NPCSOLID"/>
+        <KeyWord name="MASK_NPCSOLID_BRUSHONLY"/>
+        <KeyWord name="MASK_NPCWORLDSTATIC"/>
+        <KeyWord name="MASK_OPAQUE"/>
+        <KeyWord name="MASK_OPAQUE_AND_NPCS"/>
+        <KeyWord name="MASK_PLAYERSOLID"/>
+        <KeyWord name="MASK_PLAYERSOLID_BRUSHONLY"/>
+        <KeyWord name="MASK_SHOT"/>
+        <KeyWord name="MASK_SHOT_HULL"/>
+        <KeyWord name="MASK_SHOT_PORTAL"/>
+        <KeyWord name="MASK_SOLID"/>
+        <KeyWord name="MASK_SOLID_BRUSHONLY"/>
+        <KeyWord name="MASK_SPLITAREAPORTAL"/>
+        <KeyWord name="MASK_VISIBLE"/>
+        <KeyWord name="MASK_VISIBLE_AND_NPCS"/>
+        <KeyWord name="MASK_WATER"/>
         <KeyWord name="MAXPLAYERS"/>
         <KeyWord name="MAX_LIGHTSTYLES"/>
         <KeyWord name="MAX_NAME_LENGTH"/>
         <KeyWord name="MAX_TARGET_LENGTH"/>
+        <KeyWord name="MENUFLAG_BUTTON_EXIT"/>
+        <KeyWord name="MENUFLAG_BUTTON_EXITBACK"/>
+        <KeyWord name="MENUFLAG_BUTTON_NOVOTE"/>
+        <KeyWord name="MENUFLAG_NO_SOUND"/>
+        <KeyWord name="MENU_ACTIONS_ALL"/>
         <KeyWord name="MENU_ACTIONS_DEFAULT"/>
         <KeyWord name="MENU_NO_PAGINATION"/>
         <KeyWord name="MENU_TIME_FOREVER"/>
@@ -24093,6 +24290,10 @@ Return:
         <KeyWord name="SMC_ParseEnd"/>
         <KeyWord name="SMC_ParseStart"/>
         <KeyWord name="SMC_RawLine"/>
+        <KeyWord name="SM_PARAM_COPYBACK"/>
+        <KeyWord name="SM_PARAM_STRING_BINARY"/>
+        <KeyWord name="SM_PARAM_STRING_COPY"/>
+        <KeyWord name="SM_PARAM_STRING_UTF8"/>
         <KeyWord name="SM_REPLY_TO_CHAT"/>
         <KeyWord name="SM_REPLY_TO_CONSOLE"/>
         <KeyWord name="SNDATTN_IDLE"/>
@@ -24195,6 +24396,7 @@ Return:
         <KeyWord name="SP_ERROR_STACKLOW"/>
         <KeyWord name="SP_ERROR_STACKMIN"/>
         <KeyWord name="SP_ERROR_TRACKER_BOUNDS"/>
+        <KeyWord name="SP_PARAMFLAG_BYREF"/>
         <KeyWord name="SortOrder"/>
         <KeyWord name="SortType"/>
         <KeyWord name="Sort_Ascending"/>
@@ -24404,7 +24606,37 @@ Return:
         <KeyWord name="TFWeaponSlot_PDA"/>
         <KeyWord name="TFWeaponSlot_Primary"/>
         <KeyWord name="TFWeaponSlot_Secondary"/>
+        <KeyWord name="TF_CONDFLAG_BLEEDING"/>
+        <KeyWord name="TF_CONDFLAG_BONKED"/>
+        <KeyWord name="TF_CONDFLAG_BUFFED"/>
+        <KeyWord name="TF_CONDFLAG_CHARGING"/>
+        <KeyWord name="TF_CONDFLAG_CLOAKED"/>
+        <KeyWord name="TF_CONDFLAG_CLOAKFLICKER"/>
+        <KeyWord name="TF_CONDFLAG_CRITCOLA"/>
+        <KeyWord name="TF_CONDFLAG_DAZED"/>
+        <KeyWord name="TF_CONDFLAG_DEADRINGERED"/>
+        <KeyWord name="TF_CONDFLAG_DEFENSEBUFFED"/>
+        <KeyWord name="TF_CONDFLAG_DEMOBUFF"/>
+        <KeyWord name="TF_CONDFLAG_DISGUISED"/>
+        <KeyWord name="TF_CONDFLAG_DISGUISING"/>
+        <KeyWord name="TF_CONDFLAG_HEALING"/>
+        <KeyWord name="TF_CONDFLAG_INHEALRADIUS"/>
+        <KeyWord name="TF_CONDFLAG_JARATED"/>
+        <KeyWord name="TF_CONDFLAG_KRITZKRIEGED"/>
+        <KeyWord name="TF_CONDFLAG_MARKEDFORDEATH"/>
+        <KeyWord name="TF_CONDFLAG_MEGAHEAL"/>
+        <KeyWord name="TF_CONDFLAG_MILKED"/>
         <KeyWord name="TF_CONDFLAG_NONE"/>
+        <KeyWord name="TF_CONDFLAG_ONFIRE"/>
+        <KeyWord name="TF_CONDFLAG_OVERHEALED"/>
+        <KeyWord name="TF_CONDFLAG_REGENBUFFED"/>
+        <KeyWord name="TF_CONDFLAG_SLOWED"/>
+        <KeyWord name="TF_CONDFLAG_TAUNTING"/>
+        <KeyWord name="TF_CONDFLAG_TELEPORTGLOW"/>
+        <KeyWord name="TF_CONDFLAG_TELEPORTING"/>
+        <KeyWord name="TF_CONDFLAG_UBERCHARGED"/>
+        <KeyWord name="TF_CONDFLAG_UBERCHARGEFADE"/>
+        <KeyWord name="TF_CONDFLAG_ZOOMED"/>
         <KeyWord name="TF_CUSTOM_AEGIS_ROUND"/>
         <KeyWord name="TF_CUSTOM_AIR_STICKY_BURST"/>
         <KeyWord name="TF_CUSTOM_BACKSTAB"/>
@@ -24487,6 +24719,17 @@ Return:
         <KeyWord name="TF_CUSTOM_THROWABLE_KILL"/>
         <KeyWord name="TF_CUSTOM_TRIGGER_HURT"/>
         <KeyWord name="TF_CUSTOM_WRENCH_FIX"/>
+        <KeyWord name="TF_DEATHFLAG_ASSISTERDOMINATION"/>
+        <KeyWord name="TF_DEATHFLAG_ASSISTERREVENGE"/>
+        <KeyWord name="TF_DEATHFLAG_AUSTRALIUM"/>
+        <KeyWord name="TF_DEATHFLAG_DEADRINGER"/>
+        <KeyWord name="TF_DEATHFLAG_FIRSTBLOOD"/>
+        <KeyWord name="TF_DEATHFLAG_GIBBED"/>
+        <KeyWord name="TF_DEATHFLAG_INTERRUPTED"/>
+        <KeyWord name="TF_DEATHFLAG_KILLERDOMINATION"/>
+        <KeyWord name="TF_DEATHFLAG_KILLERREVENGE"/>
+        <KeyWord name="TF_DEATHFLAG_MINIBOSS"/>
+        <KeyWord name="TF_DEATHFLAG_PURGATORY"/>
         <KeyWord name="TF_FLAGEVENT_CAPTURED"/>
         <KeyWord name="TF_FLAGEVENT_DEFENDED"/>
         <KeyWord name="TF_FLAGEVENT_DROPPED"/>
@@ -24497,6 +24740,14 @@ Return:
         <KeyWord name="TF_STUNFLAGS_LOSERSTATE"/>
         <KeyWord name="TF_STUNFLAGS_NORMALBONK"/>
         <KeyWord name="TF_STUNFLAGS_SMALLBONK"/>
+        <KeyWord name="TF_STUNFLAG_BONKSTUCK"/>
+        <KeyWord name="TF_STUNFLAG_CHEERSOUND"/>
+        <KeyWord name="TF_STUNFLAG_GHOSTEFFECT"/>
+        <KeyWord name="TF_STUNFLAG_LIMITMOVEMENT"/>
+        <KeyWord name="TF_STUNFLAG_NOSOUNDOREFFECT"/>
+        <KeyWord name="TF_STUNFLAG_SLOWDOWN"/>
+        <KeyWord name="TF_STUNFLAG_SOUND"/>
+        <KeyWord name="TF_STUNFLAG_THIRDPERSON"/>
         <KeyWord name="TF_WEAPON_BAT"/>
         <KeyWord name="TF_WEAPON_BAT_FISH"/>
         <KeyWord name="TF_WEAPON_BAT_GIFTWRAP"/>
@@ -24607,6 +24858,10 @@ Return:
         <KeyWord name="TF_WEAPON_THROWABLE"/>
         <KeyWord name="TF_WEAPON_TRANQ"/>
         <KeyWord name="TF_WEAPON_WRENCH"/>
+        <KeyWord name="TIMER_DATA_HNDL_CLOSE"/>
+        <KeyWord name="TIMER_FLAG_NO_MAPCHANGE"/>
+        <KeyWord name="TIMER_HNDL_CLOSE"/>
+        <KeyWord name="TIMER_REPEAT"/>
         <KeyWord name="TopMenu"/>
         <KeyWord name="TopMenuAction"/>
         <KeyWord name="TopMenuAction_DisplayOption"/>
@@ -24625,6 +24880,9 @@ Return:
         <KeyWord name="Transaction"/>
         <KeyWord name="UM_BitBuf"/>
         <KeyWord name="UM_Protobuf"/>
+        <KeyWord name="USERMSG_BLOCKHOOKS"/>
+        <KeyWord name="USERMSG_INITMSG"/>
+        <KeyWord name="USERMSG_RELIABLE"/>
         <KeyWord name="UseType"/>
         <KeyWord name="Use_Off"/>
         <KeyWord name="Use_On"/>
@@ -24632,12 +24890,18 @@ Return:
         <KeyWord name="Use_Toggle"/>
         <KeyWord name="UserMessageType"/>
         <KeyWord name="UserMsg"/>
+        <KeyWord name="VDECODE_FLAG_ALLOWNOTINGAME"/>
+        <KeyWord name="VDECODE_FLAG_ALLOWNULL"/>
+        <KeyWord name="VDECODE_FLAG_ALLOWWORLD"/>
+        <KeyWord name="VDECODE_FLAG_BYREF"/>
+        <KeyWord name="VENCODE_FLAG_COPYBACK"/>
         <KeyWord name="VOICE_LISTENALL"/>
         <KeyWord name="VOICE_LISTENTEAM"/>
         <KeyWord name="VOICE_MUTED"/>
         <KeyWord name="VOICE_NORMAL"/>
         <KeyWord name="VOICE_SPEAKALL"/>
         <KeyWord name="VOICE_TEAM"/>
+        <KeyWord name="VOTEFLAG_NO_REVOTES"/>
         <KeyWord name="VOTEINFO_CLIENT_INDEX"/>
         <KeyWord name="VOTEINFO_CLIENT_ITEM"/>
         <KeyWord name="VOTEINFO_ITEM_INDEX"/>
@@ -24675,6 +24939,7 @@ Return:
         <KeyWord name="methodmap"/>
         <KeyWord name="native"/>
         <KeyWord name="new"/>
+        <KeyWord name="null"/>
         <KeyWord name="property"/>
         <KeyWord name="public"/>
         <KeyWord name="return"/>
