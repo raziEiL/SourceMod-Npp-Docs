@@ -545,6 +545,7 @@ MOVETYPE_WALK
 MapChange_Instant 
 MapChange_MapEnd 
 MapChange_RoundEnd 
+MaxClients 
 MenuAction_Cancel 
 MenuAction_Display 
 MenuAction_DisplayItem 
@@ -574,6 +575,8 @@ MenuSource_RawPanel
 MenuStyle_Default 
 MenuStyle_Radio 
 MenuStyle_Valve 
+NULL_STRING 
+NULL_VECTOR 
 NetFlow_Both 
 NetFlow_Incoming 
 NetFlow_Outgoing 
@@ -1426,5 +1429,3 @@ VOTEINFO_ITEM_INDEX
 VOTEINFO_ITEM_VOTES 
 VoteCancel_Generic 
 VoteCancel_NoVotes 
-and 
-then 

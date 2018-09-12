@@ -1,4 +1,4 @@
-#define PLUGIN_VERSION "1.2.8"
+#define PLUGIN_VERSION "1.2.9"
 
 #pragma newdecls required
 #pragma semicolon 1
@@ -9,13 +9,13 @@
 //-----------------------------------
 // Pre-compiler option
 //-----------------------------------
-#define DEBUG_BITS (DEBUG_BIT_LOG|DEBUG_BIT_ERROR|DEBUG_BIT_COMMON|DEBUG_BIT_COMMENTARY)
-// write to NPP_STYLE_FUNCTION file all strings but fake mothodmaps (e.g., METHODMAP_ArrayList_Handle_METHOD_GetArray)
-#define ADD_NPP_STYLE_METHODMAP 1
+#define DEBUG_BITS 0//(DEBUG_BIT_LOG|DEBUG_BIT_ERROR|DEBUG_BIT_COMMON|DEBUG_BIT_COMMENTARY)
+#define ADD_NPP_STYLE_METHODMAP 1 // write to NPP_STYLE_FUNCTION file all strings but fake methodmaps (e.g., MM_ArrayList_Handle_M_GetArray)
 #define ADD_DOCS_OPERATORS_MISC 1
 #define ADD_DOCS_VARIABLES		1
 #define CASE_SENSITIVE_SORTING	true
 #define USE_SHORT_PREFIX		1
+#define IGNORE_CASE				"yes"
 // -----------------------------------
 
 // bits
@@ -115,6 +115,7 @@ public Plugin myinfo =
 char	g_Debug[DEBUG_TOTAL][] = {"COMMON", "FUNC PARAM", "METHODMAP", "BRACKET", "COMMENTARY", "XML", "ERROR"},
 		g_FuncPrefix[][] = {"forward", "native", "stock", "public native", "property", "public"},
 		g_CommentType[COMMENT_TOTAL][] = {"Params:", "Notes:", "Error:", "Return:"},
+		g_ConstSMVars[][] = {"NULL_VECTOR", "NULL_STRING", "MaxClients"},
 		DEBUG[PLATFORM_MAX_PATH], g_MethodmapName[48], g_MethodmapTag[48];
 
 #if USE_SHORT_PREFIX
@@ -130,9 +131,7 @@ int g_XMLFixCount;
 
 public void OnPluginStart()
 {
-#if (DEBUG_BITS & DEBUG_BIT_LOG)
 	BuildPath(Path_SM, DEBUG, PLATFORM_MAX_PATH, LOG);
-#endif
 	RegServerCmd("sm_makedocs", Cmd_Start, "starts to parse SourceMod includes and generates output files");
 }
 
@@ -186,7 +185,7 @@ public Action Cmd_Start(int argc)
 	g_FileSourcemodXML.WriteLine("<?xml version=\"1.0\" encoding=\"Windows-1252\" ?>");
 	g_FileSourcemodXML.WriteLine("<NotepadPlus>");
 	g_FileSourcemodXML.WriteLine("%s<AutoComplete language=\"sourcemod\">", SPACE_X4);
-	g_FileSourcemodXML.WriteLine("%s<Environment ignoreCase=\"no\"/>", SPACE_X4); // fix
+	g_FileSourcemodXML.WriteLine("%s<Environment ignoreCase=\"%s\"/>", SPACE_X4, IGNORE_CASE);
 
 	if ((count[0] = size = GetArraySize(g_FuncArray)))
 	{
@@ -239,6 +238,13 @@ public Action Cmd_Start(int argc)
 			PushArrayString(g_CommonArray, buffer);
 		}
 	}
+
+	for (i = 0; i < sizeof(g_ConstSMVars); i++)
+	{
+		if (FindStringInArray(g_ConstArray, g_ConstSMVars[i]) == -1)
+			PushArrayString(g_ConstArray, g_ConstSMVars[i]);
+	}
+
 	if ((count[2] = size = GetArraySize(g_ConstArray)))
 	{
 		for (i = 0; i < size; i++)
@@ -538,7 +544,7 @@ void ReadIncludeFile(char[] filepath, int fileArrayIdx=-1, char[] search="")
 			{
 				if (search[0] ||
 					StrContains(buffer, "_included") != -1 ||
-					FindCharInString2(buffer, '(') != -1 ||
+					//FindCharInString2(buffer, '(') != -1 || // adds define like: FCVAR_UNREGISTERED     (1<<0)
 					FindCharInString2(buffer, '[') != -1)
 				{
 					continue;
@@ -577,7 +583,6 @@ void ReadIncludeFile(char[] filepath, int fileArrayIdx=-1, char[] search="")
 
 				if ((value = FindCharInString2(buffer, '{')) != -1)
 				{
-
 					strcopy(temp, ++value, buffer);
 					strcopy(buffer, 1023, buffer[value]);
 					TrimString(temp);
@@ -1082,7 +1087,7 @@ bool WriteDefines(Handle &handle, char[] buffer, int maxlength, int pos)
 					TrimString(defines_temp[i]);
 				}
 
-				if (IsValidString(defines_temp[i]) && FindStringInArray(handle, defines_temp[i]) == -1)
+				if (IsValidString(defines_temp[i]) && FindStringInArray(handle, defines_temp[i]) == -1 && !StrEqual(defines_temp[i], "then") && !StrEqual(defines_temp[i], "and"))
 				{
 					PushArrayString(handle, defines_temp[i]);
 				}
@@ -1288,7 +1293,7 @@ public void ValidateXML(char[] text, int size)
 			}
 		}
 	}
-	// TODO: проверить кол-во получаемых значений для g_XMLFixCount
+
 	g_XMLFixCount += ReplaceString(text, 1023, "<", "&lt;");
 	g_XMLFixCount += ReplaceString(text, 1023, ">", "&gt;");
 	g_XMLFixCount += ReplaceString(text, 1023, "'", "&apos;");

@@ -23966,6 +23966,7 @@ Return:
         <KeyWord name="MapChange_Instant"/>
         <KeyWord name="MapChange_MapEnd"/>
         <KeyWord name="MapChange_RoundEnd"/>
+        <KeyWord name="MaxClients"/>
         <KeyWord name="Menu"/>
         <KeyWord name="MenuAction"/>
         <KeyWord name="MenuAction_Cancel"/>
@@ -24000,6 +24001,8 @@ Return:
         <KeyWord name="MenuStyle_Radio"/>
         <KeyWord name="MenuStyle_Valve"/>
         <KeyWord name="MoveType"/>
+        <KeyWord name="NULL_STRING"/>
+        <KeyWord name="NULL_VECTOR"/>
         <KeyWord name="NetFlow"/>
         <KeyWord name="NetFlow_Both"/>
         <KeyWord name="NetFlow_Incoming"/>
@@ -24909,7 +24912,6 @@ Return:
         <KeyWord name="VoteCancel_Generic"/>
         <KeyWord name="VoteCancel_NoVotes"/>
         <KeyWord name="VoteHandler"/>
-        <KeyWord name="and"/>
         <KeyWord name="any"/>
         <KeyWord name="bool"/>
         <KeyWord name="break"/>
@@ -24948,7 +24950,6 @@ Return:
         <KeyWord name="stock"/>
         <KeyWord name="struct"/>
         <KeyWord name="switch"/>
-        <KeyWord name="then"/>
         <KeyWord name="this"/>
         <KeyWord name="true"/>
         <KeyWord name="typedef"/>
