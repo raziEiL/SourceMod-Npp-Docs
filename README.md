@@ -1,4 +1,4 @@
-![Docs screenshot](https://github.com/raziEiL/SourceMod-Npp-Docs/blob/master/img/docs.png "Inline docs")
+![Docs screenshot](https://github.com/raziEiL/SourceMod-Npp-Docs/blob/master/img/docs2.png "Inline docs")
 # SourceMod-Npp-Docs
 [![GitHub release](https://img.shields.io/github/release/raziEiL/SourceMod-Npp-Docs.svg?colorB=97CA00?label=version)](https://github.com/raziEiL/SourceMod-Npp-Docs/releases/latest)
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.me/razicat)   
@@ -39,7 +39,8 @@ If you want to configurate it or update keyword check **plugins\NPP\\** folder f
 >**Note:** Define your language as **sourcemod**
 
 ## Autocompletion
-Copy **sourcemod.xml** file from **SourceMod docs** folder to **Notepad++ API** folder. Done! The completion list can be triggered automatically as you type, via settings in **Settings -> Preferences -> Auto-Completion:** Auto-Completion is enabled by a checkbox. Additionally there is a setting "From X th character", accepting a the minimum length of a prefix needed before the completion list is shown (some people like 2, some 3, some 4...); and, there is a setting to specify which candidates should be used: words, functions, or both.
+Copy **sourcemod.xml** file from **SourceMod docs** folder to **Notepad++ API** folder. Done! 
+Due to Notepad++ **Issues** I highly recommend using [**3D plugin**](https://jcaillon.github.io/3P/ " 3D plugin") for autocompletion feature. Otherwise, you can use default Notepad++ autocompletion feature (don't forget to read about **Issues**). The completion list can be triggered automatically as you type, via settings in **Settings -> Preferences -> Auto-Completion:** Auto-Completion is enabled by a checkbox. Additionally there is a setting "From X th character", accepting a the minimum length of a prefix needed before the completion list is shown (some people like 2, some 3, some 4...); and, there is a setting to specify which candidates should be used: words, functions, or both.
 >**Note:** Press **TAB** to fast autocompletion.  
 >**Note:** To watch docs again place the cursor between `( )` characters and press **CTRL+SHIFT+SPACE** hotkeys
 
@@ -79,10 +80,12 @@ Removes prefix: MM_AdminId_M_
 Result: my_code.ImmunityLevel() 
 
 # Issues
-1. Due to Notepad++ issue, **Case-Insensitive** input makes autocomplete work incorrectly.
-2. **Case-Sensitive** input makes pop up docs work incorrectly for functions with a similar names (e.g., ReplaceStringEx hint docs from ReplaceString).  
-I chose **Case-Sensitive** input for code-complete-file, because it did less harm. So, keep in mind about **issues #2**
+The following **Issues** were [reported](https://github.com/notepad-plus-plus/notepad-plus-plus/issues/4833 "reported") on notepad-plus-plus repository.
+1. Code-complete-file defined with `ignoreCase="yes"` input makes autocomplete work incorrectly.
+2. Code-complete-file defined with `ignoreCase="no"` input makes pop up docs work incorrectly for functions with a similar names (e.g., ReplaceStringEx hint docs from ReplaceString).
 
+By deafault code-complete-file defined with`ignoreCase="yes"` input, because it did less harm. So, keep in mind about **issues #1**.
+> **Note:** For changing `ignoreCase` attribute edit sourcemod.xml file.
 
 # Credits:
  - Thanks [@MCPAN](https://forums.alliedmods.net/member.php?u=73370) for original plugin.
