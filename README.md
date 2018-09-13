@@ -11,7 +11,7 @@ Here the new API docs with all (I hope) function, define, enum, methodmap and fi
  - Generate inline docs (*sourcemod.xml*).
  - Supports SourceMod 1.7 API specifics.
  
-### New in v1.2:
+### Changes:
  - Added better way to detect commentary.
  - Added methods docs.
  - Added more console stats.
@@ -40,7 +40,7 @@ If you want to configurate it or update keyword check **plugins\NPP\\** folder f
 
 ## Autocompletion
 Copy **sourcemod.xml** file from **SourceMod docs** folder to **Notepad++ API** folder. Done! 
-Due to Notepad++ **Issues** I highly recommend using [**3D plugin**](https://jcaillon.github.io/3P/ " 3D plugin") for autocompletion feature. Otherwise, you can use default Notepad++ autocompletion feature (don't forget to read about **Issues**). The completion list can be triggered automatically as you type, via settings in **Settings -> Preferences -> Auto-Completion:** Auto-Completion is enabled by a checkbox. Additionally there is a setting "From X th character", accepting a the minimum length of a prefix needed before the completion list is shown (some people like 2, some 3, some 4...); and, there is a setting to specify which candidates should be used: words, functions, or both.
+Due to Notepad++ **Issues** I highly recommend using [**3P plugin**](https://jcaillon.github.io/3P/ " 3D plugin") for autocompletion feature. Otherwise, you can use default Notepad++ autocompletion feature (don't forget to read about **Issues**). The completion list can be triggered automatically as you type, via settings in **Settings -> Preferences -> Auto-Completion:** Auto-Completion is enabled by a checkbox. Additionally there is a setting "From X th character", accepting a the minimum length of a prefix needed before the completion list is shown (some people like 2, some 3, some 4...); and, there is a setting to specify which candidates should be used: words, functions, or both.
 >**Note:** Press **TAB** to fast autocompletion.  
 >**Note:** To watch docs again place the cursor between `( )` characters and press **CTRL+SHIFT+SPACE** hotkeys
 
