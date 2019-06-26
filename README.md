@@ -11,7 +11,7 @@ Here the new API docs with all (I hope) function, define, enum, methodmap and fi
  - Generate inline docs (*sourcemod.xml*).
  - Supports SourceMod 1.7 API specifics.
  
-### New in v1.2:
+### Changes:
  - Added better way to detect commentary.
  - Added methods docs.
  - Added more console stats.
@@ -28,19 +28,20 @@ Here the new API docs with all (I hope) function, define, enum, methodmap and fi
 
 # Notepad++
 **SourceMod docs** files are located in the **plugins\NPP\\** subfolder of sourcemod folder.  
-**Notepad++ API** files are located in the **plugins\APIs\\** subfolder of the Notepad++ installation folder.
+**Notepad++ API** files are located in the **plugins\APIs\\** subfolder of the Notepad++ installation folder.  
+**Notepad++ API v7.6+** files are located in the **autoCompletion\\** subfolder of the Notepad++ installation folder.
 
 >**Note:** Use **sm_makedocs** command to generate docs or get them from the [latest release](https://github.com/raziEiL/SourceMod-Npp-Docs/releases/latest)).
 
 ## Highlights
-If you are too lazy to configure your own style go to **SourceMod docs** folder and copy **userDefineLang.xml** to **<USER_NAME>\AppData\Roaming\Notepad++\\**  
+If you are too lazy to configure your own style go to **Notepd++ -> Lanuguage -> Define your language -> Import** and select **userDefineLang.xml** from **SourceMod docs** or copy **userDefineLang.xml** to **<USER_NAME>\AppData\Roaming\Notepad++\\**  
 If you want to configurate it or update keyword check **plugins\NPP\\** folder for **NPP_STYLE** files. These files contain defining the keyword lists for the SourcePawn language. Open one of those files, select keywords and copy. Go to **Notepd++ -> Lanuguage -> Define your language...** Select you own language or create new and past keywords to the Keywords Lists group. Do it for other groups too. More information here: [UDL 2.0](https://udl20.weebly.com/index.html). 
 
 >**Note:** Define your language as **sourcemod**
 
 ## Autocompletion
 Copy **sourcemod.xml** file from **SourceMod docs** folder to **Notepad++ API** folder. Done! 
-Due to Notepad++ **Issues** I highly recommend using [**3D plugin**](https://jcaillon.github.io/3P/ " 3D plugin") for autocompletion feature. Otherwise, you can use default Notepad++ autocompletion feature (don't forget to read about **Issues**). The completion list can be triggered automatically as you type, via settings in **Settings -> Preferences -> Auto-Completion:** Auto-Completion is enabled by a checkbox. Additionally there is a setting "From X th character", accepting a the minimum length of a prefix needed before the completion list is shown (some people like 2, some 3, some 4...); and, there is a setting to specify which candidates should be used: words, functions, or both.
+Due to Notepad++ **Issues** I highly recommend using [**3P plugin**](https://jcaillon.github.io/3P/ " 3D plugin") for autocompletion feature. Otherwise, you can use default Notepad++ autocompletion feature (don't forget to read about **Issues**). The completion list can be triggered automatically as you type, via settings in **Settings -> Preferences -> Auto-Completion:** Auto-Completion is enabled by a checkbox. Additionally there is a setting "From X th character", accepting a the minimum length of a prefix needed before the completion list is shown (some people like 2, some 3, some 4...); and, there is a setting to specify which candidates should be used: words, functions, or both.
 >**Note:** Press **TAB** to fast autocompletion.  
 >**Note:** To watch docs again place the cursor between `( )` characters and press **CTRL+SHIFT+SPACE** hotkeys
 
