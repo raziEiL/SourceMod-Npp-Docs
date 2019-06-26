@@ -4277,6 +4277,9 @@ Notes:
     Produces a date and/or time string value for a timestamp.
     See this URL for valid parameters:
     http://cplusplus.com/reference/clibrary/ctime/strftime.html
+    Note that available parameters depends on support from your operating system.
+    In particular, ones highlighted in yellow on that page are not currently
+    available on Windows and should be avoided for portable plugins.
 Error:
     Buffer too small or invalid time format.
 ">
@@ -23520,22 +23523,29 @@ Return:
         <KeyWord name="CSWeapon_ASSAULTSUIT"/>
         <KeyWord name="CSWeapon_AUG"/>
         <KeyWord name="CSWeapon_AWP"/>
+        <KeyWord name="CSWeapon_AXE"/>
         <KeyWord name="CSWeapon_BAYONET"/>
         <KeyWord name="CSWeapon_BIZON"/>
+        <KeyWord name="CSWeapon_BREACHCHARGE"/>
         <KeyWord name="CSWeapon_C4"/>
         <KeyWord name="CSWeapon_CUTTERS"/>
         <KeyWord name="CSWeapon_CZ75A"/>
         <KeyWord name="CSWeapon_DEAGLE"/>
         <KeyWord name="CSWeapon_DECOY"/>
         <KeyWord name="CSWeapon_DEFUSER"/>
+        <KeyWord name="CSWeapon_DIVERSION"/>
         <KeyWord name="CSWeapon_ELITE"/>
         <KeyWord name="CSWeapon_FAMAS"/>
+        <KeyWord name="CSWeapon_FIREBOMB"/>
+        <KeyWord name="CSWeapon_FISTS"/>
         <KeyWord name="CSWeapon_FIVESEVEN"/>
         <KeyWord name="CSWeapon_FLASHBANG"/>
+        <KeyWord name="CSWeapon_FRAGGRENADE"/>
         <KeyWord name="CSWeapon_G3SG1"/>
         <KeyWord name="CSWeapon_GALIL"/>
         <KeyWord name="CSWeapon_GALILAR"/>
         <KeyWord name="CSWeapon_GLOCK"/>
+        <KeyWord name="CSWeapon_HAMMER"/>
         <KeyWord name="CSWeapon_HEALTHSHOT"/>
         <KeyWord name="CSWeapon_HEAVYASSAULTSUIT"/>
         <KeyWord name="CSWeapon_HEGRENADE"/>
@@ -23547,13 +23557,18 @@ Return:
         <KeyWord name="CSWeapon_KNIFE_FALCHION"/>
         <KeyWord name="CSWeapon_KNIFE_FLIP"/>
         <KeyWord name="CSWeapon_KNIFE_GG"/>
+        <KeyWord name="CSWeapon_KNIFE_GHOST"/>
         <KeyWord name="CSWeapon_KNIFE_GUT"/>
+        <KeyWord name="CSWeapon_KNIFE_GYPSY_JACKKNIFE"/>
         <KeyWord name="CSWeapon_KNIFE_KARAMBIT"/>
         <KeyWord name="CSWeapon_KNIFE_M9_BAYONET"/>
         <KeyWord name="CSWeapon_KNIFE_PUSH"/>
+        <KeyWord name="CSWeapon_KNIFE_STILETTO"/>
         <KeyWord name="CSWeapon_KNIFE_SURVIVAL_BOWIE"/>
         <KeyWord name="CSWeapon_KNIFE_T"/>
         <KeyWord name="CSWeapon_KNIFE_TATICAL"/>
+        <KeyWord name="CSWeapon_KNIFE_URSUS"/>
+        <KeyWord name="CSWeapon_KNIFE_WIDOWMAKER"/>
         <KeyWord name="CSWeapon_M249"/>
         <KeyWord name="CSWeapon_M3"/>
         <KeyWord name="CSWeapon_M4A1"/>
@@ -23562,6 +23577,7 @@ Return:
         <KeyWord name="CSWeapon_MAG7"/>
         <KeyWord name="CSWeapon_MAX_WEAPONS"/>
         <KeyWord name="CSWeapon_MAX_WEAPONS_NO_KNIFES"/>
+        <KeyWord name="CSWeapon_MELEE"/>
         <KeyWord name="CSWeapon_MOLOTOV"/>
         <KeyWord name="CSWeapon_MP5NAVY"/>
         <KeyWord name="CSWeapon_MP7"/>
@@ -23583,7 +23599,9 @@ Return:
         <KeyWord name="CSWeapon_SG556"/>
         <KeyWord name="CSWeapon_SHIELD"/>
         <KeyWord name="CSWeapon_SMOKEGRENADE"/>
+        <KeyWord name="CSWeapon_SPANNER"/>
         <KeyWord name="CSWeapon_SSG08"/>
+        <KeyWord name="CSWeapon_TABLET"/>
         <KeyWord name="CSWeapon_TAGGRENADE"/>
         <KeyWord name="CSWeapon_TASER"/>
         <KeyWord name="CSWeapon_TEC9"/>
