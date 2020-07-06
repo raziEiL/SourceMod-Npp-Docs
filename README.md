@@ -17,9 +17,10 @@ Here the new API docs with all (I hope) function, define, enum, methodmap and fi
  - Added more console stats.
  - Added xml filter.
  - Code optimization.
- - Detects all func params.
+ - Detects all function params.
  - Detects enum & define correctly.
  - Detects methodmap selection.
+ - Detects typeset.
  - Makes keywords to pop up correctly.
 
  
@@ -34,10 +35,12 @@ Here the new API docs with all (I hope) function, define, enum, methodmap and fi
 >**Note:** Use **sm_makedocs** command to generate docs or get them from the [latest release](https://github.com/raziEiL/SourceMod-Npp-Docs/releases/latest)).
 
 ## Highlights
-If you are too lazy to configure your own style go to **Notepd++ -> Lanuguage -> Define your language -> Import** and select **userDefineLang.xml** from **SourceMod docs** or copy **userDefineLang.xml** to **<USER_NAME>\AppData\Roaming\Notepad++\\**  
-If you want to configurate it or update keyword check **plugins\NPP\\** folder for **NPP_STYLE** files. These files contain defining the keyword lists for the SourcePawn language. Open one of those files, select keywords and copy. Go to **Notepd++ -> Lanuguage -> Define your language...** Select you own language or create new and past keywords to the Keywords Lists group. Do it for other groups too. More information here: [UDL 2.0](https://udl20.weebly.com/index.html). 
-
->**Note:** Define your language as **sourcemod**
+### Use preset
+A preset has all the setting ready to developing your plugin. To load preset go to **Notepd++ -> Lanuguage -> Define your language -> Import** and select **userDefineLang.xml** from **SourceMod docs** or copy **userDefineLang.xml** to **<USER_NAME>\AppData\Roaming\Notepad++\\**  
+### Define you own preset
+If you want to configurate user defined languge or update keywords, check **plugins\NPP\\** folder for **NPP_STYLE** files. These files contain defining the keyword lists for the SourcePawn language. Open one of those files, select keywords and copy. Go to **Notepd++ -> Lanuguage -> Define your language...** Select you own language or create new and past keywords to the Keywords Lists group. Do it for other groups too. More information here: [UDL 2.0](https://udl20.weebly.com/index.html). 
+![Docs screenshot](https://github.com/raziEiL/SourceMod-Npp-Docs/blob/master/img/define%20languge.jpg "Inline docs")
+>**Note:** It's important to define your language as **sourcemod**
 
 ## Autocompletion
 Copy **sourcemod.xml** file from **SourceMod docs** folder to **Notepad++ API** folder. Done! 
