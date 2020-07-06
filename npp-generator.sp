@@ -1,4 +1,4 @@
-#define PLUGIN_VERSION "1.2.9"
+#define PLUGIN_VERSION "1.3.0"
 
 #pragma newdecls required
 #pragma semicolon 1
@@ -99,7 +99,7 @@ enum (<<= 1)
 #define FILE_MISC				"addons/sourcemod/plugins/NPP/NPP_STYLE_MISC.sp"
 // ( ) [ ] ; , - style separator
 #define NPP_STYLE_OPERATORS		"( ) [ ] ; , * / % + - << >> >>> < > <= >= == != & && ^ | || ? : = += -= *= /= %= &= ^= |= <<= >>= >>>= ++ -- ~ !"
-#define NPP_STYLE_OPERATORS_MISC "for if else do while switch case default return break delete continue new decl public stock const enum forward static funcenum functag native sizeof view_as true false union function methodmap typedef property struct this null"
+#define NPP_STYLE_OPERATORS_MISC "for if else do while switch case default return break delete continue new decl public stock const enum forward static funcenum functag native sizeof view_as true false union function methodmap typedef property struct this null typeset"
 #define NPP_STYLE_VARIABLES		"bool char int float Handle"
 #define LOG						"logs\\npp-generator.log"
 
@@ -564,7 +564,7 @@ void ReadIncludeFile(char[] filepath, int fileArrayIdx=-1, char[] search="")
 					PushArrayString(g_ConstArray, buffer);
 				}
 			}
-			else if ((value = StrContains(buffer, "enum")) != -1)
+			else if ((value = IsEnumString(buffer)) != -1)
 			{
 				if (search[0])
 				{
@@ -1245,7 +1245,22 @@ int CountCharInString(const char[] str, char c)
 	return count;
 }
 
-public void ValidateXML(char[] text, int size)
+int IsEnumString(const char[] buffer)
+{
+	int pos = StrContains(buffer, "enum");
+	
+	if (pos != -1){
+		int offset = pos + 4;
+		if (strlen(buffer) > offset){
+			if ((buffer[offset] > 64 && buffer[offset] < 91) || (buffer[offset] > 96 && buffer[offset] < 123))
+				return -1;
+		}	
+		return pos;
+	}	
+	return pos;
+}
+
+void ValidateXML(char[] text, int size)
 {
 	static char buffer[1024];
 	char search[] = "&amp;";
@@ -1302,7 +1317,7 @@ public void ValidateXML(char[] text, int size)
 	Debug(DEBUG_BIT_XML, "result: '%s'", text);
 }
 
-public void Debug(int BIT, const char[] format, any ...)
+void Debug(int BIT, const char[] format, any ...)
 {
 	if (DEBUG_BITS == 0
 	|| !((DEBUG_BIT_LOG|DEBUG_BIT_PRINT) & DEBUG_BITS)

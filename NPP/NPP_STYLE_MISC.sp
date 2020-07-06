@@ -13,9 +13,11 @@ BfWrite
 CSRoundEndReason 
 CSWeaponID 
 ClientRangeType 
+CommandIterator 
 ConVar 
 ConVarBounds 
 ConVarQueryResult 
+Cookie 
 CookieAccess 
 CookieMenu 
 CookieMenuAction 
@@ -41,6 +43,8 @@ FileTimeMode
 FileType 
 FindMapResult 
 FrameIterator 
+GameData 
+GlobalForward 
 GroupId 
 Handle 
 Identity 
@@ -64,6 +68,8 @@ ParamType
 PathType 
 PluginInfo 
 PluginStatus 
+PrivateForward 
+Profiler 
 PropFieldType 
 PropType 
 Protobuf 

@@ -1244,7 +1244,7 @@ Params:
     alias                   Weapons alias to get weapon name for.
     weapon                  Buffer to store weapons name
     size                    Size of buffer to store the weapons name.
-                            @note    Will set the buffer to the original alias if it is not an alias to a weapon.
+                            @note Will set the buffer to the original alias if it is not an alias to a weapon.
 Notes:
     Gets a weapon name from a weapon alias
 ">
@@ -1263,7 +1263,7 @@ Notes:
     Gets a weapon&apos;s price
 Error:
     Invalid client, failing to get weapon info, or failing to get price offset.
-    @note    c4, knife and shield will always return 0. vest, vest helmet and night vision will always return default price.
+    @note c4, knife and shield will always return 0. vest, vest helmet and night vision will always return default price.
 Return:
     Returns price of the weapon (even if modified)
 ">
@@ -1293,7 +1293,7 @@ Notes:
     Returns a CSWeaponID equivalent based on the item definition index.
 Error:
     Invalid definition index.
-    @note   In most cases the id will be the item definition index. Works for CS:GO ONLY.
+    @note In most cases the id will be the item definition index. Works for CS:GO ONLY.
 Return:
     Returns CSWeaponID value for the definition index.
 ">
@@ -1334,7 +1334,7 @@ Params:
     client                  Client index
     weapon                  Weapon classname
     price                   Buffer param for the price of the weapon
-                            @note   Not all &apos;weapons&apos; call GetWeaponPrice. Example: c4, knife, vest, vest helmet, night vision.
+                            @note Not all &apos;weapons&apos; call GetWeaponPrice. Example: c4, knife, vest, vest helmet, night vision.
 Notes:
     Called when game retrieves a weapon&apos;s price for a player.
     Return Plugin_Continue to use default value or return a higher
@@ -1438,7 +1438,8 @@ Notes:
     Sets a team&apos;s score
 Error:
     Invalid team index.
-    @note    This will update the scoreboard only after the scoreboard update function is called. Use SetTeamScore plus this to update the scoreboard instantly and save values correctly.
+    @note This will update the scoreboard only after the scoreboard update function is called.
+    Use SetTeamScore plus this to update the scoreboard instantly and save values correctly.
 ">
                 <Param name="int team"/>
                 <Param name="int value"/>
@@ -1509,7 +1510,7 @@ Notes:
     Returns a item definition index equivalent based on the CSWeaponID.
 Error:
     Invalid weapon id.
-    @note   In most cases the item deinition index will be the id. Works for CS:GO ONLY.
+    @note In most cases the item deinition index will be the id. Works for CS:GO ONLY.
 Return:
     Returns item definition index value for the weapon id.
 ">
@@ -1796,10 +1797,10 @@ Return:
         <KeyWord name="CancelClientMenu" func="yes">
             <Overload retVal="native bool" descr="
 Params:
-    hStyle                  MenuStyle Handle, or INVALID_HANDLE to use the default style.
     client                  Client index.
     autoIgnore              If true, no menus can be re-drawn on the client during
                             the cancellation process.
+    hStyle                  MenuStyle Handle, or INVALID_HANDLE to use the default style.
 Notes:
     Cancels a menu on a client.  This will only affect non-external menus.
 Return:
@@ -1886,7 +1887,7 @@ Error:
 Params:
     chr                     Character to convert.
 Notes:
-    Returns an uppercase character to a lowercase character.
+    Converts an uppercase character to its lowercase counterpart.
 Return:
     Lowercase character on success,
     no change on failure.
@@ -1899,7 +1900,7 @@ Return:
 Params:
     chr                     Character to convert.
 Notes:
-    Returns a lowercase character to an uppercase character.
+    Converts a lowercase character to its uppercase counterpart.
 Return:
     Uppercase character on success,
     no change on failure.
@@ -2058,10 +2059,10 @@ Notes:
     can result in accidental invalidation when one plugin releases the Handle, or is its owner
     is unloaded from memory.  To prevent this, the Handle may be &apos;cloned&apos; with a new owner.
     Usually, you will be cloning Handles for other plugins.  This means that if you clone
-    the Handle without specifying the new owner, it will assume the identity of your original calling
-    plugin, which is not very useful.  You should either specify that the receiving plugin should
-    clone the handle on its own, or you should explicitly clone the Handle using the receiving plugin&apos;s
-    identity Handle.
+    the Handle without specifying the new owner, it will assume the identity of your original
+    calling plugin, which is not very useful.  You should either specify that the receiving
+    plugin should clone the handle on its own, or you should explicitly clone the Handle
+    using the receiving plugin&apos;s identity Handle.
 Error:
     Invalid handles will cause a run time error.
 Return:
@@ -2150,7 +2151,9 @@ Params:
     name                    Name for this entry (does not have to be unique).
                             Specify an empty string for an anonymous admin.
 Notes:
-    Creates a new admin entry in the permissions cache.
+    Creates a new admin entry in the permissions cache and returns the generated AdminId index.
+Return:
+    New AdminId index or INVALID_ADMIN_ID if name is empty
 ">
                 <Param name="const char[] name=&apos;&apos;"/>
             </Overload>
@@ -2277,6 +2280,8 @@ Params:
                             In this case, mode is ignored.
 Notes:
     Creates a directory.
+Return:
+    True on success, false otherwise.
 ">
                 <Param name="const char[] path"/>
                 <Param name="int mode"/>
@@ -2342,7 +2347,7 @@ Return:
             </Overload>
         </KeyWord>
         <KeyWord name="CreateForward" func="yes">
-            <Overload retVal="native Handle" descr="
+            <Overload retVal="native PrivateForward" descr="
 Params:
     type                    Execution type to be used.
     ...                     Variable number of parameter types (up to 32).
@@ -2361,7 +2366,7 @@ Return:
             </Overload>
         </KeyWord>
         <KeyWord name="CreateGlobalForward" func="yes">
-            <Overload retVal="native Handle" descr="
+            <Overload retVal="native GlobalForward" descr="
 Params:
     name                    Name of public function to use in forward.
     type                    Execution type to be used.
@@ -2515,10 +2520,10 @@ Return:
             </Overload>
         </KeyWord>
         <KeyWord name="CreateProfiler" func="yes">
-            <Overload retVal="native Handle" descr="
+            <Overload retVal="native Profiler" descr="
 Notes:
     Creates a new profile object.  The Handle must be freed
-    using CloseHandle().
+    using delete or CloseHandle().
 Return:
     Handle to the profiler object.
 ">
@@ -2890,7 +2895,7 @@ Notes:
         <KeyWord name="EmitAmbientSound" func="yes">
             <Overload retVal="native void" descr="
 Params:
-    name                    Sound file name relative to the &apos;sounds&apos; folder.
+    name                    Sound file name relative to the &apos;sound&apos; folder.
     pos                     Origin of sound.
     entity                  Entity index to associate sound with.
     level                   Sound level (from 0 to 255).
@@ -3054,7 +3059,7 @@ Error:
 Params:
     clients                 Array of client indexes.
     numClients              Number of clients in the array.
-    sample                  Sound file name relative to the &apos;sounds&apos; folder.
+    sample                  Sound file name relative to the &apos;sound&apos; folder.
     entity                  Entity to emit from.
     channel                 Channel to emit with.
     level                   Sound level.
@@ -3095,7 +3100,7 @@ Params:
     clients                 Array of client indexes.
     numClients              Number of clients in the array.
     soundEntry              Sound entry name.
-    sample                  Sound file name relative to the &apos;sounds&apos; folder.
+    sample                  Sound file name relative to the &apos;sound&apos; folder.
     entity                  Entity to emit from.
     channel                 Channel to emit with.
     level                   Sound level.
@@ -3137,7 +3142,7 @@ Error:
         <KeyWord name="EmitSoundToAll" func="yes">
             <Overload retVal="stock void" descr="
 Params:
-    sample                  Sound file name relative to the &apos;sounds&apos; folder.
+    sample                  Sound file name relative to the &apos;sound&apos; folder.
     entity                  Entity to emit from.
     channel                 Channel to emit with.
     level                   Sound level.
@@ -3172,7 +3177,7 @@ Error:
             <Overload retVal="stock void" descr="
 Params:
     client                  Client index.
-    sample                  Sound file name relative to the &apos;sounds&apos; folder.
+    sample                  Sound file name relative to the &apos;sound&apos; folder.
     entity                  Entity to emit from.
     channel                 Channel to emit with.
     level                   Sound level.
@@ -3857,6 +3862,9 @@ Params:
 Notes:
     Wraps ProcessTargetString() and handles producing error messages for
     bad targets.
+    Note that you should use LoadTranslations(&apos;common.phrases&apos;) in OnPluginStart().
+    &apos;common.phrases&apos; contains all of the translatable phrases that FindTarget() will
+    reply with in the event a target is not found (error).
 Return:
     Index of target client, or -1 on error.
 ">
@@ -4037,20 +4045,6 @@ Return:
                 <Param name="float value"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="FloatAdd" func="yes">
-            <Overload retVal="native float" descr="
-Params:
-    oper1                   First value.
-    oper2                   Second value.
-Notes:
-    Adds two floats together.
-Return:
-    oper1+oper2.
-">
-                <Param name="float oper1"/>
-                <Param name="float oper2"/>
-            </Overload>
-        </KeyWord>
         <KeyWord name="FloatCompare" func="yes">
             <Overload retVal="native int" descr="
 Params:
@@ -4067,20 +4061,6 @@ Return:
                 <Param name="float fTwo"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="FloatDiv" func="yes">
-            <Overload retVal="native float" descr="
-Params:
-    dividend                First value.
-    divisor                 Second value.
-Notes:
-    Divides the dividend by the divisor.
-Return:
-    dividend/divisor.
-">
-                <Param name="float dividend"/>
-                <Param name="float divisor"/>
-            </Overload>
-        </KeyWord>
         <KeyWord name="FloatFraction" func="yes">
             <Overload retVal="native float" descr="
 Params:
@@ -4091,34 +4071,6 @@ Return:
     Decimal part.
 ">
                 <Param name="float value"/>
-            </Overload>
-        </KeyWord>
-        <KeyWord name="FloatMul" func="yes">
-            <Overload retVal="native float" descr="
-Params:
-    oper1                   First value.
-    oper2                   Second value.
-Notes:
-    Multiplies two floats together.
-Return:
-    oper1*oper2.
-">
-                <Param name="float oper1"/>
-                <Param name="float oper2"/>
-            </Overload>
-        </KeyWord>
-        <KeyWord name="FloatSub" func="yes">
-            <Overload retVal="native float" descr="
-Params:
-    oper1                   First value.
-    oper2                   Second value.
-Notes:
-    Subtracts oper2 from oper1.
-Return:
-    oper1-oper2.
-">
-                <Param name="float oper1"/>
-                <Param name="float oper2"/>
             </Overload>
         </KeyWord>
         <KeyWord name="FloatToString" func="yes">
@@ -4289,25 +4241,10 @@ Error:
                 <Param name="int stamp=-1"/>
             </Overload>
         </KeyWord>
-        <KeyWord name="FormatUserLogText" func="yes">
-            <Overload retVal="stock void" descr="
-Params:
-    client                  Client index.
-    buffer                  Buffer for text.
-    maxlength               Maximum length of text.
-Notes:
-    Formats a user&apos;s info as log text.  This is usually not needed because
-    %L can be used to auto-format client information into a string.
-">
-                <Param name="int client"/>
-                <Param name="char[] buffer"/>
-                <Param name="int maxlength"/>
-            </Overload>
-        </KeyWord>
         <KeyWord name="GameConfGetAddress" func="yes">
             <Overload retVal="native Address" descr="
 Params:
-    gameconf                GameConfig Handle, or INVALID_HANDLE to use sdktools.games.txt.
+    gameconf                Game config handle.
     name                    Name of the property to find.
 Notes:
     Finds an address calculation in a GameConfig file,
@@ -4719,7 +4656,7 @@ Return:
 ">
                 <Param name="AdminId id"/>
                 <Param name="int index"/>
-                <Param name="const char[] name"/>
+                <Param name="char[] name"/>
                 <Param name="int maxlength"/>
             </Overload>
         </KeyWord>
@@ -6532,7 +6469,7 @@ Params:
     level                   Sound level.
     volume                  Sound volume.
     pitch                   Sound pitch.
-    sample                  Sound file name relative to the &apos;sounds&apos; folder.
+    sample                  Sound file name relative to the &apos;sound&apos; folder.
     maxlength               Maximum length of sample string buffer.
     entity                  Entity the sound is being emitted from.
 Notes:
@@ -6722,21 +6659,6 @@ Return:
     True on success, false if operation is not supported.
 ">
                 <Param name="int &amp;time"/>
-            </Overload>
-        </KeyWord>
-        <KeyWord name="GetMaxClients" func="yes">
-            <Overload retVal="native int" descr="
-Notes:
-    This function will be deprecated in a future release.  Use the MaxClients variable instead.
-    Returns the maximum number of clients allowed on the server.  This may
-    return 0 if called before OnMapStart(), and thus should not be called
-    in OnPluginStart().
-    You should not globally cache the value to GetMaxClients() because it can change from
-    SourceTV or TF2&apos;s arena mode.  Use the &apos;MaxClients&apos; dynamic variable documented at the
-    top of this file.
-Return:
-    Maximum number of clients allowed.
-">
             </Overload>
         </KeyWord>
         <KeyWord name="GetMaxEntities" func="yes">
@@ -7051,7 +6973,7 @@ Params:
     param                   Parameter number, starting from 1.
     length                  Stores the length of the string.
 Notes:
-    Retrieves the string length from a native parameter string.  This is useful
+    Retrieves the string length from a native parameter string.  This is useful for
     fetching the entire string using dynamic arrays.
     If this function succeeds, Get/SetNativeString will also succeed.
 Error:
@@ -7338,7 +7260,7 @@ Notes:
     by MatchRegex.
 Return:
     True if a substring was found, False on fail/error
-    @note    str_id = 0 is the full captured string, anything else is the capture group index.
+    @note str_id = 0 is the full captured string, anything else is the capture group index.
 ">
                 <Param name="Handle regex"/>
                 <Param name="int str_id"/>
@@ -8510,13 +8432,13 @@ Return:
         <KeyWord name="IsEntNetworkable" func="yes">
             <Overload retVal="native bool" descr="
 Params:
-    edict                   Index of the entity.
+    entity                  Index of the entity.
 Notes:
     Returns whether or not an entity has a valid networkable edict.
 Return:
     True if networkable, false if invalid or not networkable.
 ">
-                <Param name="int entiy"/>
+                <Param name="int entity"/>
             </Overload>
         </KeyWord>
         <KeyWord name="IsFakeClient" func="yes">
@@ -8691,18 +8613,6 @@ Notes:
 Return:
     True if the server is ticking, false otherwise.
 ">
-            </Overload>
-        </KeyWord>
-        <KeyWord name="IsSoundPrecached" func="yes">
-            <Overload retVal="native bool" descr="
-Params:
-    sound                   Name of the sound to check.
-Notes:
-    Returns if a given sound is precached.
-Return:
-    True if precached, false otherwise.
-">
-                <Param name="const char[] sound"/>
             </Overload>
         </KeyWord>
         <KeyWord name="IsStackEmpty" func="yes">
@@ -9410,14 +9320,14 @@ Return:
             </Overload>
         </KeyWord>
         <KeyWord name="LoadGameConfigFile" func="yes">
-            <Overload retVal="native Handle" descr="
+            <Overload retVal="native GameData" descr="
 Params:
     file                    File to load.  The path must be relative to the &apos;gamedata&apos; folder under the config folder
                             and the extension should be omitted.
 Notes:
     Loads a game config file.
 Return:
-    A handle to the game config file or INVALID_HANDLE in failure.
+    A handle to the game config file or INVALID_HANDLE on failure.
 ">
                 <Param name="const char[] file"/>
             </Overload>
@@ -9520,6 +9430,21 @@ Notes:
     prefixed by the plugin&apos;s logtag (filename).
 ">
                 <Param name="const char[] format"/>
+                <Param name="any ..."/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="LogStackTrace" func="yes">
+            <Overload retVal="native void" descr="
+Params:
+    fmt                     Format string to send with the stack trace.
+    ...                     Format arguments.
+Notes:
+    Logs a stack trace from the current function call. Code
+    execution continues after the call
+Error:
+    Always logs a stack trace.
+">
+                <Param name="const char[] fmt"/>
                 <Param name="any ..."/>
             </Overload>
         </KeyWord>
@@ -9697,7 +9622,7 @@ Return:
     INVALID_GROUP_ID and NULL if an error occurred.
 ">
                 <Param name="int index"/>
-                <Param name="const char[] name"/>
+                <Param name="char[] name"/>
                 <Param name="int maxlength"/>
             </Overload>
         </KeyWord>
@@ -10164,6 +10089,38 @@ Error:
     Invalid index.
 ">
                 <Param name="int index"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="MM_ArrayList_Handle_M_Sort" func="yes">
+            <Overload retVal="public native void" descr="
+Methodmap notes:
+    This string is not a real Sourcemod Function!
+    To use function remove the 'MM_ArrayList_Handle_M_' prefix
+    Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
+Params:
+    order                   Sort order to use, same as other sorts.
+    type                    Data type stored in the ADT Array
+Notes:
+    Sort an ADT Array. Specify the type as Integer, Float, or String.
+">
+                <Param name="SortOrder order"/>
+                <Param name="SortType type"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="MM_ArrayList_Handle_M_SortCustom" func="yes">
+            <Overload retVal="public native void" descr="
+Methodmap notes:
+    This string is not a real Sourcemod Function!
+    To use function remove the 'MM_ArrayList_Handle_M_' prefix
+    Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
+Params:
+    sortfunc                Sort comparison function to use
+    hndl                    Optional Handle to pass through the comparison calls.
+Notes:
+    Custom sorts an ADT Array. You must pass in a comparison function.
+">
+                <Param name="SortFuncADTArray sortfunc"/>
+                <Param name="Handle hndl=INVALID_HANDLE"/>
             </Overload>
         </KeyWord>
         <KeyWord name="MM_ArrayList_Handle_M_SwapAt" func="yes">
@@ -10786,6 +10743,103 @@ Notes:
                 <Param name="int num"/>
             </Overload>
         </KeyWord>
+        <KeyWord name="MM_CommandIterator_Handle_C_CommandIterator" func="yes">
+            <Overload retVal="public native Handle" descr="
+Methodmap notes:
+    This string is not a real Sourcemod Function!
+    To use function remove the 'MM_CommandIterator_Handle_C_' prefix
+    Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
+Notes:
+    Creates a new CommandIterator. Must be freed with delete or
+    CloseHandle().
+    The CommandIterator can be used to iterate commands created by
+    SourceMod plugins and allows inspection of properties associated
+    with the command.
+Return:
+    New CommandIterator Handle.
+">
+            </Overload>
+        </KeyWord>
+        <KeyWord name="MM_CommandIterator_Handle_M_GetDescription" func="yes">
+            <Overload retVal="public native void" descr="
+Methodmap notes:
+    This string is not a real Sourcemod Function!
+    To use function remove the 'MM_CommandIterator_Handle_M_' prefix
+    Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
+Params:
+    buffer                  Buffer to copy to.
+    maxlen                  Maximum size of the buffer.
+Notes:
+    Retrieves the command&apos;s description.
+Error:
+    Invalid iterator position.
+">
+                <Param name="char[] buffer"/>
+                <Param name="int maxlen"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="MM_CommandIterator_Handle_M_GetName" func="yes">
+            <Overload retVal="public native void" descr="
+Methodmap notes:
+    This string is not a real Sourcemod Function!
+    To use function remove the 'MM_CommandIterator_Handle_M_' prefix
+    Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
+Params:
+    buffer                  Buffer to copy to.
+    maxlen                  Maximum size of the buffer.
+Notes:
+    Retrieves the command&apos;s name.
+Error:
+    Invalid iterator position.
+">
+                <Param name="char[] buffer"/>
+                <Param name="int maxlen"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="MM_CommandIterator_Handle_M_Next" func="yes">
+            <Overload retVal="public native bool" descr="
+Methodmap notes:
+    This string is not a real Sourcemod Function!
+    To use function remove the 'MM_CommandIterator_Handle_M_' prefix
+    Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
+Notes:
+    Determines if there is a next command. If one is found, the
+    iterator is advanced to it.
+Return:
+    true if found and iterator is advanced.
+">
+            </Overload>
+        </KeyWord>
+        <KeyWord name="MM_CommandIterator_Handle_P_Flags" func="yes">
+            <Overload retVal="property int" descr="
+Methodmap notes:
+    This string is not a real Sourcemod Function!
+    To use function remove the 'MM_CommandIterator_Handle_P_' prefix
+    Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
+Property methods:
+    Has getter
+Notes:
+    Retrieves the command&apos;s default flags
+Error:
+    Invalid iterator position.
+">
+            </Overload>
+        </KeyWord>
+        <KeyWord name="MM_CommandIterator_Handle_P_Plugin" func="yes">
+            <Overload retVal="property Handle" descr="
+Methodmap notes:
+    This string is not a real Sourcemod Function!
+    To use function remove the 'MM_CommandIterator_Handle_P_' prefix
+    Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
+Property methods:
+    Has getter
+Notes:
+    Retrieves the plugin handle of the command&apos;s creator
+Error:
+    Invalid iterator position.
+">
+            </Overload>
+        </KeyWord>
         <KeyWord name="MM_ConVar_Handle_M_AddChangeHook" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
@@ -11095,6 +11149,143 @@ Property methods:
     Has setter
 Notes:
     Retrieves or sets an integer value for the convar.
+">
+            </Overload>
+        </KeyWord>
+        <KeyWord name="MM_Cookie_Handle_C_Cookie" func="yes">
+            <Overload retVal="public native Handle" descr="
+Methodmap notes:
+    This string is not a real Sourcemod Function!
+    To use function remove the 'MM_Cookie_Handle_C_' prefix
+    Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
+Params:
+    name                    Name of the new preference cookie.
+    description             Optional description of the preference cookie.
+    access                  What CookieAccess level to assign to this cookie.
+Notes:
+    Creates a new Client preference cookie.
+    Handles returned can be closed via CloseHandle() when
+    no longer needed.
+Error:
+    Cookie name is blank.
+Return:
+    A handle to the newly created cookie. If the cookie already
+    exists, a handle to it will still be returned.
+">
+                <Param name="const char[] name"/>
+                <Param name="const char[] description"/>
+                <Param name="CookieAccess access"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="MM_Cookie_Handle_M_Get" func="yes">
+            <Overload retVal="public native void" descr="
+Methodmap notes:
+    This string is not a real Sourcemod Function!
+    To use function remove the 'MM_Cookie_Handle_M_' prefix
+    Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
+Params:
+    client                  Client index.
+    buffer                  Copyback buffer for value.
+    maxlen                  Maximum length of the buffer.
+Notes:
+    Retrieve the value of a Client preference cookie.
+Error:
+    Invalid cookie handle or invalid client index.
+">
+                <Param name="int client"/>
+                <Param name="char[] buffer"/>
+                <Param name="int maxlen"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="MM_Cookie_Handle_M_GetClientTime" func="yes">
+            <Overload retVal="public native int" descr="
+Methodmap notes:
+    This string is not a real Sourcemod Function!
+    To use function remove the 'MM_Cookie_Handle_M_' prefix
+    Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
+Params:
+    client                  Client index.
+Notes:
+    Returns the last updated timestamp for a client cookie
+Return:
+    Last updated timestamp.
+">
+                <Param name="int client"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="MM_Cookie_Handle_M_Set" func="yes">
+            <Overload retVal="public native void" descr="
+Methodmap notes:
+    This string is not a real Sourcemod Function!
+    To use function remove the 'MM_Cookie_Handle_M_' prefix
+    Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
+Params:
+    client                  Client index.
+    value                   String value to set.
+Notes:
+    Set the value of a Client preference cookie.
+Error:
+    Invalid cookie handle or invalid client index.
+">
+                <Param name="int client"/>
+                <Param name="const char[] value"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="MM_Cookie_Handle_M_SetByAuthId" func="yes">
+            <Overload retVal="public native void" descr="
+Methodmap notes:
+    This string is not a real Sourcemod Function!
+    To use function remove the 'MM_Cookie_Handle_M_' prefix
+    Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
+Params:
+    authID                  String Auth/STEAM ID of player to set.
+    value                   String value to set.
+Notes:
+    Sets the value of a Client preference cookie based on an authID string.
+Error:
+    Invalid cookie handle.
+">
+                <Param name="const char[] authID"/>
+                <Param name="const char[] value"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="MM_Cookie_Handle_M_SetPrefabMenu" func="yes">
+            <Overload retVal="public native void" descr="
+Methodmap notes:
+    This string is not a real Sourcemod Function!
+    To use function remove the 'MM_Cookie_Handle_M_' prefix
+    Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
+Params:
+    type                    A CookieMenu prefab menu type.
+    display                 Text to show on the menu.
+    handler                 Optional handler callback for translations and output on selection
+    info                    Info data to pass to the callback.
+Notes:
+    Add a new prefab item to the client cookie settings menu.
+    Note: This handles everything automatically and does not require a callback
+Error:
+    Invalid cookie handle.
+">
+                <Param name="CookieMenu type"/>
+                <Param name="const char[] display"/>
+                <Param name="CookieMenuHandler handler=INVALID_FUNCTION"/>
+                <Param name="any info=0"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="MM_Cookie_Handle_P_AccessLevel" func="yes">
+            <Overload retVal="property CookieAccess" descr="
+Methodmap notes:
+    This string is not a real Sourcemod Function!
+    To use function remove the 'MM_Cookie_Handle_P_' prefix
+    Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
+Property methods:
+    Has getter
+Notes:
+    Returns the access level of a cookie
+Error:
+    Invalid cookie handle.
+Return:
+    CookieAccess access level.
 ">
             </Overload>
         </KeyWord>
@@ -11500,12 +11691,12 @@ Methodmap notes:
     To use function remove the 'MM_DataPack_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
-    bytes                   Number of bytes to simulate reading.
+    unused                  Unused variable. Exists for backwards compatability.
 Notes:
     Returns whether or not a specified number of bytes from the data pack
     position to the end can be read.
 ">
-                <Param name="int bytes"/>
+                <Param name="int unused = 0"/>
             </Overload>
         </KeyWord>
         <KeyWord name="MM_DataPack_Handle_M_ReadCell" func="yes">
@@ -11514,10 +11705,10 @@ Methodmap notes:
     This string is not a real Sourcemod Function!
     To use function remove the 'MM_DataPack_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
-Params:
-    pack                    Handle to the data pack.
 Notes:
     Reads a cell from a data pack.
+Return:
+    A cell at this position
 ">
             </Overload>
         </KeyWord>
@@ -11527,10 +11718,10 @@ Methodmap notes:
     This string is not a real Sourcemod Function!
     To use function remove the 'MM_DataPack_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
-Params:
-    pack                    Handle to the data pack.
 Notes:
     Reads a float from a data pack.
+Return:
+    Float at this position
 ">
             </Overload>
         </KeyWord>
@@ -11585,10 +11776,12 @@ Methodmap notes:
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
     cell                    Cell to add.
+    insert                  Determines whether mid-pack writes will insert instead of overwrite.
 Notes:
     Packs a normal cell into a data pack.
 ">
                 <Param name="any cell"/>
+                <Param name="bool insert = false"/>
             </Overload>
         </KeyWord>
         <KeyWord name="MM_DataPack_Handle_M_WriteFloat" func="yes">
@@ -11599,10 +11792,12 @@ Methodmap notes:
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
     val                     Float to add.
+    insert                  Determines whether mid-pack writes will insert instead of overwrite.
 Notes:
     Packs a float into a data pack.
 ">
                 <Param name="float val"/>
+                <Param name="bool insert = false"/>
             </Overload>
         </KeyWord>
         <KeyWord name="MM_DataPack_Handle_M_WriteFunction" func="yes">
@@ -11613,10 +11808,12 @@ Methodmap notes:
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
     fktptr                  Function pointer to add.
+    insert                  Determines whether mid-pack writes will insert instead of overwrite.
 Notes:
     Packs a function pointer into a data pack.
 ">
                 <Param name="Function fktptr"/>
+                <Param name="bool insert = false"/>
             </Overload>
         </KeyWord>
         <KeyWord name="MM_DataPack_Handle_M_WriteString" func="yes">
@@ -11627,10 +11824,12 @@ Methodmap notes:
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
     str                     String to add.
+    insert                  Determines whether mid-pack writes will insert instead of overwrite.
 Notes:
     Packs a string into a data pack.
 ">
                 <Param name="const char[] str"/>
+                <Param name="bool insert = false"/>
             </Overload>
         </KeyWord>
         <KeyWord name="MM_DataPack_Handle_P_Position" func="yes">
@@ -12024,6 +12223,7 @@ Methodmap notes:
     To use function remove the 'MM_Event_Handle_P_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Property methods:
+    Has getter
     Has setter
 Notes:
     Sets whether an event&apos;s broadcasting will be disabled or not.
@@ -12053,6 +12253,21 @@ Notes:
     Tests if the end of file has been reached.
 Return:
     True if end of file has been reached, false otherwise.
+">
+            </Overload>
+        </KeyWord>
+        <KeyWord name="MM_File_Handle_M_Flush" func="yes">
+            <Overload retVal="public native bool" descr="
+Methodmap notes:
+    This string is not a real Sourcemod Function!
+    To use function remove the 'MM_File_Handle_M_' prefix
+    Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
+Notes:
+    Flushes a file&apos;s buffered output; any buffered output
+    is immediately written to the file.
+Return:
+    True on success or use_valve_fs specified with OpenFile,
+    otherwise false on failure.
 ">
             </Overload>
         </KeyWord>
@@ -12418,7 +12633,7 @@ Notes:
             </Overload>
         </KeyWord>
         <KeyWord name="MM_FrameIterator_Handle_P_LineNumber" func="yes">
-            <Overload retVal="property bool" descr="
+            <Overload retVal="property int" descr="
 Methodmap notes:
     This string is not a real Sourcemod Function!
     To use function remove the 'MM_FrameIterator_Handle_P_' prefix
@@ -12427,6 +12642,115 @@ Property methods:
     Has getter
 Notes:
     Returns the line number of the current function call.
+">
+            </Overload>
+        </KeyWord>
+        <KeyWord name="MM_GameData_Handle_C_GameData" func="yes">
+            <Overload retVal="public native Handle" descr="
+Methodmap notes:
+    This string is not a real Sourcemod Function!
+    To use function remove the 'MM_GameData_Handle_C_' prefix
+    Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
+Params:
+    file                    File to load.  The path must be relative to the &apos;gamedata&apos; folder under the config folder
+                            and the extension should be omitted.
+Notes:
+    Loads a game config file.
+Return:
+    A handle to the game config file or null on failure.
+">
+                <Param name="const char[] file"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="MM_GameData_Handle_M_GetAddress" func="yes">
+            <Overload retVal="public native Address" descr="
+Methodmap notes:
+    This string is not a real Sourcemod Function!
+    To use function remove the 'MM_GameData_Handle_M_' prefix
+    Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
+Params:
+    name                    Name of the property to find.
+Notes:
+    Finds an address calculation in a GameConfig file,
+    performs LoadFromAddress on it as appropriate, then returns the final address.
+Return:
+    An address calculated on success, or 0 on failure.
+">
+                <Param name="const char[] name"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="MM_GameData_Handle_M_GetKeyValue" func="yes">
+            <Overload retVal="public native bool" descr="
+Methodmap notes:
+    This string is not a real Sourcemod Function!
+    To use function remove the 'MM_GameData_Handle_M_' prefix
+    Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
+Params:
+    key                     Key to retrieve from the Keys section.
+    buffer                  Destination string buffer.
+    maxlen                  Maximum length of output string buffer.
+Notes:
+    Gets the value of a key from the &apos;Keys&apos; section.
+Return:
+    True if key existed, false otherwise.
+">
+                <Param name="const char[] key"/>
+                <Param name="char[] buffer"/>
+                <Param name="int maxlen"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="MM_GameData_Handle_M_GetOffset" func="yes">
+            <Overload retVal="public native int" descr="
+Methodmap notes:
+    This string is not a real Sourcemod Function!
+    To use function remove the 'MM_GameData_Handle_M_' prefix
+    Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
+Params:
+    key                     Key to retrieve from the offset section.
+Notes:
+    Returns an offset value.
+Return:
+    An offset, or -1 on failure.
+">
+                <Param name="const char[] key"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="MM_GlobalForward_Handle_C_GlobalForward" func="yes">
+            <Overload retVal="public native Handle" descr="
+Methodmap notes:
+    This string is not a real Sourcemod Function!
+    To use function remove the 'MM_GlobalForward_Handle_C_' prefix
+    Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
+Params:
+    name                    Name of public function to use in forward.
+    type                    Execution type to be used.
+    ...                     Variable number of parameter types (up to 32).
+Notes:
+    Creates a global forward.
+    The name used to create the forward is used as its public function in all target plugins.
+    This is ideal for global, static forwards that are never changed.
+    Global forwards cannot be cloned.
+    Use CloseHandle() to destroy these.
+Error:
+    More than 32 paramater types passed.
+Return:
+    Handle to new global forward.
+">
+                <Param name="const char[] name"/>
+                <Param name="ExecType type"/>
+                <Param name="ParamType ..."/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="MM_GlobalForward_Handle_P_FunctionCount" func="yes">
+            <Overload retVal="property int" descr="
+Methodmap notes:
+    This string is not a real Sourcemod Function!
+    To use function remove the 'MM_GlobalForward_Handle_P_' prefix
+    Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
+Property methods:
+    Has getter
+Notes:
+    Returns the number of functions in a global or private forward&apos;s call list.
 ">
             </Overload>
         </KeyWord>
@@ -13407,7 +13731,6 @@ Methodmap notes:
     To use function remove the 'MM_Menu_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
-    menu                    Menu Handle.
     buffer                  Buffer to store title.
     maxlength               Maximum length of the buffer.
 Notes:
@@ -13496,8 +13819,6 @@ Methodmap notes:
     This string is not a real Sourcemod Function!
     To use function remove the 'MM_Menu_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
-Params:
-    menu                    Menu Handle.
 Notes:
     Creates a raw MenuPanel based off the menu&apos;s style.
     The Handle must be freed with CloseHandle().
@@ -13810,6 +14131,149 @@ Notes:
 ">
             </Overload>
         </KeyWord>
+        <KeyWord name="MM_PrivateForward_GlobalForward_C_PrivateForward" func="yes">
+            <Overload retVal="public native GlobalForward" descr="
+Methodmap notes:
+    This string is not a real Sourcemod Function!
+    To use function remove the 'MM_PrivateForward_GlobalForward_C_' prefix
+    Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
+Params:
+    type                    Execution type to be used.
+    ...                     Variable number of parameter types (up to 32).
+Notes:
+    Creates a private forward.
+    No functions are automatically added. Use AddToForward() to do this.
+    Private forwards can be cloned.
+    Use CloseHandle() to destroy these.
+Error:
+    More than 32 paramater types passed.
+Return:
+    Handle to new private forward.
+">
+                <Param name="ExecType type"/>
+                <Param name="ParamType ..."/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="MM_PrivateForward_GlobalForward_M_AddFunction" func="yes">
+            <Overload retVal="public native bool" descr="
+Methodmap notes:
+    This string is not a real Sourcemod Function!
+    To use function remove the 'MM_PrivateForward_GlobalForward_M_' prefix
+    Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
+Params:
+    plugin                  Handle of the plugin that contains the function.
+                            Pass INVALID_HANDLE to specify the calling plugin.
+    func                    Function to add to forward.
+Notes:
+    Adds a function to a private forward&apos;s call list.
+    Cannot be used during an incomplete call.
+Error:
+    Invalid or corrupt private forward handle, invalid or corrupt plugin handle, or invalid function.
+Return:
+    True on success, false otherwise.
+">
+                <Param name="Handle plugin"/>
+                <Param name="Function func"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="MM_PrivateForward_GlobalForward_M_RemoveAllFunctions" func="yes">
+            <Overload retVal="public native int" descr="
+Methodmap notes:
+    This string is not a real Sourcemod Function!
+    To use function remove the 'MM_PrivateForward_GlobalForward_M_' prefix
+    Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
+Params:
+    plugin                  Handle of the plugin to remove instances of.
+                            Pass INVALID_HANDLE to specify the calling plugin.
+Notes:
+    Removes all instances of a plugin from a private forward&apos;s call list.
+    Functions will be removed automatically if their parent plugin is unloaded.
+Error:
+    Invalid or corrupt private forward handle or invalid or corrupt plugin handle.
+Return:
+    Number of functions removed from forward.
+">
+                <Param name="Handle plugin"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="MM_PrivateForward_GlobalForward_M_RemoveFunction" func="yes">
+            <Overload retVal="public native bool" descr="
+Methodmap notes:
+    This string is not a real Sourcemod Function!
+    To use function remove the 'MM_PrivateForward_GlobalForward_M_' prefix
+    Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
+Params:
+    plugin                  Handle of the plugin that contains the function.
+                            Pass INVALID_HANDLE to specify the calling plugin.
+    func                    Function to remove from forward.
+Notes:
+    Removes a function from a private forward&apos;s call list.
+    Only removes one instance.
+    Functions will be removed automatically if their parent plugin is unloaded.
+Error:
+    Invalid or corrupt private forward handle, invalid or corrupt plugin handle, or invalid function.
+Return:
+    True on success, false otherwise.
+">
+                <Param name="Handle plugin"/>
+                <Param name="Function func"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="MM_Profiler_Handle_C_Profiler" func="yes">
+            <Overload retVal="public native Handle" descr="
+Methodmap notes:
+    This string is not a real Sourcemod Function!
+    To use function remove the 'MM_Profiler_Handle_C_' prefix
+    Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
+Notes:
+    Creates a new profile object.  The Handle must be freed
+    using delete or CloseHandle().
+Return:
+    A new Profiler Handle.
+">
+            </Overload>
+        </KeyWord>
+        <KeyWord name="MM_Profiler_Handle_M_Start" func="yes">
+            <Overload retVal="public native void" descr="
+Methodmap notes:
+    This string is not a real Sourcemod Function!
+    To use function remove the 'MM_Profiler_Handle_M_' prefix
+    Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
+Notes:
+    Starts a cycle for profiling.
+">
+            </Overload>
+        </KeyWord>
+        <KeyWord name="MM_Profiler_Handle_M_Stop" func="yes">
+            <Overload retVal="public native void" descr="
+Methodmap notes:
+    This string is not a real Sourcemod Function!
+    To use function remove the 'MM_Profiler_Handle_M_' prefix
+    Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
+Notes:
+    Stops a cycle for profiling.
+Error:
+    Profiler was never started.
+">
+            </Overload>
+        </KeyWord>
+        <KeyWord name="MM_Profiler_Handle_P_Time" func="yes">
+            <Overload retVal="property float" descr="
+Methodmap notes:
+    This string is not a real Sourcemod Function!
+    To use function remove the 'MM_Profiler_Handle_P_' prefix
+    Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
+Property methods:
+    Has getter
+Notes:
+    Returns the amount of high-precision time in seconds
+    that passed during the profiler&apos;s last start/stop
+    cycle.
+Return:
+    Time elapsed in seconds.
+">
+            </Overload>
+        </KeyWord>
         <KeyWord name="MM_Protobuf_Handle_M_AddAngle" func="yes">
             <Overload retVal="public native void" descr="
 Methodmap notes:
@@ -13900,6 +14364,24 @@ Error:
                 <Param name="int value"/>
             </Overload>
         </KeyWord>
+        <KeyWord name="MM_Protobuf_Handle_M_AddInt64" func="yes">
+            <Overload retVal="public native void" descr="
+Methodmap notes:
+    This string is not a real Sourcemod Function!
+    To use function remove the 'MM_Protobuf_Handle_M_' prefix
+    Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
+Params:
+    field                   Field name.
+    value                   Large integer value to add (0=High bits, 1=Low bits).
+Notes:
+    Add an int64, uint64, sint64, fixed64, sfixed64 to a protobuf message repeated field.
+Error:
+    Non-existent field, or incorrect field type.
+">
+                <Param name="const char[] field"/>
+                <Param name="int value[2]"/>
+            </Overload>
+        </KeyWord>
         <KeyWord name="MM_Protobuf_Handle_M_AddMessage" func="yes">
             <Overload retVal="public native Protobuf" descr="
 Methodmap notes:
@@ -13983,9 +14465,27 @@ Params:
 Notes:
     Gets the number of elements in a repeated field of a protobuf message.
 Error:
-    Non-existent field, or incorrect field type.
+    Non-existent field, or non-repeated field.
 Return:
     Number of elements in the field.
+">
+                <Param name="const char[] field"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="MM_Protobuf_Handle_M_HasField" func="yes">
+            <Overload retVal="public native bool" descr="
+Methodmap notes:
+    This string is not a real Sourcemod Function!
+    To use function remove the 'MM_Protobuf_Handle_M_' prefix
+    Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
+Params:
+    field                   Field name.
+Notes:
+    Returns whether or not the named, non-repeated field has a value set.
+Error:
+    Non-existent field, or repeated field.
+Return:
+    True if value has been set, else false.
 ">
                 <Param name="const char[] field"/>
             </Overload>
@@ -14087,6 +14587,26 @@ Return:
     Integer value read.
 ">
                 <Param name="const char[] field"/>
+                <Param name="int index = PB_FIELD_NOT_REPEATED"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="MM_Protobuf_Handle_M_ReadInt64" func="yes">
+            <Overload retVal="public native void" descr="
+Methodmap notes:
+    This string is not a real Sourcemod Function!
+    To use function remove the 'MM_Protobuf_Handle_M_' prefix
+    Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
+Params:
+    field                   Field name.
+    value                   Array to represent the large integer (0=High bits, 1=Low bits).
+    index                   Index into repeated field.
+Notes:
+    Reads an int64, uint64, sint64, fixed64, sfixed64 from a protobuf message.
+Error:
+    Non-existent field, or incorrect field type.
+">
+                <Param name="const char[] field"/>
+                <Param name="int value[2]"/>
                 <Param name="int index = PB_FIELD_NOT_REPEATED"/>
             </Overload>
         </KeyWord>
@@ -14291,7 +14811,7 @@ Error:
             </Overload>
         </KeyWord>
         <KeyWord name="MM_Protobuf_Handle_M_SetInt" func="yes">
-            <Overload retVal="public native int" descr="
+            <Overload retVal="public native void" descr="
 Methodmap notes:
     This string is not a real Sourcemod Function!
     To use function remove the 'MM_Protobuf_Handle_M_' prefix
@@ -14307,6 +14827,26 @@ Error:
 ">
                 <Param name="const char[] field"/>
                 <Param name="int value"/>
+                <Param name="int index = PB_FIELD_NOT_REPEATED"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="MM_Protobuf_Handle_M_SetInt64" func="yes">
+            <Overload retVal="public native void" descr="
+Methodmap notes:
+    This string is not a real Sourcemod Function!
+    To use function remove the 'MM_Protobuf_Handle_M_' prefix
+    Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
+Params:
+    field                   Field name.
+    value                   Large integer value to set (0=High bits, 1=Low bits).
+    index                   Index into repeated field.
+Notes:
+    Sets an int64, uint64, sint64, fixed64, sfixed64 on a protobuf message.
+Error:
+    Non-existent field, or incorrect field type.
+">
+                <Param name="const char[] field"/>
+                <Param name="int value[2]"/>
                 <Param name="int index = PB_FIELD_NOT_REPEATED"/>
             </Overload>
         </KeyWord>
@@ -14404,7 +14944,7 @@ Notes:
     Returns number of captures for a match
 Return:
     Number of captures in the match.
-    @note    Use GetSubString() and loop from 1 -&gt; captures -1 for str_id to get all captures
+    @note Use GetSubString() and loop from 1 -&gt; captures -1 for str_id to get all captures
 ">
                 <Param name="int match = 0"/>
             </Overload>
@@ -14416,7 +14956,6 @@ Methodmap notes:
     To use function remove the 'MM_Regex_Handle_M_' prefix
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
-    regex                   The regex handle to extract data from.
     str_id                  The index of the expression to get - starts at 0, and ends at captures - 1.
     buffer                  The buffer to set to the matching substring.
     maxlen                  The maximum string length of the buffer.
@@ -14427,7 +14966,7 @@ Notes:
     number returned by Regex.Match or Regex.CaptureCount.
 Return:
     True if a substring was found, False on fail/error
-    @note    str_id = 0 is the full captured string, anything else is the capture group index.
+    @note str_id = 0 is the full captured string, anything else is the capture group index.
     if Regex.Match is used match can only be 0
 ">
                 <Param name="int str_id"/>
@@ -14444,14 +14983,13 @@ Methodmap notes:
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
     str                     The string to check.
-    regex                   Regex Handle from CompileRegex()
     ret                     Error code, if applicable.
     offset                  Offset in the string to start searching from. MatchOffset returns the offset of the match.
 Notes:
     Matches a string against a pre-compiled regular expression pattern.
 Return:
     Number of captures found or -1 on failure.
-    @note    Use the regex handle passed to this function to extract
+    @note Use the regex handle passed to this function to extract
     matches with GetSubString().
 ">
                 <Param name="const char[] str"/>
@@ -14467,13 +15005,12 @@ Methodmap notes:
     Read more here: https://github.com/raziEiL/SourceMod-Npp-Docs
 Params:
     str                     The string to check.
-    regex                   Regex Handle from CompileRegex()
     ret                     Error code, if applicable.
 Notes:
     Gets all matches from a string against a pre-compiled regular expression pattern.
 Return:
     Number of matches found or -1 on failure.
-    @note    Use GetSubString() and loop from 0 -&gt; totalmatches - 1.
+    @note Use GetSubString() and loop from 0 -&gt; totalmatches - 1.
 ">
                 <Param name="const char[] str"/>
                 <Param name="RegexError &amp;ret = REGEX_ERROR_NONE"/>
@@ -15184,14 +15721,14 @@ Notes:
         <KeyWord name="MatchRegex" func="yes">
             <Overload retVal="native int" descr="
 Params:
-    str                     The string to check.
     regex                   Regex Handle from CompileRegex()
+    str                     The string to check.
     ret                     Error code, if applicable.
 Notes:
     Matches a string against a pre-compiled regular expression pattern.
 Return:
     Number of captures found or -1 on failure.
-    @note    Use the regex handle passed to this function to extract
+    @note Use the regex handle passed to this function to extract
     matches with GetRegexSubString().
 ">
                 <Param name="Handle regex"/>
@@ -15228,7 +15765,8 @@ Notes:
 Params:
     map                     Map to add.
     force                   Should we force the map in even if it requires overwriting an existing nomination?
-    owner                   Client index of the nominator. If the client disconnects the nomination will be removed. Use 0 for constant nominations
+    owner                   Client index of the nominator. If the client disconnects the nomination will be removed.
+                            Use 0 for constant nominations
 Notes:
     Attempt to add a map to the mapchooser map list.
 Return:
@@ -15832,8 +16370,7 @@ Notes:
     Called when a clients movement buttons are being processed
 Return:
     Plugin_Handled to block the commands from being processed, Plugin_Continue otherwise.
-    @note   To see if all 11 params are available, use FeatureType_Capability and
-    FEATURECAP_PLAYERRUNCMD_11PARAMS.
+    @note To see if all 11 params are available, use FeatureType_Capability and FEATURECAP_PLAYERRUNCMD_11PARAMS.
 ">
                 <Param name="int client"/>
                 <Param name="int &amp;buttons"/>
@@ -16678,7 +17215,7 @@ Return:
         <KeyWord name="PrefetchSound" func="yes">
             <Overload retVal="native void" descr="
 Params:
-    name                    Sound file name relative to the &apos;sounds&apos; folder.
+    name                    Sound file name relative to the &apos;sound&apos; folder.
 Notes:
     Prefetches a sound.
 ">
@@ -17947,7 +18484,7 @@ Params:
     format                  Formatting rules.
     ...                     Variable number of format parameters.
 Notes:
-    Reples to a message in a command.
+    Replies to a message in a command.
     A client index of 0 will use PrintToServer().
     If the command was from the console, PrintToConsole() is used.
     If the command was from chat, PrintToChat() is used.
@@ -18178,7 +18715,7 @@ Params:
 Notes:
     Hooks an entity
 Return:
-    bool  Hook Successful
+    Hook Successful
 ">
                 <Param name="int entity"/>
                 <Param name="SDKHookType type"/>
@@ -19038,19 +19575,6 @@ Return:
                 <Param name="Handle database"/>
                 <Param name="const char[] query"/>
                 <Param name="int len=-1"/>
-            </Overload>
-        </KeyWord>
-        <KeyWord name="SQL_QuoteString" func="yes">
-            <Overload retVal="stock bool" descr="
-Notes:
-    This is a backwards compatibility stock.  You should use SQL_EscapeString()
-    instead, as this function will probably be deprecated in SourceMod 1.1.
-">
-                <Param name="Handle database"/>
-                <Param name="const char[] string"/>
-                <Param name="char[] buffer"/>
-                <Param name="int maxlength"/>
-                <Param name="int &amp;written=0"/>
             </Overload>
         </KeyWord>
         <KeyWord name="SQL_ReadDriver" func="yes">
@@ -21374,7 +21898,7 @@ Error:
 Params:
     entity                  Entity index.
     channel                 Channel number.
-    name                    Sound file name relative to the &apos;sounds&apos; folder.
+    name                    Sound file name relative to the &apos;sound&apos; folder.
 Notes:
     Stops a sound.
 ">
@@ -22254,13 +22778,16 @@ Return:
 Params:
     client                  Player&apos;s index.
     attacker                Attacker&apos;s index.
+    duration                Duration of fire (in seconds).
 Notes:
-    Sets a client on fire for 10 seconds.
+    Sets a client on fire.
+    Fire duration is capped to 10 seconds.
 Error:
     Invalid client index, client not in game, or no mod support.
 ">
                 <Param name="int client"/>
                 <Param name="int attacker"/>
+                <Param name="float duration=10.0"/>
             </Overload>
         </KeyWord>
         <KeyWord name="TF2_IsHolidayActive" func="yes">
@@ -22529,6 +23056,128 @@ Notes:
                 <Param name="int attacker=0"/>
             </Overload>
         </KeyWord>
+        <KeyWord name="TR_AllSolid" func="yes">
+            <Overload retVal="native bool" descr="
+Params:
+    hndl                    A trace Handle, or INVALID_HANDLE to use a global trace result.
+Notes:
+    Returns whether the entire trace was in a solid area.
+Error:
+    Invalid Handle.
+Return:
+    True if entire trace was in a solid area, otherwise false.
+">
+                <Param name="Handle hndl=INVALID_HANDLE"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="TR_ClipCurrentRayToEntity" func="yes">
+            <Overload retVal="native void" descr="
+Params:
+    flags                   Trace flags.
+    entity                  Entity to clip to.
+Notes:
+    Clips the current global ray (or hull) to a particular entity.
+">
+                <Param name="int flags"/>
+                <Param name="int entity"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="TR_ClipCurrentRayToEntityEx" func="yes">
+            <Overload retVal="native Handle" descr="
+Params:
+    flags                   Trace flags.
+    entity                  Entity to clip to.
+Notes:
+    Clips the current global ray (or hull) to a particular entity.
+Return:
+    Ray trace handle, which must be closed via CloseHandle().
+">
+                <Param name="int flags"/>
+                <Param name="int entity"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="TR_ClipRayHullToEntity" func="yes">
+            <Overload retVal="native void" descr="
+Params:
+    pos                     Starting position of the ray.
+    vec                     Ending position of the ray.
+    mins                    Hull minimum size.
+    maxs                    Hull maximum size.
+    flags                   Trace flags.
+    entity                  Entity to clip to.
+Notes:
+    Clips a ray hull to a particular entity.
+">
+                <Param name="const float pos[3]"/>
+                <Param name="const float vec[3]"/>
+                <Param name="const float mins[3]"/>
+                <Param name="const float maxs[3]"/>
+                <Param name="int flags"/>
+                <Param name="int entity"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="TR_ClipRayHullToEntityEx" func="yes">
+            <Overload retVal="native Handle" descr="
+Params:
+    pos                     Starting position of the ray.
+    vec                     Ending position of the ray.
+    mins                    Hull minimum size.
+    maxs                    Hull maximum size.
+    flags                   Trace flags.
+    entity                  Entity to clip to.
+Notes:
+    Clips a ray hull to a particular entity.
+Return:
+    Ray trace handle, which must be closed via CloseHandle().
+">
+                <Param name="const float pos[3]"/>
+                <Param name="const float vec[3]"/>
+                <Param name="const float mins[3]"/>
+                <Param name="const float maxs[3]"/>
+                <Param name="int flags"/>
+                <Param name="int entity"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="TR_ClipRayToEntity" func="yes">
+            <Overload retVal="native void" descr="
+Params:
+    pos                     Starting position of the ray.
+    vec                     Depending on RayType, it will be used as the ending
+                            point, or the direction angle.
+    flags                   Trace flags.
+    rtype                   Method to calculate the ray direction.
+    entity                  Entity to clip to.
+Notes:
+    Clips a ray to a particular entity.
+">
+                <Param name="const float pos[3]"/>
+                <Param name="const float vec[3]"/>
+                <Param name="int flags"/>
+                <Param name="RayType rtype"/>
+                <Param name="int entity"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="TR_ClipRayToEntityEx" func="yes">
+            <Overload retVal="native Handle" descr="
+Params:
+    pos                     Starting position of the ray.
+    vec                     Depending on RayType, it will be used as the ending
+                            point, or the direction angle.
+    flags                   Trace flags.
+    rtype                   Method to calculate the ray direction.
+    entity                  Entity to clip to.
+Notes:
+    Clips a ray to a particular entity.
+Return:
+    Ray trace handle, which must be closed via CloseHandle().
+">
+                <Param name="const float pos[3]"/>
+                <Param name="const float vec[3]"/>
+                <Param name="int flags"/>
+                <Param name="RayType rtype"/>
+                <Param name="int entity"/>
+            </Overload>
+        </KeyWord>
         <KeyWord name="TR_DidHit" func="yes">
             <Overload retVal="native bool" descr="
 Params:
@@ -22539,6 +23188,69 @@ Error:
     Invalid Handle.
 Return:
     True if any collision found, otherwise false.
+">
+                <Param name="Handle hndl=INVALID_HANDLE"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="TR_EnumerateEntities" func="yes">
+            <Overload retVal="native void" descr="
+Params:
+    pos                     Starting position of the ray.
+    vec                     Depending on RayType, it will be used as the ending
+                            point, or the direction angle.
+    mask                    Mask to use for the trace. See PARTITION_* flags.
+    rtype                   Method to calculate the ray direction.
+    enumerator              Function to use as enumerator. For each entity found
+                            along the ray, this function is called.
+    data                    Arbitrary data value to pass through to the enumerator.
+Notes:
+    Enumerates over entities along a ray. This may find entities that are
+    close to the ray but do not actually intersect it. Use TR_Clip*RayToEntity
+    with TR_DidHit to check if the ray actually intersects the entity.
+">
+                <Param name="const float pos[3]"/>
+                <Param name="const float vec[3]"/>
+                <Param name="int mask"/>
+                <Param name="RayType rtype"/>
+                <Param name="TraceEntityEnumerator enumerator"/>
+                <Param name="any data=0"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="TR_EnumerateEntitiesHull" func="yes">
+            <Overload retVal="native void" descr="
+Params:
+    pos                     Starting position of the ray.
+    vec                     Ending position of the ray.
+    mins                    Hull minimum size.
+    maxs                    Hull maximum size.
+    mask                    Mask to use for the trace. See PARTITION_* flags.
+    enumerator              Function to use as enumerator. For each entity found
+                            along the ray, this function is called.
+    data                    Arbitrary data value to pass through to the enumerator.
+Notes:
+    Enumerates over entities along a ray hull. This may find entities that are
+    close to the ray but do not actually intersect it. Use TR_Clip*RayToEntity
+    with TR_DidHit to check if the ray actually intersects the entity.
+">
+                <Param name="const float pos[3]"/>
+                <Param name="const float vec[3]"/>
+                <Param name="const float mins[3]"/>
+                <Param name="const float maxs[3]"/>
+                <Param name="int mask"/>
+                <Param name="TraceEntityEnumerator enumerator"/>
+                <Param name="any data=0"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="TR_GetDisplacementFlags" func="yes">
+            <Overload retVal="native int" descr="
+Params:
+    hndl                    A trace Handle, or INVALID_HANDLE to use a global trace result.
+Notes:
+    Returns the displacement flags for the surface that was hit. See DISPSURF_FLAG_*.
+Error:
+    Invalid Handle.
+Return:
+    Displacement flags.
 ">
                 <Param name="Handle hndl=INVALID_HANDLE"/>
             </Overload>
@@ -22585,6 +23297,37 @@ Return:
                 <Param name="Handle hndl=INVALID_HANDLE"/>
             </Overload>
         </KeyWord>
+        <KeyWord name="TR_GetFractionLeftSolid" func="yes">
+            <Overload retVal="native float" descr="
+Params:
+    hndl                    A trace Handle, or INVALID_HANDLE to use a global trace result.
+Notes:
+    Returns the time fraction from a trace result when it left a solid.
+    Only valid if trace started in solid
+Error:
+    Invalid Handle.
+Return:
+    Time fraction left solid value of the trace.
+">
+                <Param name="Handle hndl=INVALID_HANDLE"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="TR_GetHitBoxIndex" func="yes">
+            <Overload retVal="native int" descr="
+Params:
+    hndl                    A trace Handle, or INVALID_HANDLE to use a global trace result.
+Notes:
+    Returns in which hitbox the trace collided if any.
+    Note: if the entity that collided with the trace is the world entity,
+    then this function doesn&apos;t return an hitbox index but a static prop index.
+Error:
+    Invalid Handle.
+Return:
+    Hitbox index (Or static prop index).
+">
+                <Param name="Handle hndl=INVALID_HANDLE"/>
+            </Overload>
+        </KeyWord>
         <KeyWord name="TR_GetHitGroup" func="yes">
             <Overload retVal="native int" descr="
 Params:
@@ -22595,6 +23338,20 @@ Error:
     Invalid Handle.
 Return:
     Body hit group.
+">
+                <Param name="Handle hndl=INVALID_HANDLE"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="TR_GetPhysicsBone" func="yes">
+            <Overload retVal="native int" descr="
+Params:
+    hndl                    A trace Handle, or INVALID_HANDLE to use a global trace result.
+Notes:
+    Returns the index of the physics bone that was hit.
+Error:
+    Invalid Handle.
+Return:
+    Physics bone index.
 ">
                 <Param name="Handle hndl=INVALID_HANDLE"/>
             </Overload>
@@ -22641,6 +23398,64 @@ Return:
                 <Param name="const float pos[3]"/>
             </Overload>
         </KeyWord>
+        <KeyWord name="TR_GetStartPosition" func="yes">
+            <Overload retVal="native void" descr="
+Params:
+    hndl                    A trace Handle, or INVALID_HANDLE to use a global trace result.
+    pos                     Vector buffer to store data in.
+Notes:
+    Returns the starting position of a trace.
+Error:
+    Invalid Handle.
+">
+                <Param name="Handle hndl"/>
+                <Param name="float pos[3]"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="TR_GetSurfaceFlags" func="yes">
+            <Overload retVal="native int" descr="
+Params:
+    hndl                    A trace Handle, or INVALID_HANDLE to use a global trace result.
+Notes:
+    Returns the surface flags. See SURF_*.
+Error:
+    Invalid Handle.
+Return:
+    Surface flags.
+">
+                <Param name="Handle hndl=INVALID_HANDLE"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="TR_GetSurfaceName" func="yes">
+            <Overload retVal="native void" descr="
+Params:
+    hndl                    A trace Handle, or INVALID_HANDLE to use a global trace result.
+    buffer                  Buffer to store surface name in
+    maxlen                  Maximum length of output buffer
+Notes:
+    Returns the name of the surface that was hit.
+Error:
+    Invalid Handle.
+">
+                <Param name="Handle hndl"/>
+                <Param name="char[] buffer"/>
+                <Param name="int maxlen"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="TR_GetSurfaceProps" func="yes">
+            <Overload retVal="native int" descr="
+Params:
+    hndl                    A trace Handle, or INVALID_HANDLE to use a global trace result.
+Notes:
+    Returns the surface properties index of the surface that was hit.
+Error:
+    Invalid Handle.
+Return:
+    Surface props.
+">
+                <Param name="Handle hndl=INVALID_HANDLE"/>
+            </Overload>
+        </KeyWord>
         <KeyWord name="TR_PointOutsideWorld" func="yes">
             <Overload retVal="native bool" descr="
 Params:
@@ -22651,6 +23466,20 @@ Return:
     True if outside world, otherwise false.
 ">
                 <Param name="float pos[3]"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="TR_StartSolid" func="yes">
+            <Overload retVal="native bool" descr="
+Params:
+    hndl                    A trace Handle, or INVALID_HANDLE to use a global trace result.
+Notes:
+    Returns whether the initial point was in a solid area.
+Error:
+    Invalid Handle.
+Return:
+    True if initial point was in a solid area, otherwise false.
+">
+                <Param name="Handle hndl=INVALID_HANDLE"/>
             </Overload>
         </KeyWord>
         <KeyWord name="TR_TraceHull" func="yes">
@@ -22695,8 +23524,7 @@ Return:
             <Overload retVal="native void" descr="
 Params:
     pos                     Starting position of the ray.
-    vec                     Depending on RayType, it will be used as the ending
-                            point, or the direction angle.
+    vec                     Ending position of the ray.
     mins                    Hull minimum size.
     maxs                    Hull maximum size.
     flags                   Trace flags.
@@ -23527,6 +24355,7 @@ Return:
         <KeyWord name="CSWeapon_BAYONET"/>
         <KeyWord name="CSWeapon_BIZON"/>
         <KeyWord name="CSWeapon_BREACHCHARGE"/>
+        <KeyWord name="CSWeapon_BUMPMINE"/>
         <KeyWord name="CSWeapon_C4"/>
         <KeyWord name="CSWeapon_CUTTERS"/>
         <KeyWord name="CSWeapon_CZ75A"/>
@@ -23554,6 +24383,8 @@ Return:
         <KeyWord name="CSWeapon_KEVLAR"/>
         <KeyWord name="CSWeapon_KNIFE"/>
         <KeyWord name="CSWeapon_KNIFE_BUTTERFLY"/>
+        <KeyWord name="CSWeapon_KNIFE_CANIS"/>
+        <KeyWord name="CSWeapon_KNIFE_CORD"/>
         <KeyWord name="CSWeapon_KNIFE_FALCHION"/>
         <KeyWord name="CSWeapon_KNIFE_FLIP"/>
         <KeyWord name="CSWeapon_KNIFE_GG"/>
@@ -23562,7 +24393,9 @@ Return:
         <KeyWord name="CSWeapon_KNIFE_GYPSY_JACKKNIFE"/>
         <KeyWord name="CSWeapon_KNIFE_KARAMBIT"/>
         <KeyWord name="CSWeapon_KNIFE_M9_BAYONET"/>
+        <KeyWord name="CSWeapon_KNIFE_OUTDOOR"/>
         <KeyWord name="CSWeapon_KNIFE_PUSH"/>
+        <KeyWord name="CSWeapon_KNIFE_SKELETON"/>
         <KeyWord name="CSWeapon_KNIFE_STILETTO"/>
         <KeyWord name="CSWeapon_KNIFE_SURVIVAL_BOWIE"/>
         <KeyWord name="CSWeapon_KNIFE_T"/>
@@ -23599,6 +24432,7 @@ Return:
         <KeyWord name="CSWeapon_SG556"/>
         <KeyWord name="CSWeapon_SHIELD"/>
         <KeyWord name="CSWeapon_SMOKEGRENADE"/>
+        <KeyWord name="CSWeapon_SNOWBALL"/>
         <KeyWord name="CSWeapon_SPANNER"/>
         <KeyWord name="CSWeapon_SSG08"/>
         <KeyWord name="CSWeapon_TABLET"/>
@@ -23621,6 +24455,7 @@ Return:
         <KeyWord name="CS_TEAM_SPECTATOR"/>
         <KeyWord name="CS_TEAM_T"/>
         <KeyWord name="ClientRangeType"/>
+        <KeyWord name="CommandIterator"/>
         <KeyWord name="Command_Allow"/>
         <KeyWord name="Command_Deny"/>
         <KeyWord name="ConVar"/>
@@ -23632,6 +24467,7 @@ Return:
         <KeyWord name="ConVarQuery_NotValid"/>
         <KeyWord name="ConVarQuery_Okay"/>
         <KeyWord name="ConVarQuery_Protected"/>
+        <KeyWord name="Cookie"/>
         <KeyWord name="CookieAccess"/>
         <KeyWord name="CookieAccess_Private"/>
         <KeyWord name="CookieAccess_Protected"/>
@@ -23660,6 +24496,11 @@ Return:
         <KeyWord name="DBVal_Error"/>
         <KeyWord name="DBVal_Null"/>
         <KeyWord name="DBVal_TypeMismatch"/>
+        <KeyWord name="DISPSURF_FLAG_BUILDABLE"/>
+        <KeyWord name="DISPSURF_FLAG_SURFACE"/>
+        <KeyWord name="DISPSURF_FLAG_SURFPROP1"/>
+        <KeyWord name="DISPSURF_FLAG_SURFPROP2"/>
+        <KeyWord name="DISPSURF_FLAG_WALKABLE"/>
         <KeyWord name="DMG_ACID"/>
         <KeyWord name="DMG_AIRBOAT"/>
         <KeyWord name="DMG_ALWAYSGIB"/>
@@ -23678,19 +24519,25 @@ Return:
         <KeyWord name="DMG_ENERGYBEAM"/>
         <KeyWord name="DMG_FALL"/>
         <KeyWord name="DMG_GENERIC"/>
+        <KeyWord name="DMG_HALF_FALLOFF"/>
+        <KeyWord name="DMG_IGNITE"/>
         <KeyWord name="DMG_NERVEGAS"/>
         <KeyWord name="DMG_NEVERGIB"/>
+        <KeyWord name="DMG_NOCLOSEDISTANCEMOD"/>
         <KeyWord name="DMG_PARALYZE"/>
         <KeyWord name="DMG_PHYSGUN"/>
         <KeyWord name="DMG_PLASMA"/>
         <KeyWord name="DMG_POISON"/>
         <KeyWord name="DMG_PREVENT_PHYSICS_FORCE"/>
         <KeyWord name="DMG_RADIATION"/>
+        <KeyWord name="DMG_RADIUS_MAX"/>
         <KeyWord name="DMG_REMOVENORAGDOLL"/>
         <KeyWord name="DMG_SHOCK"/>
         <KeyWord name="DMG_SLASH"/>
         <KeyWord name="DMG_SLOWBURN"/>
         <KeyWord name="DMG_SONIC"/>
+        <KeyWord name="DMG_USEDISTANCEMOD"/>
+        <KeyWord name="DMG_USE_HITLOCATIONS"/>
         <KeyWord name="DMG_VEHICLE"/>
         <KeyWord name="DataPack"/>
         <KeyWord name="DataPackPos"/>
@@ -23864,6 +24711,8 @@ Return:
         <KeyWord name="FindMap_NotFound"/>
         <KeyWord name="FindMap_PossiblyAvailable"/>
         <KeyWord name="FrameIterator"/>
+        <KeyWord name="GameData"/>
+        <KeyWord name="GlobalForward"/>
         <KeyWord name="GroupId"/>
         <KeyWord name="Handle"/>
         <KeyWord name="INVALID_ADMIN_ID"/>
@@ -24039,6 +24888,10 @@ Return:
         <KeyWord name="OverrideType"/>
         <KeyWord name="Override_Command"/>
         <KeyWord name="Override_CommandGroup"/>
+        <KeyWord name="PARTITION_NON_STATIC_EDICTS"/>
+        <KeyWord name="PARTITION_SOLID_EDICTS"/>
+        <KeyWord name="PARTITION_STATIC_PROPS"/>
+        <KeyWord name="PARTITION_TRIGGER_EDICTS"/>
         <KeyWord name="PB_FIELD_NOT_REPEATED"/>
         <KeyWord name="PCRE_ANCHORED"/>
         <KeyWord name="PCRE_CASELESS"/>
@@ -24085,6 +24938,8 @@ Return:
         <KeyWord name="Plugin_Running"/>
         <KeyWord name="Plugin_Stop"/>
         <KeyWord name="Plugin_Uncompiled"/>
+        <KeyWord name="PrivateForward"/>
+        <KeyWord name="Profiler"/>
         <KeyWord name="PropFieldType"/>
         <KeyWord name="PropField_Entity"/>
         <KeyWord name="PropField_Float"/>
@@ -24418,6 +25273,22 @@ Return:
         <KeyWord name="SP_ERROR_STACKMIN"/>
         <KeyWord name="SP_ERROR_TRACKER_BOUNDS"/>
         <KeyWord name="SP_PARAMFLAG_BYREF"/>
+        <KeyWord name="SURF_BUMPLIGHT"/>
+        <KeyWord name="SURF_HINT"/>
+        <KeyWord name="SURF_HITBOX"/>
+        <KeyWord name="SURF_LIGHT"/>
+        <KeyWord name="SURF_NOCHOP"/>
+        <KeyWord name="SURF_NODECALS"/>
+        <KeyWord name="SURF_NODRAW"/>
+        <KeyWord name="SURF_NOLIGHT"/>
+        <KeyWord name="SURF_NOPORTAL"/>
+        <KeyWord name="SURF_NOSHADOWS"/>
+        <KeyWord name="SURF_SKIP"/>
+        <KeyWord name="SURF_SKY"/>
+        <KeyWord name="SURF_SKY2D"/>
+        <KeyWord name="SURF_TRANS"/>
+        <KeyWord name="SURF_TRIGGER"/>
+        <KeyWord name="SURF_WARP"/>
         <KeyWord name="SortOrder"/>
         <KeyWord name="SortType"/>
         <KeyWord name="Sort_Ascending"/>
@@ -24660,6 +25531,7 @@ Return:
         <KeyWord name="TF_CONDFLAG_ZOOMED"/>
         <KeyWord name="TF_CUSTOM_AEGIS_ROUND"/>
         <KeyWord name="TF_CUSTOM_AIR_STICKY_BURST"/>
+        <KeyWord name="TF_CUSTOM_AXTINGUISHER_BOOSTED"/>
         <KeyWord name="TF_CUSTOM_BACKSTAB"/>
         <KeyWord name="TF_CUSTOM_BASEBALL"/>
         <KeyWord name="TF_CUSTOM_BLEEDING"/>
