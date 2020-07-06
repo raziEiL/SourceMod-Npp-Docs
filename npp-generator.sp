@@ -564,12 +564,10 @@ void ReadIncludeFile(char[] filepath, int fileArrayIdx=-1, char[] search="")
 					PushArrayString(g_ConstArray, buffer);
 				}
 			}
-			else if ((value = IsEnumString(buffer)) != -1)
+			else if ((value = IsTypeString(buffer, "enum")) != -1)
 			{
 				if (search[0])
-				{
 					continue;
-				}
 
 				strcopy(buffer, 1023, buffer[value+4]);
 				TrimString(buffer);
@@ -635,6 +633,19 @@ void ReadIncludeFile(char[] filepath, int fileArrayIdx=-1, char[] search="")
 							break;
 						}
 					}
+				}
+			}
+			else if ((value = IsTypeString(buffer, "typeset")) != -1)
+			{
+				if (search[0])
+					continue;
+
+				strcopy(buffer, 1023, buffer[value+7]);
+				TrimString(buffer);
+				ReplaceString(buffer, 1023, "{", "");
+				if (IsValidString(buffer) && FindStringInArray(g_MiscArray, buffer) == -1)
+				{
+					PushArrayString(g_MiscArray, buffer);
 				}
 			}
 			else
@@ -1245,12 +1256,12 @@ int CountCharInString(const char[] str, char c)
 	return count;
 }
 
-int IsEnumString(const char[] buffer)
+int IsTypeString(const char[] buffer, const char[] type)
 {
-	int pos = StrContains(buffer, "enum");
+	int pos = StrContains(buffer, type);
 	
 	if (pos != -1){
-		int offset = pos + 4;
+		int offset = pos + strlen(type);
 		if (strlen(buffer) > offset){
 			if ((buffer[offset] > 64 && buffer[offset] < 91) || (buffer[offset] > 96 && buffer[offset] < 123))
 				return -1;

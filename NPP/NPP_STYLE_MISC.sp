@@ -16,6 +16,7 @@ ClientRangeType
 CommandIterator 
 ConVar 
 ConVarBounds 
+ConVarQueryFinished 
 ConVarQueryResult 
 Cookie 
 CookieAccess 
@@ -33,7 +34,9 @@ Database
 DialogType 
 DirectoryListing 
 EngineVersion 
+EntityOutput 
 Event 
+EventHook 
 EventHookMode 
 ExecType 
 FeatureStatus 
@@ -58,8 +61,12 @@ MenuAction
 MenuSource 
 MenuStyle 
 MoveType 
+MsgHook 
+MultiTargetFilter 
+NativeCall 
 NetFlow 
 NominateResult 
+NormalSHook 
 NumberType 
 OverrideRule 
 OverrideType 
@@ -80,9 +87,11 @@ RegexError
 RenderFx 
 RenderMode 
 ReplySource 
+RequestFrameCallback 
 RoundState 
 SDKCallType 
 SDKFuncConfSource 
+SDKHookCB 
 SDKHookType 
 SDKLibrary 
 SDKPassMethod 
@@ -96,6 +105,8 @@ SMC_NewSection
 SMC_ParseEnd 
 SMC_ParseStart 
 SMC_RawLine 
+SQLTxnSuccess 
+SortFunc2D 
 SortOrder 
 SortType 
 StringMap 
@@ -107,11 +118,14 @@ TFObjectMode
 TFObjectType 
 TFResourceType 
 TFTeam 
+Timer 
 TopMenu 
 TopMenuAction 
 TopMenuObject 
 TopMenuObjectType 
 TopMenuPosition 
+TraceEntityEnumerator 
+TraceEntityFilter 
 Transaction 
 UseType 
 UserMessageType 

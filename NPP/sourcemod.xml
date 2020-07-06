@@ -24462,6 +24462,7 @@ Return:
         <KeyWord name="ConVarBound_Lower"/>
         <KeyWord name="ConVarBound_Upper"/>
         <KeyWord name="ConVarBounds"/>
+        <KeyWord name="ConVarQueryFinished"/>
         <KeyWord name="ConVarQueryResult"/>
         <KeyWord name="ConVarQuery_NotFound"/>
         <KeyWord name="ConVarQuery_NotValid"/>
@@ -24578,7 +24579,9 @@ Return:
         <KeyWord name="Engine_SourceSDK2007"/>
         <KeyWord name="Engine_TF2"/>
         <KeyWord name="Engine_Unknown"/>
+        <KeyWord name="EntityOutput"/>
         <KeyWord name="Event"/>
+        <KeyWord name="EventHook"/>
         <KeyWord name="EventHookMode"/>
         <KeyWord name="EventHookMode_Post"/>
         <KeyWord name="EventHookMode_PostNoCopy"/>
@@ -24868,8 +24871,11 @@ Return:
         <KeyWord name="MenuStyle_Radio"/>
         <KeyWord name="MenuStyle_Valve"/>
         <KeyWord name="MoveType"/>
+        <KeyWord name="MsgHook"/>
+        <KeyWord name="MultiTargetFilter"/>
         <KeyWord name="NULL_STRING"/>
         <KeyWord name="NULL_VECTOR"/>
+        <KeyWord name="NativeCall"/>
         <KeyWord name="NetFlow"/>
         <KeyWord name="NetFlow_Both"/>
         <KeyWord name="NetFlow_Incoming"/>
@@ -24880,6 +24886,7 @@ Return:
         <KeyWord name="Nominate_InvalidMap"/>
         <KeyWord name="Nominate_Replaced"/>
         <KeyWord name="Nominate_VoteFull"/>
+        <KeyWord name="NormalSHook"/>
         <KeyWord name="NumberType"/>
         <KeyWord name="NumberType_Int16"/>
         <KeyWord name="NumberType_Int32"/>
@@ -25053,6 +25060,7 @@ Return:
         <KeyWord name="RenderFx"/>
         <KeyWord name="RenderMode"/>
         <KeyWord name="ReplySource"/>
+        <KeyWord name="RequestFrameCallback"/>
         <KeyWord name="RoundState"/>
         <KeyWord name="RoundState_BetweenRounds"/>
         <KeyWord name="RoundState_Bonus"/>
@@ -25076,6 +25084,7 @@ Return:
         <KeyWord name="SDKConf_Signature"/>
         <KeyWord name="SDKConf_Virtual"/>
         <KeyWord name="SDKFuncConfSource"/>
+        <KeyWord name="SDKHookCB"/>
         <KeyWord name="SDKHookType"/>
         <KeyWord name="SDKHook_Blocked"/>
         <KeyWord name="SDKHook_BlockedPost"/>
@@ -25273,6 +25282,7 @@ Return:
         <KeyWord name="SP_ERROR_STACKMIN"/>
         <KeyWord name="SP_ERROR_TRACKER_BOUNDS"/>
         <KeyWord name="SP_PARAMFLAG_BYREF"/>
+        <KeyWord name="SQLTxnSuccess"/>
         <KeyWord name="SURF_BUMPLIGHT"/>
         <KeyWord name="SURF_HINT"/>
         <KeyWord name="SURF_HITBOX"/>
@@ -25289,6 +25299,7 @@ Return:
         <KeyWord name="SURF_TRANS"/>
         <KeyWord name="SURF_TRIGGER"/>
         <KeyWord name="SURF_WARP"/>
+        <KeyWord name="SortFunc2D"/>
         <KeyWord name="SortOrder"/>
         <KeyWord name="SortType"/>
         <KeyWord name="Sort_Ascending"/>
@@ -25755,6 +25766,7 @@ Return:
         <KeyWord name="TIMER_FLAG_NO_MAPCHANGE"/>
         <KeyWord name="TIMER_HNDL_CLOSE"/>
         <KeyWord name="TIMER_REPEAT"/>
+        <KeyWord name="Timer"/>
         <KeyWord name="TopMenu"/>
         <KeyWord name="TopMenuAction"/>
         <KeyWord name="TopMenuAction_DisplayOption"/>
@@ -25770,6 +25782,8 @@ Return:
         <KeyWord name="TopMenuPosition_LastCategory"/>
         <KeyWord name="TopMenuPosition_LastRoot"/>
         <KeyWord name="TopMenuPosition_Start"/>
+        <KeyWord name="TraceEntityEnumerator"/>
+        <KeyWord name="TraceEntityFilter"/>
         <KeyWord name="Transaction"/>
         <KeyWord name="UM_BitBuf"/>
         <KeyWord name="UM_Protobuf"/>
@@ -25843,6 +25857,7 @@ Return:
         <KeyWord name="this"/>
         <KeyWord name="true"/>
         <KeyWord name="typedef"/>
+        <KeyWord name="typeset"/>
         <KeyWord name="union"/>
         <KeyWord name="view_as"/>
         <KeyWord name="void"/>
