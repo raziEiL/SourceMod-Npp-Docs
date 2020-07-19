@@ -48,6 +48,9 @@ Due to Notepad++ **Issues** I highly recommend using [**3P plugin**](https://jca
 >**Note:** Press **TAB** to fast autocompletion.  
 >**Note:** To watch docs again place the cursor between `( )` characters and press **CTRL+SHIFT+SPACE** hotkeys
 
+# Useful URLs
+[NppExec Script and Console Hightlight](https://gist.github.com/raziEiL/03cdab8773ee36a600f7aec19edce53e)
+
 # Methodmap notes
 ![Docs screenshot](https://github.com/raziEiL/SourceMod-Npp-Docs/blob/master/img/docs%20list.png "Inline docs: methodmap strings")  
 These strings are not actual SourceMod functions. The purpose of these strings is to provide access to documentation showing the methodmap structure. Notepad++ don't reacts on dots in names (exp: fileArray.GetString) and docs not shown, so `.` were separated with `_` symbol.
